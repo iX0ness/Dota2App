@@ -1,5 +1,5 @@
 //
-//  SearchAccountViewModel.swift
+//  R.swift
 //  Dota2App
 //
 //  Created by Levchuk Misha on 03/03/2020.
@@ -8,6 +8,8 @@
 
 import Foundation
 
-class SearchAccountViewModel {
-    
+enum R {
+    enum SearchAccount {
+        static let accountImage = "account"
+    }
 }
