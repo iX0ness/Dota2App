@@ -9,21 +9,25 @@
 /* Begin PBXBuildFile section */
 		3282E73A240ED6740002E111 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E739240ED6740002E111 /* AppDelegate.swift */; };
 		3282E73C240ED6740002E111 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E73B240ED6740002E111 /* SceneDelegate.swift */; };
-		3282E73E240ED6740002E111 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E73D240ED6740002E111 /* ViewController.swift */; };
-		3282E741240ED6740002E111 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3282E73F240ED6740002E111 /* Main.storyboard */; };
+		3282E73E240ED6740002E111 /* SearchAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E73D240ED6740002E111 /* SearchAccountViewController.swift */; };
 		3282E743240ED6780002E111 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3282E742240ED6780002E111 /* Assets.xcassets */; };
 		3282E746240ED6780002E111 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3282E744240ED6780002E111 /* LaunchScreen.storyboard */; };
+		3282E74E240EDAD40002E111 /* AppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E74D240EDAD40002E111 /* AppDependencyContainer.swift */; };
+		3282E752240EDBD70002E111 /* SearchAccountFactory+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E751240EDBD70002E111 /* SearchAccountFactory+Extension.swift */; };
+		3282E756240EDCC90002E111 /* SearchAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E755240EDCC90002E111 /* SearchAccountViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		3282E736240ED6740002E111 /* Dota2App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dota2App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3282E739240ED6740002E111 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		3282E73B240ED6740002E111 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		3282E73D240ED6740002E111 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		3282E740240ED6740002E111 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		3282E73D240ED6740002E111 /* SearchAccountViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAccountViewController.swift; sourceTree = "<group>"; };
 		3282E742240ED6780002E111 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3282E745240ED6780002E111 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3282E747240ED6780002E111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3282E74D240EDAD40002E111 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
+		3282E751240EDBD70002E111 /* SearchAccountFactory+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchAccountFactory+Extension.swift"; sourceTree = "<group>"; };
+		3282E755240EDCC90002E111 /* SearchAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAccountViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +60,49 @@
 		3282E738240ED6740002E111 /* Dota2App */ = {
 			isa = PBXGroup;
 			children = (
+				3282E74F240EDBA10002E111 /* AppDependencyContainer */,
+				3282E753240EDC9B0002E111 /* Screens */,
 				3282E739240ED6740002E111 /* AppDelegate.swift */,
 				3282E73B240ED6740002E111 /* SceneDelegate.swift */,
-				3282E73D240ED6740002E111 /* ViewController.swift */,
-				3282E73F240ED6740002E111 /* Main.storyboard */,
 				3282E742240ED6780002E111 /* Assets.xcassets */,
 				3282E744240ED6780002E111 /* LaunchScreen.storyboard */,
 				3282E747240ED6780002E111 /* Info.plist */,
 			);
 			path = Dota2App;
+			sourceTree = "<group>";
+		};
+		3282E74F240EDBA10002E111 /* AppDependencyContainer */ = {
+			isa = PBXGroup;
+			children = (
+				3282E750240EDBAC0002E111 /* Factories */,
+				3282E74D240EDAD40002E111 /* AppDependencyContainer.swift */,
+			);
+			path = AppDependencyContainer;
+			sourceTree = "<group>";
+		};
+		3282E750240EDBAC0002E111 /* Factories */ = {
+			isa = PBXGroup;
+			children = (
+				3282E751240EDBD70002E111 /* SearchAccountFactory+Extension.swift */,
+			);
+			path = Factories;
+			sourceTree = "<group>";
+		};
+		3282E753240EDC9B0002E111 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				3282E754240EDCAC0002E111 /* SearchAccount */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		3282E754240EDCAC0002E111 /* SearchAccount */ = {
+			isa = PBXGroup;
+			children = (
+				3282E755240EDCC90002E111 /* SearchAccountViewModel.swift */,
+				3282E73D240ED6740002E111 /* SearchAccountViewController.swift */,
+			);
+			path = SearchAccount;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +165,6 @@
 			files = (
 				3282E746240ED6780002E111 /* LaunchScreen.storyboard in Resources */,
 				3282E743240ED6780002E111 /* Assets.xcassets in Resources */,
-				3282E741240ED6740002E111 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +175,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3282E73E240ED6740002E111 /* ViewController.swift in Sources */,
+				3282E756240EDCC90002E111 /* SearchAccountViewModel.swift in Sources */,
+				3282E73E240ED6740002E111 /* SearchAccountViewController.swift in Sources */,
 				3282E73A240ED6740002E111 /* AppDelegate.swift in Sources */,
+				3282E752240EDBD70002E111 /* SearchAccountFactory+Extension.swift in Sources */,
+				3282E74E240EDAD40002E111 /* AppDependencyContainer.swift in Sources */,
 				3282E73C240ED6740002E111 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +187,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		3282E73F240ED6740002E111 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				3282E740240ED6740002E111 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		3282E744240ED6780002E111 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
