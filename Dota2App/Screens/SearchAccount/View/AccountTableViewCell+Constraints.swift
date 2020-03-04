@@ -11,15 +11,16 @@ import UIKit
 extension AccountTableViewCell {
 
     func constructHierarchy() {
-        addSubview(accountImageView)
+        addSubview(accountDetailsStackView)
     }
 
-    func activateAccountImageViewConstraints() {
+    func activateAccountDetailsStackViewConstraints() {
         NSLayoutConstraint.activate([
-            accountImageView.widthAnchor.constraint(equalToConstant: 50),
-            accountImageView.heightAnchor.constraint(equalToConstant: 50),
-            accountImageView.centerYAnchor.constraint(equalTo: centerYAnchor),
-            accountImageView.centerXAnchor.constraint(equalTo: centerXAnchor)
+            accountDetailsStackView.leadingAnchor.constraint(equalToSystemSpacingAfter: layoutMarginsGuide.leadingAnchor, multiplier: 1.0),
+            accountDetailsStackView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
+            accountDetailsStackView.heightAnchor.constraint(equalToConstant: 50),
+            accountDetailsStackView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
 }
+

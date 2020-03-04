@@ -13,13 +13,27 @@ extension SearchAccountViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel.accounts.count
     }
-
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.defaultReuseIdentifier, for: indexPath) as! AccountTableViewCell
-        cell.accountImageView.image = viewModel.accounts[indexPath.row].image
+        let account = getAccount(at: indexPath)
+        cell.configure(with: account)
         cell.accountTitleLabel.text = viewModel.accounts[indexPath.row].title
         return cell
-     }
-
-    
+    }
+        
 }
+
+extension SearchAccountViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80
+    }
+}
+
+extension SearchAccountViewController {
+    func getAccount(at indexPath: IndexPath) -> Account {
+        return viewModel.accounts[indexPath.row]
+    }
+}
+
+

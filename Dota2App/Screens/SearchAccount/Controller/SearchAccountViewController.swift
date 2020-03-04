@@ -29,6 +29,7 @@ class SearchAccountViewController: UIViewController {
         super.viewDidLoad()
         guard let searchAccountView = view as? SearchAccountView else {return}
         searchAccountView.accountsTableView.dataSource = self
+        searchAccountView.accountsTableView.delegate = self
         
     }
 

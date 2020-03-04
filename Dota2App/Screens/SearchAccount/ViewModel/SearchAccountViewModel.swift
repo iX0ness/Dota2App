@@ -11,9 +11,11 @@ import UIKit
 
 class SearchAccountViewModel {
 
-    var accounts = [Account(image: UIImage(named: R.SearchAccount.accountImage)!,
+    var accounts = [Account(image: UIImage(named: "prof1")!,
                             title: "No name 1"),
-                    Account(image: UIImage(named: R.SearchAccount.accountImage)!,
+                    Account(image: UIImage(named: "prof2")!,
+                            title: "No name 2"),
+                    Account(image: UIImage(named: "prof3")!,
                             title: "No name 2")]
     
 }

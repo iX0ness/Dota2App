@@ -22,6 +22,7 @@
 		3282E74E240EDAD40002E111 /* AppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E74D240EDAD40002E111 /* AppDependencyContainer.swift */; };
 		3282E752240EDBD70002E111 /* RootViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E751240EDBD70002E111 /* RootViewController+Extension.swift */; };
 		3282E756240EDCC90002E111 /* SearchAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E755240EDCC90002E111 /* SearchAccountViewModel.swift */; };
+		8B6EB8482410039700D6CA85 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB8472410039700D6CA85 /* Helper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +43,7 @@
 		3282E74D240EDAD40002E111 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
 		3282E751240EDBD70002E111 /* RootViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootViewController+Extension.swift"; sourceTree = "<group>"; };
 		3282E755240EDCC90002E111 /* SearchAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAccountViewModel.swift; sourceTree = "<group>"; };
+		8B6EB8472410039700D6CA85 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,6 +130,7 @@
 		3282E738240ED6740002E111 /* Dota2App */ = {
 			isa = PBXGroup;
 			children = (
+				8B6EB8462410038800D6CA85 /* Helpers */,
 				320AC4CE240F0423000228BD /* Models */,
 				320AC4C6240EEC97000228BD /* Resources */,
 				3282E74F240EDBA10002E111 /* AppDependencyContainer */,
@@ -172,6 +175,14 @@
 				3251B88D240EE3D10032685D /* Controller */,
 			);
 			path = SearchAccount;
+			sourceTree = "<group>";
+		};
+		8B6EB8462410038800D6CA85 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				8B6EB8472410039700D6CA85 /* Helper.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -245,6 +256,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				320AC4CD240F0343000228BD /* SearchAccountViewController+UITableViewDataSource+Delegate.swift in Sources */,
+				8B6EB8482410039700D6CA85 /* Helper.swift in Sources */,
 				320AC4D0240F0445000228BD /* Account.swift in Sources */,
 				3282E756240EDCC90002E111 /* SearchAccountViewModel.swift in Sources */,
 				3282E73E240ED6740002E111 /* SearchAccountViewController.swift in Sources */,
@@ -324,7 +336,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -378,7 +390,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

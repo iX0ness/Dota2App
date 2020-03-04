@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 class SearchAccountView: UIView {
+    
     let viewModel: SearchAccountViewModel
 
     var accountsTableView: UITableView = {
