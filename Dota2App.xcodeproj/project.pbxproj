@@ -26,6 +26,10 @@
 		3282E752240EDBD70002E111 /* RootViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E751240EDBD70002E111 /* RootViewController+Extension.swift */; };
 		3282E756240EDCC90002E111 /* SearchAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E755240EDCC90002E111 /* SearchAccountViewModel.swift */; };
 		8B6EB8482410039700D6CA85 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB8472410039700D6CA85 /* Helper.swift */; };
+		8B6EB84D24166E0900D6CA85 /* GetAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB84C24166E0900D6CA85 /* GetAccounts.swift */; };
+		8B6EB850241673DB00D6CA85 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB84F241673DB00D6CA85 /* AccountResponse.swift */; };
+		8B6EB85424167CC200D6CA85 /* WonLostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB85324167CC200D6CA85 /* WonLostResponse.swift */; };
+		8B6EB85624167D0800D6CA85 /* GetWonLostStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB85524167D0800D6CA85 /* GetWonLostStatistic.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +54,10 @@
 		3282E751240EDBD70002E111 /* RootViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootViewController+Extension.swift"; sourceTree = "<group>"; };
 		3282E755240EDCC90002E111 /* SearchAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAccountViewModel.swift; sourceTree = "<group>"; };
 		8B6EB8472410039700D6CA85 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
+		8B6EB84C24166E0900D6CA85 /* GetAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccounts.swift; sourceTree = "<group>"; };
+		8B6EB84F241673DB00D6CA85 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
+		8B6EB85324167CC200D6CA85 /* WonLostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WonLostResponse.swift; sourceTree = "<group>"; };
+		8B6EB85524167D0800D6CA85 /* GetWonLostStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWonLostStatistic.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,8 +74,11 @@
 		3206B8A124102C3100A3C27F /* DotaAPI */ = {
 			isa = PBXGroup;
 			children = (
+				8B6EB84E241673C200D6CA85 /* ResponseModels */,
+				8B6EB84B24166DD700D6CA85 /* Requests */,
+				8B6EB84A24166D9500D6CA85 /* LocalClient */,
+				8B6EB84924166D7C00D6CA85 /* NetworkClient */,
 				3206B8A224102C4B00A3C27F /* APIProtocols.swift */,
-				3206B8A4241195ED00A3C27F /* NetworkingClient.swift */,
 				3206B8A6241507E700A3C27F /* APIError.swift */,
 			);
 			path = DotaAPI;
@@ -202,6 +213,39 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		8B6EB84924166D7C00D6CA85 /* NetworkClient */ = {
+			isa = PBXGroup;
+			children = (
+				3206B8A4241195ED00A3C27F /* NetworkingClient.swift */,
+			);
+			path = NetworkClient;
+			sourceTree = "<group>";
+		};
+		8B6EB84A24166D9500D6CA85 /* LocalClient */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = LocalClient;
+			sourceTree = "<group>";
+		};
+		8B6EB84B24166DD700D6CA85 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				8B6EB84C24166E0900D6CA85 /* GetAccounts.swift */,
+				8B6EB85524167D0800D6CA85 /* GetWonLostStatistic.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		8B6EB84E241673C200D6CA85 /* ResponseModels */ = {
+			isa = PBXGroup;
+			children = (
+				8B6EB84F241673DB00D6CA85 /* AccountResponse.swift */,
+				8B6EB85324167CC200D6CA85 /* WonLostResponse.swift */,
+			);
+			path = ResponseModels;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -274,19 +318,23 @@
 			files = (
 				320AC4CD240F0343000228BD /* SearchAccountViewController+UITableViewDataSource+Delegate.swift in Sources */,
 				8B6EB8482410039700D6CA85 /* Helper.swift in Sources */,
+				8B6EB84D24166E0900D6CA85 /* GetAccounts.swift in Sources */,
 				3206B8A5241195ED00A3C27F /* NetworkingClient.swift in Sources */,
 				3206B8A7241507E700A3C27F /* APIError.swift in Sources */,
+				8B6EB85424167CC200D6CA85 /* WonLostResponse.swift in Sources */,
 				320AC4D0240F0445000228BD /* Account.swift in Sources */,
 				3206B8A324102C4B00A3C27F /* APIProtocols.swift in Sources */,
 				3282E756240EDCC90002E111 /* SearchAccountViewModel.swift in Sources */,
 				3282E73E240ED6740002E111 /* SearchAccountViewController.swift in Sources */,
 				3282E73A240ED6740002E111 /* AppDelegate.swift in Sources */,
+				8B6EB85624167D0800D6CA85 /* GetWonLostStatistic.swift in Sources */,
 				3251B891240EE3F90032685D /* SearchAccountView.swift in Sources */,
 				3282E752240EDBD70002E111 /* RootViewController+Extension.swift in Sources */,
 				3282E74E240EDAD40002E111 /* AppDependencyContainer.swift in Sources */,
 				320AC4C5240EEA3A000228BD /* AccountTableViewCell.swift in Sources */,
 				3282E73C240ED6740002E111 /* SceneDelegate.swift in Sources */,
 				320AC4C9240EECE6000228BD /* R.swift in Sources */,
+				8B6EB850241673DB00D6CA85 /* AccountResponse.swift in Sources */,
 				320AC4CB240EEEB6000228BD /* AccountTableViewCell+Constraints.swift in Sources */,
 				320AC4C3240EE79F000228BD /* SearchAccountView+Constraints.swift in Sources */,
 			);

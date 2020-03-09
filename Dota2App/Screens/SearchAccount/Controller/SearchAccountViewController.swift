@@ -11,6 +11,9 @@ import UIKit
 class SearchAccountViewController: UIViewController {
 
     let viewModel: SearchAccountViewModel
+    let networkingClient = NetworkingClient()
+    let accounts = GetAccounts(accountName: "342878356")
+    let wonLostStatistic = GetWonLostStatistic(accountID: "221666230")
 
     init(viewModel: SearchAccountViewModel) {
         self.viewModel = viewModel
@@ -30,6 +33,16 @@ class SearchAccountViewController: UIViewController {
         guard let searchAccountView = view as? SearchAccountView else {return}
         searchAccountView.accountsTableView.dataSource = self
         searchAccountView.accountsTableView.delegate = self
+        
+        networkingClient.send(request: accounts) { result in
+            switch result {
+            case .success(let data):
+                print(data)
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
         
     }
 
