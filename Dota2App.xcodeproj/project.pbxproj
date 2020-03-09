@@ -10,6 +10,8 @@
 		3206B8A324102C4B00A3C27F /* APIProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206B8A224102C4B00A3C27F /* APIProtocols.swift */; };
 		3206B8A5241195ED00A3C27F /* NetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206B8A4241195ED00A3C27F /* NetworkingClient.swift */; };
 		3206B8A7241507E700A3C27F /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206B8A6241507E700A3C27F /* APIError.swift */; };
+		3206B8A92416B8EA00A3C27F /* AppDependencyContainer+NetworkingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206B8A82416B8EA00A3C27F /* AppDependencyContainer+NetworkingFactory.swift */; };
+		3206B8AB2416BA7100A3C27F /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206B8AA2416BA7100A3C27F /* AccountService.swift */; };
 		320AC4C3240EE79F000228BD /* SearchAccountView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320AC4C2240EE79F000228BD /* SearchAccountView+Constraints.swift */; };
 		320AC4C5240EEA3A000228BD /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320AC4C4240EEA3A000228BD /* AccountTableViewCell.swift */; };
 		320AC4C9240EECE6000228BD /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320AC4C8240EECE6000228BD /* R.swift */; };
@@ -37,6 +39,8 @@
 		3206B8A224102C4B00A3C27F /* APIProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProtocols.swift; sourceTree = "<group>"; };
 		3206B8A4241195ED00A3C27F /* NetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingClient.swift; sourceTree = "<group>"; };
 		3206B8A6241507E700A3C27F /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
+		3206B8A82416B8EA00A3C27F /* AppDependencyContainer+NetworkingFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+NetworkingFactory.swift"; sourceTree = "<group>"; };
+		3206B8AA2416BA7100A3C27F /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AccountService.swift; path = Dota2App/AppDependencyContainer/Factories/AccountService.swift; sourceTree = SOURCE_ROOT; };
 		320AC4C2240EE79F000228BD /* SearchAccountView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchAccountView+Constraints.swift"; sourceTree = "<group>"; };
 		320AC4C4240EEA3A000228BD /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		320AC4C8240EECE6000228BD /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
@@ -186,6 +190,7 @@
 			isa = PBXGroup;
 			children = (
 				3282E751240EDBD70002E111 /* RootViewController+Extension.swift */,
+				3206B8A82416B8EA00A3C27F /* AppDependencyContainer+NetworkingFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -220,6 +225,7 @@
 		8B043AEF24169CDD00997C8A /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				3206B8AA2416BA7100A3C27F /* AccountService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -354,7 +360,9 @@
 				3282E73C240ED6740002E111 /* SceneDelegate.swift in Sources */,
 				320AC4C9240EECE6000228BD /* R.swift in Sources */,
 				8B043AEE24169CB400997C8A /* APIFacade.swift in Sources */,
+				3206B8A92416B8EA00A3C27F /* AppDependencyContainer+NetworkingFactory.swift in Sources */,
 				8B6EB850241673DB00D6CA85 /* AccountResponse.swift in Sources */,
+				3206B8AB2416BA7100A3C27F /* AccountService.swift in Sources */,
 				320AC4CB240EEEB6000228BD /* AccountTableViewCell+Constraints.swift in Sources */,
 				320AC4C3240EE79F000228BD /* SearchAccountView+Constraints.swift in Sources */,
 			);
