@@ -25,6 +25,7 @@
 		3282E74E240EDAD40002E111 /* AppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E74D240EDAD40002E111 /* AppDependencyContainer.swift */; };
 		3282E752240EDBD70002E111 /* RootViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E751240EDBD70002E111 /* RootViewController+Extension.swift */; };
 		3282E756240EDCC90002E111 /* SearchAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E755240EDCC90002E111 /* SearchAccountViewModel.swift */; };
+		8B043AEE24169CB400997C8A /* APIFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043AED24169CB400997C8A /* APIFacade.swift */; };
 		8B6EB8482410039700D6CA85 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB8472410039700D6CA85 /* Helper.swift */; };
 		8B6EB84D24166E0900D6CA85 /* GetAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB84C24166E0900D6CA85 /* GetAccounts.swift */; };
 		8B6EB850241673DB00D6CA85 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB84F241673DB00D6CA85 /* AccountResponse.swift */; };
@@ -53,6 +54,7 @@
 		3282E74D240EDAD40002E111 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
 		3282E751240EDBD70002E111 /* RootViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootViewController+Extension.swift"; sourceTree = "<group>"; };
 		3282E755240EDCC90002E111 /* SearchAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAccountViewModel.swift; sourceTree = "<group>"; };
+		8B043AED24169CB400997C8A /* APIFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFacade.swift; sourceTree = "<group>"; };
 		8B6EB8472410039700D6CA85 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		8B6EB84C24166E0900D6CA85 /* GetAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccounts.swift; sourceTree = "<group>"; };
 		8B6EB84F241673DB00D6CA85 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 		3282E738240ED6740002E111 /* Dota2App */ = {
 			isa = PBXGroup;
 			children = (
+				8B043AEC24169C9500997C8A /* Facade */,
 				3206B8A124102C3100A3C27F /* DotaAPI */,
 				8B6EB8462410038800D6CA85 /* Helpers */,
 				320AC4CE240F0423000228BD /* Models */,
@@ -203,6 +206,22 @@
 				3251B88D240EE3D10032685D /* Controller */,
 			);
 			path = SearchAccount;
+			sourceTree = "<group>";
+		};
+		8B043AEC24169C9500997C8A /* Facade */ = {
+			isa = PBXGroup;
+			children = (
+				8B043AEF24169CDD00997C8A /* Services */,
+				8B043AED24169CB400997C8A /* APIFacade.swift */,
+			);
+			path = Facade;
+			sourceTree = "<group>";
+		};
+		8B043AEF24169CDD00997C8A /* Services */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Services;
 			sourceTree = "<group>";
 		};
 		8B6EB8462410038800D6CA85 /* Helpers */ = {
@@ -334,6 +353,7 @@
 				320AC4C5240EEA3A000228BD /* AccountTableViewCell.swift in Sources */,
 				3282E73C240ED6740002E111 /* SceneDelegate.swift in Sources */,
 				320AC4C9240EECE6000228BD /* R.swift in Sources */,
+				8B043AEE24169CB400997C8A /* APIFacade.swift in Sources */,
 				8B6EB850241673DB00D6CA85 /* AccountResponse.swift in Sources */,
 				320AC4CB240EEEB6000228BD /* AccountTableViewCell+Constraints.swift in Sources */,
 				320AC4C3240EE79F000228BD /* SearchAccountView+Constraints.swift in Sources */,

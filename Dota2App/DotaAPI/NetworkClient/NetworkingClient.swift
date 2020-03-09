@@ -43,7 +43,6 @@ class NetworkingClient: APIClient {
                 completion(.success(parsedData))
             } catch {
                 print(error)
-                print("____________________________________")
                 completion(.failure(APIError.parsingError(message: error.localizedDescription)))
             }
             
