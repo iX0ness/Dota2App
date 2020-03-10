@@ -11,10 +11,10 @@ import Foundation
 class AccountService {
 
     private let networkingClient: NetworkingClient
-    typealias AccountsCompletion<Value: Decodable> = (Result<Value, Error>) -> Void
+    
 
-    init(factory: NetworkingFactory) {
-        self.networkingClient = factory.makeNetworkingClient()
+    init(networkingClient: NetworkingClient) {
+        self.networkingClient = networkingClient
     }
 
     func getAccounts(with accountName: String, completion: @escaping AccountsCompletion<[AccountResponse]>) {

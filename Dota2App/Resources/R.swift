@@ -8,8 +8,13 @@
 
 import Foundation
 
+//typealias AccountsCompletion<Value: Decodable> = (Result<Value, Error>) -> Void
 enum R {
     enum SearchAccount {
         static let accountImage = "account"
+    }
+    
+    enum TypeAliases {
+        typealias AccountsCompletion<Value: Decodable> = (Result<Value, Error>) -> Void
     }
 }

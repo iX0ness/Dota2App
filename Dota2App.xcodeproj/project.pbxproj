@@ -28,6 +28,9 @@
 		3282E752240EDBD70002E111 /* RootViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E751240EDBD70002E111 /* RootViewController+Extension.swift */; };
 		3282E756240EDCC90002E111 /* SearchAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E755240EDCC90002E111 /* SearchAccountViewModel.swift */; };
 		8B043AEE24169CB400997C8A /* APIFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043AED24169CB400997C8A /* APIFacade.swift */; };
+		8B043AF82417D88700997C8A /* AppDependencyContainer+AccountsServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043AF72417D88700997C8A /* AppDependencyContainer+AccountsServiceFactory.swift */; };
+		8B043AFA2417DD5600997C8A /* AppDependencyContainer+APIFacadeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043AF92417DD5600997C8A /* AppDependencyContainer+APIFacadeFactory.swift */; };
+		8B043AFF2417E7A100997C8A /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043AFE2417E7A100997C8A /* TypeAliases.swift */; };
 		8B6EB8482410039700D6CA85 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB8472410039700D6CA85 /* Helper.swift */; };
 		8B6EB84D24166E0900D6CA85 /* GetAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB84C24166E0900D6CA85 /* GetAccounts.swift */; };
 		8B6EB850241673DB00D6CA85 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB84F241673DB00D6CA85 /* AccountResponse.swift */; };
@@ -59,6 +62,9 @@
 		3282E751240EDBD70002E111 /* RootViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootViewController+Extension.swift"; sourceTree = "<group>"; };
 		3282E755240EDCC90002E111 /* SearchAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAccountViewModel.swift; sourceTree = "<group>"; };
 		8B043AED24169CB400997C8A /* APIFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFacade.swift; sourceTree = "<group>"; };
+		8B043AF72417D88700997C8A /* AppDependencyContainer+AccountsServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+AccountsServiceFactory.swift"; sourceTree = "<group>"; };
+		8B043AF92417DD5600997C8A /* AppDependencyContainer+APIFacadeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+APIFacadeFactory.swift"; sourceTree = "<group>"; };
+		8B043AFE2417E7A100997C8A /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
 		8B6EB8472410039700D6CA85 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		8B6EB84C24166E0900D6CA85 /* GetAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccounts.swift; sourceTree = "<group>"; };
 		8B6EB84F241673DB00D6CA85 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
@@ -95,6 +101,7 @@
 			children = (
 				320AC4C7240EECCD000228BD /* System */,
 				320AC4C8240EECE6000228BD /* R.swift */,
+				8B043AFE2417E7A100997C8A /* TypeAliases.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -191,6 +198,8 @@
 			children = (
 				3282E751240EDBD70002E111 /* RootViewController+Extension.swift */,
 				3206B8A82416B8EA00A3C27F /* AppDependencyContainer+NetworkingFactory.swift */,
+				8B043AF72417D88700997C8A /* AppDependencyContainer+AccountsServiceFactory.swift */,
+				8B043AF92417DD5600997C8A /* AppDependencyContainer+APIFacadeFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -344,7 +353,9 @@
 				320AC4CD240F0343000228BD /* SearchAccountViewController+UITableViewDataSource+Delegate.swift in Sources */,
 				8B6EB8482410039700D6CA85 /* Helper.swift in Sources */,
 				8B6EB84D24166E0900D6CA85 /* GetAccounts.swift in Sources */,
+				8B043AFF2417E7A100997C8A /* TypeAliases.swift in Sources */,
 				3206B8A5241195ED00A3C27F /* NetworkingClient.swift in Sources */,
+				8B043AF82417D88700997C8A /* AppDependencyContainer+AccountsServiceFactory.swift in Sources */,
 				3206B8A7241507E700A3C27F /* APIError.swift in Sources */,
 				8B6EB85424167CC200D6CA85 /* WonLostResponse.swift in Sources */,
 				320AC4D0240F0445000228BD /* Account.swift in Sources */,
@@ -364,6 +375,7 @@
 				8B6EB850241673DB00D6CA85 /* AccountResponse.swift in Sources */,
 				3206B8AB2416BA7100A3C27F /* AccountService.swift in Sources */,
 				320AC4CB240EEEB6000228BD /* AccountTableViewCell+Constraints.swift in Sources */,
+				8B043AFA2417DD5600997C8A /* AppDependencyContainer+APIFacadeFactory.swift in Sources */,
 				320AC4C3240EE79F000228BD /* SearchAccountView+Constraints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

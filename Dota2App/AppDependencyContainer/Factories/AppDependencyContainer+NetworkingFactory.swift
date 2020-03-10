@@ -8,12 +8,4 @@
 
 import Foundation
 
-protocol NetworkingFactory {
-    func makeNetworkingClient() -> NetworkingClient
-}
 
-extension AppDependencyContainer: NetworkingFactory {
-    func makeNetworkingClient() -> NetworkingClient {
-        return NetworkingClient()
-    }
-}
