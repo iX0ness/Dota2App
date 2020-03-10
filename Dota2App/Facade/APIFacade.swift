@@ -30,7 +30,7 @@ extension APIFacade: AccountServiceProvider {
             switch result {
             case .success(let accounts):
                 completion(.success(accounts))
-                
+        
             case .failure(let error):
                 completion(.failure(error))
             }
