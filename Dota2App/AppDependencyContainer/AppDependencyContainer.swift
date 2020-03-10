@@ -9,5 +9,15 @@
 import Foundation
 
 class AppDependencyContainer {
-    
+    func makeNetworkingClient() -> NetworkingClient {
+        return NetworkingClient()
+    }
+
+    func makeSearchAccountViewController() -> SearchAccountViewController {
+        return SearchAccountViewController(viewModel: makeSearchAccountViewModel())
+    }
+
+    private func makeSearchAccountViewModel() -> SearchAccountViewModel {
+        return SearchAccountViewModel()
+    }
 }

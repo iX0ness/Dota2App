@@ -10,8 +10,9 @@
 		3206B8A324102C4B00A3C27F /* APIProtocols.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206B8A224102C4B00A3C27F /* APIProtocols.swift */; };
 		3206B8A5241195ED00A3C27F /* NetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206B8A4241195ED00A3C27F /* NetworkingClient.swift */; };
 		3206B8A7241507E700A3C27F /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206B8A6241507E700A3C27F /* APIError.swift */; };
-		3206B8A92416B8EA00A3C27F /* AppDependencyContainer+NetworkingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206B8A82416B8EA00A3C27F /* AppDependencyContainer+NetworkingFactory.swift */; };
 		3206B8AB2416BA7100A3C27F /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206B8AA2416BA7100A3C27F /* AccountService.swift */; };
+		3206B8AD2418176200A3C27F /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206B8AC2418176200A3C27F /* TypeAliases.swift */; };
+		3206B8AF241817D800A3C27F /* AppDependencyContainer+APIFacadeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206B8AE241817D800A3C27F /* AppDependencyContainer+APIFacadeFactory.swift */; };
 		320AC4C3240EE79F000228BD /* SearchAccountView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320AC4C2240EE79F000228BD /* SearchAccountView+Constraints.swift */; };
 		320AC4C5240EEA3A000228BD /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320AC4C4240EEA3A000228BD /* AccountTableViewCell.swift */; };
 		320AC4C9240EECE6000228BD /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320AC4C8240EECE6000228BD /* R.swift */; };
@@ -25,7 +26,6 @@
 		3282E743240ED6780002E111 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3282E742240ED6780002E111 /* Assets.xcassets */; };
 		3282E746240ED6780002E111 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3282E744240ED6780002E111 /* LaunchScreen.storyboard */; };
 		3282E74E240EDAD40002E111 /* AppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E74D240EDAD40002E111 /* AppDependencyContainer.swift */; };
-		3282E752240EDBD70002E111 /* RootViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E751240EDBD70002E111 /* RootViewController+Extension.swift */; };
 		3282E756240EDCC90002E111 /* SearchAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E755240EDCC90002E111 /* SearchAccountViewModel.swift */; };
 		8B043AEE24169CB400997C8A /* APIFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043AED24169CB400997C8A /* APIFacade.swift */; };
 		8B043AF124178D2F00997C8A /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043AF024178D2F00997C8A /* ImageLoader.swift */; };
@@ -42,8 +42,9 @@
 		3206B8A224102C4B00A3C27F /* APIProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProtocols.swift; sourceTree = "<group>"; };
 		3206B8A4241195ED00A3C27F /* NetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingClient.swift; sourceTree = "<group>"; };
 		3206B8A6241507E700A3C27F /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		3206B8A82416B8EA00A3C27F /* AppDependencyContainer+NetworkingFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+NetworkingFactory.swift"; sourceTree = "<group>"; };
 		3206B8AA2416BA7100A3C27F /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AccountService.swift; path = Dota2App/AppDependencyContainer/Factories/AccountService.swift; sourceTree = SOURCE_ROOT; };
+		3206B8AC2418176200A3C27F /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
+		3206B8AE241817D800A3C27F /* AppDependencyContainer+APIFacadeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+APIFacadeFactory.swift"; sourceTree = "<group>"; };
 		320AC4C2240EE79F000228BD /* SearchAccountView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchAccountView+Constraints.swift"; sourceTree = "<group>"; };
 		320AC4C4240EEA3A000228BD /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		320AC4C8240EECE6000228BD /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
@@ -59,7 +60,6 @@
 		3282E745240ED6780002E111 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3282E747240ED6780002E111 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3282E74D240EDAD40002E111 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
-		3282E751240EDBD70002E111 /* RootViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RootViewController+Extension.swift"; sourceTree = "<group>"; };
 		3282E755240EDCC90002E111 /* SearchAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAccountViewModel.swift; sourceTree = "<group>"; };
 		8B043AED24169CB400997C8A /* APIFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFacade.swift; sourceTree = "<group>"; };
 		8B043AF024178D2F00997C8A /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
@@ -101,6 +101,7 @@
 			children = (
 				320AC4C7240EECCD000228BD /* System */,
 				320AC4C8240EECE6000228BD /* R.swift */,
+				3206B8AC2418176200A3C27F /* TypeAliases.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -195,8 +196,7 @@
 		3282E750240EDBAC0002E111 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				3282E751240EDBD70002E111 /* RootViewController+Extension.swift */,
-				3206B8A82416B8EA00A3C27F /* AppDependencyContainer+NetworkingFactory.swift */,
+				3206B8AE241817D800A3C27F /* AppDependencyContainer+APIFacadeFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -369,10 +369,11 @@
 				3282E756240EDCC90002E111 /* SearchAccountViewModel.swift in Sources */,
 				3282E73E240ED6740002E111 /* SearchAccountViewController.swift in Sources */,
 				3282E73A240ED6740002E111 /* AppDelegate.swift in Sources */,
+				3206B8AF241817D800A3C27F /* AppDependencyContainer+APIFacadeFactory.swift in Sources */,
 				8B6EB85624167D0800D6CA85 /* GetWonLostStatistic.swift in Sources */,
+				3206B8AD2418176200A3C27F /* TypeAliases.swift in Sources */,
 				8B043AF62417CA8A00997C8A /* UIImageView+Extension.swift in Sources */,
 				3251B891240EE3F90032685D /* SearchAccountView.swift in Sources */,
-				3282E752240EDBD70002E111 /* RootViewController+Extension.swift in Sources */,
 				3282E74E240EDAD40002E111 /* AppDependencyContainer.swift in Sources */,
 				320AC4C5240EEA3A000228BD /* AccountTableViewCell.swift in Sources */,
 				3282E73C240ED6740002E111 /* SceneDelegate.swift in Sources */,
@@ -380,7 +381,6 @@
 				320AC4C9240EECE6000228BD /* R.swift in Sources */,
 				8B043AEE24169CB400997C8A /* APIFacade.swift in Sources */,
 				8B043AF42417AD8F00997C8A /* UIImageLoader.swift in Sources */,
-				3206B8A92416B8EA00A3C27F /* AppDependencyContainer+NetworkingFactory.swift in Sources */,
 				8B6EB850241673DB00D6CA85 /* AccountResponse.swift in Sources */,
 				3206B8AB2416BA7100A3C27F /* AccountService.swift in Sources */,
 				320AC4CB240EEEB6000228BD /* AccountTableViewCell+Constraints.swift in Sources */,
