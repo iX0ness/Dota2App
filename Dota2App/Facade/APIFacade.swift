@@ -9,7 +9,6 @@
 import Foundation
 
 protocol AccountServiceProvider {
-    //var accountService: AccountService {get}
     func fetchAccounts(_ accountName: String, completion: @escaping AccountsCompletion<[AccountResponse]>)
 }
 

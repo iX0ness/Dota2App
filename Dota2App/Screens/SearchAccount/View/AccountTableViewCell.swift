@@ -12,6 +12,7 @@ import UIKit
 class AccountTableViewCell: UITableViewCell {
     
     private let prefferedImageSize = CGSize(width: 60.0, height: 60.0)
+    var onReuse: (() -> Void) = {}
 
     lazy var accountImageView: UIImageView = {
         let imageView = UIImageView()
@@ -47,10 +48,18 @@ class AccountTableViewCell: UITableViewCell {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(with account: Account) {
-        let resizedImage = Helper.resizedImageWith(image: account.image, targetSize: prefferedImageSize)
-        accountImageView.image = resizedImage
-        accountTitleLabel.text = account.title
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        accountImageView.image = nil
+        accountImageView.cancelImageLoad()
+        
+    }
+    
+    
+    func configure(with account: AccountResponse) {
+        let accountAvatarURL = URL(string: account.avatarfull)!
+        accountImageView.loadImage(at: accountAvatarURL, with: .custom(size: CGSize(width: 60.0, height: 60.0)))
+        accountTitleLabel.text = account.personaname
     }
 }
 

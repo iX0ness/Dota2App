@@ -33,6 +33,13 @@ class SearchAccountViewController: UIViewController {
         guard let searchAccountView = view as? SearchAccountView else {return}
         searchAccountView.accountsTableView.dataSource = self
         searchAccountView.accountsTableView.delegate = self
+        viewModel.didFetchAccounts = {
+            DispatchQueue.main.async {
+                searchAccountView.accountsTableView.reloadData()
+            }
+            
+            
+        }
     }
 
 

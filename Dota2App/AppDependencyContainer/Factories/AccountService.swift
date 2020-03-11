@@ -12,7 +12,6 @@ class AccountService {
 
     private let networkingClient: NetworkingClient
     
-
     init(networkingClient: NetworkingClient = NetworkingClient()) {
         self.networkingClient = networkingClient
     }
@@ -23,10 +22,9 @@ class AccountService {
         networkingClient.send(request: accountRequest) { (result) in
             switch result {
             case .success(let accounts):
-                print(accounts)
                 completion(.success(accounts))
             case .failure(let error):
-                print(error)
+                completion(.failure(error))
             }
         }
     }

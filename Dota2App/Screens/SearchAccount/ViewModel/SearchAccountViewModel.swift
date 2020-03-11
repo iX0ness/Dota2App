@@ -11,18 +11,31 @@ import UIKit
 
 class SearchAccountViewModel {
     
-    let accountsProvider: AccountServiceProvider
+    private let accountsProvider: AccountServiceProvider
+    
+    var didFetchAccounts: (() -> Void)?
+    
+    var fetchedAccounts: [AccountResponse] = [] {
+        didSet {
+            didFetchAccounts?()
+        }
+    }
     
     init(accountsProvider: AccountServiceProvider) {
         self.accountsProvider = accountsProvider
         
+        DispatchQueue.global().async {
+            self.accountsProvider.fetchAccounts("kurwa") { (result) in
+                switch result {
+                case .success(let accounts):
+                    self.fetchedAccounts = accounts
+                    
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
+        
+        
     }
-
-    var accounts = [Account(image: UIImage(named: "prof1")!,
-                            title: "No name 1"),
-                    Account(image: UIImage(named: "prof2")!,
-                            title: "No name 2"),
-                    Account(image: UIImage(named: "prof3")!,
-                            title: "No name 2")]
-    
 }

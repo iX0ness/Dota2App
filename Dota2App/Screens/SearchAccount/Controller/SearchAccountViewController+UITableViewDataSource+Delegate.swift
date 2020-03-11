@@ -11,14 +11,14 @@ import UIKit
 
 extension SearchAccountViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.accounts.count
+        return viewModel.fetchedAccounts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.defaultReuseIdentifier, for: indexPath) as! AccountTableViewCell
         let account = getAccount(at: indexPath)
         cell.configure(with: account)
-        cell.accountTitleLabel.text = viewModel.accounts[indexPath.row].title
+        //cell.accountTitleLabel.text = viewModel.fetchedAccounts[indexPath.row].personaname
         return cell
     }
         
@@ -31,8 +31,8 @@ extension SearchAccountViewController: UITableViewDelegate {
 }
 
 extension SearchAccountViewController {
-    func getAccount(at indexPath: IndexPath) -> Account {
-        return viewModel.accounts[indexPath.row]
+    func getAccount(at indexPath: IndexPath) -> AccountResponse {
+        return viewModel.fetchedAccounts[indexPath.row]
     }
 }
 

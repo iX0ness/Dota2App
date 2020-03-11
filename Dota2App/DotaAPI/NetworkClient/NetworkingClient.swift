@@ -20,8 +20,6 @@ class NetworkingClient: APIClient {
             return
         }
         
-        print(url.absoluteString)
-        
         let dataTask = session.dataTask(with: url) { (data, response, error) in
             guard error == nil else {
                 completion(.failure(error!))

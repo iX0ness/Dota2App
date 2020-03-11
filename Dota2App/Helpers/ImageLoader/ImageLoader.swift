@@ -33,8 +33,9 @@ class ImageLoader {
             defer {self.runningRequests.removeValue(forKey: uuid)}
             
             if let data = data, let image = UIImage(data: data) {
-                self.loadedImages[url] = self.convertImage(image, to: size)
-                completion(.success(image))
+                let resizedImage = self.convertImage(image, to: size)
+                self.loadedImages[url] = resizedImage
+                completion(.success(resizedImage))
                 return
             }
             
