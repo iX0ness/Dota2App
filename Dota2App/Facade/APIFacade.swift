@@ -9,24 +9,23 @@
 import Foundation
 
 protocol AccountServiceProvider {
-    var accountService: AccountService {get}
+    //var accountService: AccountService {get}
     func fetchAccounts(_ accountName: String, completion: @escaping AccountsCompletion<[AccountResponse]>)
 }
 
 
 class APIFacade {
-
-    let accountService: AccountService
     
-    init(factory: APIFacadeFactory) {
-        self.accountService = factory.makeAccountService()
+    private let accountsService: AccountService
+    init(accountsService: AccountService = AccountService()) {
+        self.accountsService = accountsService
     }
    
 }
 
 extension APIFacade: AccountServiceProvider {
     func fetchAccounts(_ accountName: String, completion: @escaping AccountsCompletion<[AccountResponse]>) {
-        accountService.getAccounts(with: accountName) { (result) in
+        accountsService.getAccounts(with: accountName) { (result) in
             switch result {
             case .success(let accounts):
                 completion(.success(accounts))
@@ -37,3 +36,4 @@ extension APIFacade: AccountServiceProvider {
         }
     }
 }
+
