@@ -13,7 +13,7 @@ class AccountService {
     private let networkingClient: NetworkingClient
     
 
-    init(networkingClient: NetworkingClient) {
+    init(networkingClient: NetworkingClient = NetworkingClient()) {
         self.networkingClient = networkingClient
     }
 
@@ -31,3 +31,5 @@ class AccountService {
         }
     }
 }
+
+

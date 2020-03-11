@@ -10,6 +10,13 @@ import Foundation
 import UIKit
 
 class SearchAccountViewModel {
+    
+    let accountsProvider: AccountServiceProvider
+    
+    init(accountsProvider: AccountServiceProvider) {
+        self.accountsProvider = accountsProvider
+        
+    }
 
     var accounts = [Account(image: UIImage(named: "prof1")!,
                             title: "No name 1"),

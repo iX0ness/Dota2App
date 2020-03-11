@@ -26,7 +26,6 @@
 		3282E74E240EDAD40002E111 /* AppDependencyContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E74D240EDAD40002E111 /* AppDependencyContainer.swift */; };
 		3282E756240EDCC90002E111 /* SearchAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E755240EDCC90002E111 /* SearchAccountViewModel.swift */; };
 		8B043AEE24169CB400997C8A /* APIFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043AED24169CB400997C8A /* APIFacade.swift */; };
-		8B043AFA2417DD5600997C8A /* AppDependencyContainer+APIFacadeFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043AF92417DD5600997C8A /* AppDependencyContainer+APIFacadeFactory.swift */; };
 		8B043AFF2417E7A100997C8A /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043AFE2417E7A100997C8A /* TypeAliases.swift */; };
 		8B6EB8482410039700D6CA85 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB8472410039700D6CA85 /* Helper.swift */; };
 		8B6EB84D24166E0900D6CA85 /* GetAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB84C24166E0900D6CA85 /* GetAccounts.swift */; };
@@ -57,7 +56,6 @@
 		3282E74D240EDAD40002E111 /* AppDependencyContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDependencyContainer.swift; sourceTree = "<group>"; };
 		3282E755240EDCC90002E111 /* SearchAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAccountViewModel.swift; sourceTree = "<group>"; };
 		8B043AED24169CB400997C8A /* APIFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFacade.swift; sourceTree = "<group>"; };
-		8B043AF92417DD5600997C8A /* AppDependencyContainer+APIFacadeFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+APIFacadeFactory.swift"; sourceTree = "<group>"; };
 		8B043AFE2417E7A100997C8A /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
 		8B6EB8472410039700D6CA85 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		8B6EB84C24166E0900D6CA85 /* GetAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccounts.swift; sourceTree = "<group>"; };
@@ -190,7 +188,6 @@
 		3282E750240EDBAC0002E111 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				8B043AF92417DD5600997C8A /* AppDependencyContainer+APIFacadeFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -363,7 +360,6 @@
 				8B6EB850241673DB00D6CA85 /* AccountResponse.swift in Sources */,
 				3206B8AB2416BA7100A3C27F /* AccountService.swift in Sources */,
 				320AC4CB240EEEB6000228BD /* AccountTableViewCell+Constraints.swift in Sources */,
-				8B043AFA2417DD5600997C8A /* AppDependencyContainer+APIFacadeFactory.swift in Sources */,
 				320AC4C3240EE79F000228BD /* SearchAccountView+Constraints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

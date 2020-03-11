@@ -10,17 +10,17 @@ import Foundation
 
 class AppDependencyContainer {
     
+    private let apiFacade = APIFacade()
     
-    func makeNetworkingClient() -> NetworkingClient {
-        return NetworkingClient()
-    }
     
     func makeSearchAccountViewController() -> SearchAccountViewController {
         return SearchAccountViewController(viewModel: makeSearchAccountViewModel())
     }
 
     private func makeSearchAccountViewModel() -> SearchAccountViewModel {
-        return SearchAccountViewModel()
+        return SearchAccountViewModel(accountsProvider: apiFacade)
     }
     
 }
+
+
