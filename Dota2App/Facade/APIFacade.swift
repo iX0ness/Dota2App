@@ -16,7 +16,7 @@ protocol AccountServiceProvider {
 class APIFacade {
     
     private let accountsService: AccountService
-    init(accountsService: AccountService = AccountService()) {
+    init(accountsService: AccountService) {
         self.accountsService = accountsService
     }
    

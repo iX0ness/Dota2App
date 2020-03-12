@@ -24,6 +24,7 @@ class SearchAccountViewModel {
     init(accountsProvider: AccountServiceProvider) {
         self.accountsProvider = accountsProvider
         
+
         DispatchQueue.global().async {
             self.accountsProvider.fetchAccounts("kurwa") { (result) in
                 switch result {
@@ -38,4 +39,5 @@ class SearchAccountViewModel {
         
         
     }
+
 }

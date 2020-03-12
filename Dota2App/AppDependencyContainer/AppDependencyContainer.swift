@@ -10,13 +10,16 @@ import Foundation
 
 class AppDependencyContainer {
     
-    private let apiFacade = APIFacade()
+    private lazy var apiFacade: APIFacade = {
+        let facade = APIFacade(accountsService: makeAccountService())
+        return facade
+    }()
     
     
     func makeSearchAccountViewController() -> SearchAccountViewController {
         return SearchAccountViewController(viewModel: makeSearchAccountViewModel())
     }
-
+    
     private func makeSearchAccountViewModel() -> SearchAccountViewModel {
         return SearchAccountViewModel(accountsProvider: apiFacade)
     }
