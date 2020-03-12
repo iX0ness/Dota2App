@@ -199,6 +199,7 @@
 		3282E74F240EDBA10002E111 /* AppDependencyContainer */ = {
 			isa = PBXGroup;
 			children = (
+				8B043B14241A96D500997C8A /* Providers */,
 				3282E750240EDBAC0002E111 /* Factories */,
 				3282E74D240EDAD40002E111 /* AppDependencyContainer.swift */,
 			);
@@ -208,8 +209,6 @@
 		3282E750240EDBAC0002E111 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				8B043B06241A343200997C8A /* AppDependencyContainer+NetworkingClientProvider.swift */,
-				8B043B08241A43C000997C8A /* AppDependencyContainer+ServicesProvider.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -247,6 +246,15 @@
 				3206B8AA2416BA7100A3C27F /* AccountService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		8B043B14241A96D500997C8A /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+				8B043B08241A43C000997C8A /* AppDependencyContainer+ServicesProvider.swift */,
+				8B043B06241A343200997C8A /* AppDependencyContainer+NetworkingClientProvider.swift */,
+			);
+			path = Providers;
 			sourceTree = "<group>";
 		};
 		8B6EB8462410038800D6CA85 /* Helpers */ = {

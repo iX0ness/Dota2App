@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 class AppDependencyContainer {
     
@@ -16,7 +17,12 @@ class AppDependencyContainer {
     }()
     
     
-    func makeSearchAccountViewController() -> SearchAccountViewController {
+    func makeRootViewController() -> UINavigationController {
+        let navigationController = UINavigationController(rootViewController: makeSearchAccountViewController())
+        return navigationController
+    }
+    
+    private func makeSearchAccountViewController() -> SearchAccountViewController {
         return SearchAccountViewController(viewModel: makeSearchAccountViewModel())
     }
     
