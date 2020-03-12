@@ -11,12 +11,14 @@ import UIKit
 class SearchAccountViewController: UIViewController {
 
     let viewModel: SearchAccountViewModel
+    let searchController: UISearchController
 //    let networkingClient = NetworkingClient()
 //    let accounts = GetAccounts(accountName: "342878356")
 //    let wonLostStatistic = GetWonLostStatistic(accountID: "221666230")
 
-    init(viewModel: SearchAccountViewModel) {
+    init(viewModel: SearchAccountViewModel, factory: SearchControllerFactory) {
         self.viewModel = viewModel
+        self.searchController = factory.makeSearchController()
         super.init(nibName: nil, bundle: nil)
     }
 

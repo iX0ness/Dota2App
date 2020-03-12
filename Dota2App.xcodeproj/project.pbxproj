@@ -20,6 +20,7 @@
 		320AC4CB240EEEB6000228BD /* AccountTableViewCell+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320AC4CA240EEEB6000228BD /* AccountTableViewCell+Constraints.swift */; };
 		320AC4CD240F0343000228BD /* SearchAccountViewController+UITableViewDataSource+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320AC4CC240F0343000228BD /* SearchAccountViewController+UITableViewDataSource+Delegate.swift */; };
 		320AC4D0240F0445000228BD /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320AC4CF240F0445000228BD /* Account.swift */; };
+		321C356E241AD0CC00E24B65 /* AppDependencyContainer+SearchControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C356D241AD0CC00E24B65 /* AppDependencyContainer+SearchControllerFactory.swift */; };
 		3251B891240EE3F90032685D /* SearchAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3251B890240EE3F90032685D /* SearchAccountView.swift */; };
 		3282E73A240ED6740002E111 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E739240ED6740002E111 /* AppDelegate.swift */; };
 		3282E73C240ED6740002E111 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E73B240ED6740002E111 /* SceneDelegate.swift */; };
@@ -53,6 +54,7 @@
 		320AC4CA240EEEB6000228BD /* AccountTableViewCell+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountTableViewCell+Constraints.swift"; sourceTree = "<group>"; };
 		320AC4CC240F0343000228BD /* SearchAccountViewController+UITableViewDataSource+Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchAccountViewController+UITableViewDataSource+Delegate.swift"; sourceTree = "<group>"; };
 		320AC4CF240F0445000228BD /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		321C356D241AD0CC00E24B65 /* AppDependencyContainer+SearchControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+SearchControllerFactory.swift"; sourceTree = "<group>"; };
 		3251B890240EE3F90032685D /* SearchAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAccountView.swift; sourceTree = "<group>"; };
 		3282E736240ED6740002E111 /* Dota2App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Dota2App.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		3282E739240ED6740002E111 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -209,6 +211,7 @@
 		3282E750240EDBAC0002E111 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
+				321C356D241AD0CC00E24B65 /* AppDependencyContainer+SearchControllerFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -392,6 +395,7 @@
 				3282E73C240ED6740002E111 /* SceneDelegate.swift in Sources */,
 				320AC4C9240EECE6000228BD /* R.swift in Sources */,
 				8B043AEE24169CB400997C8A /* APIFacade.swift in Sources */,
+				321C356E241AD0CC00E24B65 /* AppDependencyContainer+SearchControllerFactory.swift in Sources */,
 				3206B8B524181ABE00A3C27F /* UIImageLoader.swift in Sources */,
 				8B6EB850241673DB00D6CA85 /* AccountResponse.swift in Sources */,
 				3206B8AB2416BA7100A3C27F /* AccountService.swift in Sources */,

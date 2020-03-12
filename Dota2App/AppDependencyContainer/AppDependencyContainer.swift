@@ -16,14 +16,13 @@ class AppDependencyContainer {
         return facade
     }()
     
-    
     func makeRootViewController() -> UINavigationController {
         let navigationController = UINavigationController(rootViewController: makeSearchAccountViewController())
         return navigationController
     }
     
     private func makeSearchAccountViewController() -> SearchAccountViewController {
-        return SearchAccountViewController(viewModel: makeSearchAccountViewModel())
+        return SearchAccountViewController(viewModel: makeSearchAccountViewModel(), factory: self)
     }
     
     private func makeSearchAccountViewModel() -> SearchAccountViewModel {
