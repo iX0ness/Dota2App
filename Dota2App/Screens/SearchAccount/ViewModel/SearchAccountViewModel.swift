@@ -16,8 +16,20 @@ class SearchAccountViewModel {
     init(accountsProvider: AccountServiceProvider) {
         self.accountsProvider = accountsProvider
         
+        accountsProvider.fetchAccounts("kurwa") { (result) in
+            switch result {
+            case .success(let accounts):
+                print(accounts)
+                
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
     }
 
+    
+    
     var accounts = [Account(image: UIImage(named: "prof1")!,
                             title: "No name 1"),
                     Account(image: UIImage(named: "prof2")!,

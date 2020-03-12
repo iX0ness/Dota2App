@@ -30,6 +30,8 @@
 		3282E756240EDCC90002E111 /* SearchAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E755240EDCC90002E111 /* SearchAccountViewModel.swift */; };
 		8B043AEE24169CB400997C8A /* APIFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043AED24169CB400997C8A /* APIFacade.swift */; };
 		8B043AFF2417E7A100997C8A /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043AFE2417E7A100997C8A /* TypeAliases.swift */; };
+		8B043B07241A343200997C8A /* AppDependencyContainer+NetworkingClientProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043B06241A343200997C8A /* AppDependencyContainer+NetworkingClientProvider.swift */; };
+		8B043B09241A43C000997C8A /* AppDependencyContainer+ServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043B08241A43C000997C8A /* AppDependencyContainer+ServicesProvider.swift */; };
 		8B6EB8482410039700D6CA85 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB8472410039700D6CA85 /* Helper.swift */; };
 		8B6EB84D24166E0900D6CA85 /* GetAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB84C24166E0900D6CA85 /* GetAccounts.swift */; };
 		8B6EB850241673DB00D6CA85 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB84F241673DB00D6CA85 /* AccountResponse.swift */; };
@@ -63,6 +65,8 @@
 		3282E755240EDCC90002E111 /* SearchAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAccountViewModel.swift; sourceTree = "<group>"; };
 		8B043AED24169CB400997C8A /* APIFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFacade.swift; sourceTree = "<group>"; };
 		8B043AFE2417E7A100997C8A /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
+		8B043B06241A343200997C8A /* AppDependencyContainer+NetworkingClientProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+NetworkingClientProvider.swift"; sourceTree = "<group>"; };
+		8B043B08241A43C000997C8A /* AppDependencyContainer+ServicesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+ServicesProvider.swift"; sourceTree = "<group>"; };
 		8B6EB8472410039700D6CA85 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		8B6EB84C24166E0900D6CA85 /* GetAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccounts.swift; sourceTree = "<group>"; };
 		8B6EB84F241673DB00D6CA85 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
@@ -204,6 +208,8 @@
 		3282E750240EDBAC0002E111 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
+				8B043B06241A343200997C8A /* AppDependencyContainer+NetworkingClientProvider.swift */,
+				8B043B08241A43C000997C8A /* AppDependencyContainer+ServicesProvider.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -356,6 +362,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				320AC4CD240F0343000228BD /* SearchAccountViewController+UITableViewDataSource+Delegate.swift in Sources */,
+				8B043B09241A43C000997C8A /* AppDependencyContainer+ServicesProvider.swift in Sources */,
 				8B6EB8482410039700D6CA85 /* Helper.swift in Sources */,
 				8B6EB84D24166E0900D6CA85 /* GetAccounts.swift in Sources */,
 				8B043AFF2417E7A100997C8A /* TypeAliases.swift in Sources */,
@@ -364,6 +371,7 @@
 				3206B8A7241507E700A3C27F /* APIError.swift in Sources */,
 				8B6EB85424167CC200D6CA85 /* WonLostResponse.swift in Sources */,
 				320AC4D0240F0445000228BD /* Account.swift in Sources */,
+				8B043B07241A343200997C8A /* AppDependencyContainer+NetworkingClientProvider.swift in Sources */,
 				3206B8A324102C4B00A3C27F /* APIProtocols.swift in Sources */,
 				3282E756240EDCC90002E111 /* SearchAccountViewModel.swift in Sources */,
 				3206B8B424181ABE00A3C27F /* UIImageView+Extension.swift in Sources */,
