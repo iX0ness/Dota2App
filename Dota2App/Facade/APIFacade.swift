@@ -9,7 +9,7 @@
 import Foundation
 
 protocol AccountServiceProvider {
-    func fetchAccounts(_ accountName: String, completion: @escaping AccountsCompletion<[AccountResponse]>)
+    func fetchAccounts(_ accountName: String, completion: @escaping AccountsCompletion<[AccountResponse]>) -> URLSessionDataTask?
 }
 
 
@@ -23,8 +23,8 @@ class APIFacade {
 }
 
 extension APIFacade: AccountServiceProvider {
-    func fetchAccounts(_ accountName: String, completion: @escaping AccountsCompletion<[AccountResponse]>) {
-        accountsService.getAccounts(with: accountName) { (result) in
+    func fetchAccounts(_ accountName: String, completion: @escaping AccountsCompletion<[AccountResponse]>) -> URLSessionDataTask? {
+        let task = accountsService.getAccounts(with: accountName) { (result) in
             switch result {
             case .success(let accounts):
                 completion(.success(accounts))
@@ -33,6 +33,8 @@ extension APIFacade: AccountServiceProvider {
                 completion(.failure(error))
             }
         }
+        
+        return task
     }
 }
 

@@ -16,10 +16,10 @@ class AccountService {
         self.networkingClient = networkingClient
     }
 
-    func getAccounts(with accountName: String, completion: @escaping AccountsCompletion<[AccountResponse]>) {
+    func getAccounts(with accountName: String, completion: @escaping AccountsCompletion<[AccountResponse]>) -> URLSessionDataTask? {
         let accountRequest = GetAccounts(accountName: accountName)
 
-        networkingClient.send(request: accountRequest) { (result) in
+        let task = networkingClient.send(request: accountRequest) { (result) in
             switch result {
             case .success(let accounts):
                 completion(.success(accounts))
@@ -27,6 +27,8 @@ class AccountService {
                 completion(.failure(error))
             }
         }
+        
+        return task
     }
 }
 

@@ -12,6 +12,8 @@ import UIKit
 class SearchAccountViewModel {
     
     private let accountsProvider: AccountServiceProvider
+    var dataTask: URLSessionDataTask?
+    
     
     var didFetchAccounts: (() -> Void)?
     
@@ -23,20 +25,6 @@ class SearchAccountViewModel {
     
     init(accountsProvider: AccountServiceProvider) {
         self.accountsProvider = accountsProvider
-        
-
-        DispatchQueue.global().async {
-            self.accountsProvider.fetchAccounts("kurwa") { (result) in
-                switch result {
-                case .success(let accounts):
-                    self.fetchedAccounts = accounts
-                    
-                case .failure(let error):
-                    print(error)
-                }
-            }
-        }
-        
         
     }
 

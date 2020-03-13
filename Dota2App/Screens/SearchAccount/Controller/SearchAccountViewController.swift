@@ -8,13 +8,15 @@
 
 import UIKit
 
+//    let networkingClient = NetworkingClient()
+//    let accounts = GetAccounts(accountName: "342878356")
+//    let wonLostStatistic = GetWonLostStatistic(accountID: "221666230")
+
 class SearchAccountViewController: UIViewController {
 
     let viewModel: SearchAccountViewModel
     let searchController: UISearchController
-//    let networkingClient = NetworkingClient()
-//    let accounts = GetAccounts(accountName: "342878356")
-//    let wonLostStatistic = GetWonLostStatistic(accountID: "221666230")
+
 
     init(viewModel: SearchAccountViewModel, factory: SearchControllerFactory) {
         self.viewModel = viewModel
@@ -33,15 +35,9 @@ class SearchAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let searchAccountView = view as? SearchAccountView else {return}
-        searchAccountView.accountsTableView.dataSource = self
-        searchAccountView.accountsTableView.delegate = self
-        viewModel.didFetchAccounts = {
-            DispatchQueue.main.async {
-                searchAccountView.accountsTableView.reloadData()
-            }
-            
-            
-        }
+        setupView(searchAccountView)
+        bindView(searchAccountView)
+        
     }
 
 

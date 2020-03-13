@@ -22,9 +22,9 @@ extension SearchAccountView: SearchViewConstraints {
     func activateAccountsTableViewConstraints() {
         NSLayoutConstraint.activate([
             accountsTableView.leadingAnchor.constraint(equalTo: safeAreaLayoutGuide.leadingAnchor),
-            accountsTableView.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor),
+            accountsTableView.topAnchor.constraint(equalTo: topAnchor),
             accountsTableView.trailingAnchor.constraint(equalTo: safeAreaLayoutGuide.trailingAnchor),
-            accountsTableView.bottomAnchor.constraint(equalTo: safeAreaLayoutGuide.bottomAnchor)
+            accountsTableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
 }

@@ -13,11 +13,11 @@ class NetworkingClient: APIClient {
     private let session = URLSession(configuration: .default)
     private var baseURL = URL(string: "https://api.opendota.com/api/")!
     
-    func send<T: APIRequest>(request: T, completion: @escaping CompletionHandler<T.Response>) {
+    func send<T: APIRequest>(request: T, completion: @escaping CompletionHandler<T.Response>) -> URLSessionDataTask? {
         
         guard let url = createEndpoint(for: request) else {
             completion(.failure(APIError.urlConstructionError))
-            return
+            return nil
         }
         
         let dataTask = session.dataTask(with: url) { (data, response, error) in
@@ -46,6 +46,8 @@ class NetworkingClient: APIClient {
             
         }
         dataTask.resume()
+        
+        return dataTask
     }
     
     

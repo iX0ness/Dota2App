@@ -16,5 +16,5 @@ protocol APIRequest: Encodable {
 }
 
 protocol APIClient {
-    func send<T: APIRequest>(request: T, completion: @escaping CompletionHandler<T.Response>)
+    func send<T: APIRequest>(request: T, completion: @escaping CompletionHandler<T.Response>) -> URLSessionDataTask?
 }
