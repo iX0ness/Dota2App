@@ -40,6 +40,7 @@
 		8B6EB850241673DB00D6CA85 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB84F241673DB00D6CA85 /* AccountResponse.swift */; };
 		8B6EB85424167CC200D6CA85 /* WonLostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB85324167CC200D6CA85 /* WonLostResponse.swift */; };
 		8B6EB85624167D0800D6CA85 /* GetWonLostStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB85524167D0800D6CA85 /* GetWonLostStatistic.swift */; };
+		8BCFFDA82420EC2C00751874 /* SearchAccountViewController+UISearchResultsUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCFFDA72420EC2C00751874 /* SearchAccountViewController+UISearchResultsUpdating.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		8B6EB84F241673DB00D6CA85 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
 		8B6EB85324167CC200D6CA85 /* WonLostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WonLostResponse.swift; sourceTree = "<group>"; };
 		8B6EB85524167D0800D6CA85 /* GetWonLostStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWonLostStatistic.swift; sourceTree = "<group>"; };
+		8BCFFDA72420EC2C00751874 /* SearchAccountViewController+UISearchResultsUpdating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchAccountViewController+UISearchResultsUpdating.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -147,6 +149,7 @@
 				3282E73D240ED6740002E111 /* SearchAccountViewController.swift */,
 				320AC4CC240F0343000228BD /* SearchAccountViewController+UITableViewDataSource+Delegate.swift */,
 				8B043B15241B7CB300997C8A /* SearchAccountViewController+Extension.swift */,
+				8BCFFDA72420EC2C00751874 /* SearchAccountViewController+UISearchResultsUpdating.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -389,6 +392,7 @@
 				320AC4CD240F0343000228BD /* SearchAccountViewController+UITableViewDataSource+Delegate.swift in Sources */,
 				8B043B09241A43C000997C8A /* AppDependencyContainer+ServicesProvider.swift in Sources */,
 				8B043B16241B7CB300997C8A /* SearchAccountViewController+Extension.swift in Sources */,
+				8BCFFDA82420EC2C00751874 /* SearchAccountViewController+UISearchResultsUpdating.swift in Sources */,
 				8B6EB8482410039700D6CA85 /* Helper.swift in Sources */,
 				8B6EB84D24166E0900D6CA85 /* GetAccounts.swift in Sources */,
 				8B043AFF2417E7A100997C8A /* TypeAliases.swift in Sources */,

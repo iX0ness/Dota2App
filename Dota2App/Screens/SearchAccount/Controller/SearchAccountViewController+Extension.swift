@@ -11,10 +11,21 @@ import UIKit
 
 extension SearchAccountViewController {
     func setupView(_ view: SearchAccountView) {
+        
+        /// Setup table view delegate
         view.accountsTableView.dataSource = self
         view.accountsTableView.delegate = self
-        view.accountsTableView.tableHeaderView = searchController.searchBar
         
+        /// Setup searchController
+        //view.accountsTableView.tableHeaderView = searchController.searchBar
+        navigationItem.searchController = searchController
+        searchController.searchResultsUpdater = self
+        searchController.searchBar.delegate = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        
+        
+        /// Setup navigationBar
         if let navigationBar = navigationController?.navigationBar {
             navigationBar.topItem?.title = "Search account"
             navigationBar.prefersLargeTitles = true

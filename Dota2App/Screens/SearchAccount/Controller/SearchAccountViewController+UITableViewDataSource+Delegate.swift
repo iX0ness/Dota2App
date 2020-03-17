@@ -18,7 +18,6 @@ extension SearchAccountViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.defaultReuseIdentifier, for: indexPath) as! AccountTableViewCell
         let account = getAccount(at: indexPath)
         cell.configure(with: account)
-        //cell.accountTitleLabel.text = viewModel.fetchedAccounts[indexPath.row].personaname
         return cell
     }
         

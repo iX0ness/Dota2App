@@ -27,5 +27,19 @@ class SearchAccountViewModel {
         self.accountsProvider = accountsProvider
         
     }
-
+    
+    func getAccounts(named accountName: String) {
+        let _ = accountsProvider.fetchAccounts(accountName) { (result) in
+            switch result {
+            case .success(let accounts):
+                self.fetchedAccounts = accounts
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
+    
 }
+
+
+
