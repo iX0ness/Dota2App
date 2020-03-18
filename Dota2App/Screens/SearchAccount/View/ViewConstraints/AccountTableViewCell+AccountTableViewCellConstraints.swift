@@ -8,7 +8,12 @@
 
 import UIKit
 
-extension AccountTableViewCell {
+protocol AccountTableViewCellConstraints {
+    func constructHierarchy()
+    func activateAccountDetailsStackViewConstraints()
+}
+
+extension AccountTableViewCell: AccountTableViewCellConstraints {
 
     func constructHierarchy() {
         addSubview(accountDetailsStackView)

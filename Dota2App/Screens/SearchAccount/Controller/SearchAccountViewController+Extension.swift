@@ -29,6 +29,7 @@ extension SearchAccountViewController {
         if let navigationBar = navigationController?.navigationBar {
             navigationBar.topItem?.title = "Search account"
             navigationBar.prefersLargeTitles = true
+            navigationBar.barTintColor = R.SearchAccount.navBarColor
         }
         
     }
@@ -40,6 +41,4 @@ extension SearchAccountViewController {
             }
         }
     }
-    
-    
 }

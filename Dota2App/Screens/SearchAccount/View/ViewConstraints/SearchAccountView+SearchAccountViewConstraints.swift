@@ -9,12 +9,12 @@
 import Foundation
 import UIKit
 
-protocol SearchViewConstraints {
+protocol SearchAccountViewConstraints {
     func constructHierarchy()
     func activateAccountsTableViewConstraints()
 }
 
-extension SearchAccountView: SearchViewConstraints {
+extension SearchAccountView: SearchAccountViewConstraints {
     func constructHierarchy() {
         addSubview(accountsTableView)
     }

@@ -11,6 +11,15 @@ import UIKit
 
 extension SearchAccountViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
+        if viewModel.fetchedAccounts.count > 0 {
+            tableView.backgroundView?.isHidden  = true
+            tableView.separatorStyle = .singleLine
+        } else {
+            tableView.backgroundView?.isHidden  = false
+            tableView.separatorStyle = .none
+        }
+        
         return viewModel.fetchedAccounts.count
     }
     
@@ -33,6 +42,8 @@ extension SearchAccountViewController {
     func getAccount(at indexPath: IndexPath) -> AccountResponse {
         return viewModel.fetchedAccounts[indexPath.row]
     }
+    
+    
 }
 
 

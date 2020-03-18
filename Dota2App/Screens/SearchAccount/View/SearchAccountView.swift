@@ -12,12 +12,20 @@ import UIKit
 class SearchAccountView: UIView {
     
     let viewModel: SearchAccountViewModel
+    
+    lazy var emptyAccountView: EmptySearchAccountView = {
+        let view = EmptySearchAccountView()
+        return view
+    }()
 
-    var accountsTableView: UITableView = {
+    lazy var accountsTableView: UITableView = {
         let tableView = UITableView()
+        tableView.backgroundView = emptyAccountView
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()
+    
+    
 
     init(viewModel: SearchAccountViewModel) {
         self.viewModel = viewModel
