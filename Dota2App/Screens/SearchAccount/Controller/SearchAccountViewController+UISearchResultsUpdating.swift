@@ -34,4 +34,27 @@ extension SearchAccountViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         viewModel.fetchedAccounts.removeAll()
     }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        setEditingColor(for: searchBar, color: R.SearchAccount.searchTextFieldTextColor)
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        setStandardColor(for: searchBar, color: .lightGray)
+    }
+    
+    private func setEditingColor(for searchBar: UISearchBar, color: UIColor) {
+        if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
+            textfield.attributedPlaceholder = NSAttributedString(string: textfield.placeholder ?? "",
+                                                                 attributes: [NSAttributedString.Key.foregroundColor : color])
+        }
+    }
+    
+    private func setStandardColor(for searchBar: UISearchBar, color: UIColor) {
+        if let textfield = searchBar.value(forKey: "searchField") as? UITextField {
+            textfield.attributedPlaceholder = NSAttributedString(string: textfield.placeholder ?? "",
+                                                                 attributes: [NSAttributedString.Key.foregroundColor : color])
+        }
+    }
+    
 }

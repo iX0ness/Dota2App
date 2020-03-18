@@ -196,6 +196,7 @@
 		3282E738240ED6740002E111 /* Dota2App */ = {
 			isa = PBXGroup;
 			children = (
+				8BCFFDAE24224CC300751874 /* UIKit */,
 				8B043AEC24169C9500997C8A /* Facade */,
 				3206B8A124102C3100A3C27F /* DotaAPI */,
 				8B6EB8462410038800D6CA85 /* Helpers */,
@@ -331,6 +332,13 @@
 				8BCFFDAC242221CE00751874 /* EmptySearchAccountView+EmptySearchAccountViewConstraints.swift */,
 			);
 			path = ViewConstraints;
+			sourceTree = "<group>";
+		};
+		8BCFFDAE24224CC300751874 /* UIKit */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UIKit;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

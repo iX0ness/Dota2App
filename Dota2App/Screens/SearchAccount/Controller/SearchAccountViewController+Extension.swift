@@ -17,12 +17,14 @@ extension SearchAccountViewController {
         view.accountsTableView.delegate = self
         
         /// Setup searchController
-        //view.accountsTableView.tableHeaderView = searchController.searchBar
         navigationItem.searchController = searchController
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
         searchController.obscuresBackgroundDuringPresentation = false
         definesPresentationContext = true
+        
+        searchController.searchBar.tintColor = R.SearchAccount.searchBarTintColor
+        searchController.searchBar.searchTextField.textColor = R.SearchAccount.searchTextFieldTextColor
         
         
         /// Setup navigationBar
@@ -30,6 +32,7 @@ extension SearchAccountViewController {
             navigationBar.topItem?.title = "Search account"
             navigationBar.prefersLargeTitles = true
             navigationBar.barTintColor = R.SearchAccount.navBarColor
+            navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         }
         
     }

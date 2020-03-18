@@ -15,6 +15,8 @@ enum R {
         static let emptyViewBackgroundColor = UIColor(red: 22/255, green: 26/255, blue: 39/255, alpha: 1.0)
         static let dimViewBackgroundColor = UIColor(red: 255/255, green: 255/255, blue: 255/255, alpha: 0.12)
         static let navBarColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 1.0)
+        static let searchBarTintColor = UIColor(red: 51/255, green: 53/255, blue: 65/255, alpha: 1.0)
+        static let searchTextFieldTextColor = UIColor(red: 51/255, green: 53/255, blue: 65/255, alpha: 1.0)
     }
     
     enum TypeAliases {
