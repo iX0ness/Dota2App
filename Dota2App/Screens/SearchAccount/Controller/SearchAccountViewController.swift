@@ -16,11 +16,12 @@ class SearchAccountViewController: UIViewController {
 
     let viewModel: SearchAccountViewModel
     let searchController: UISearchController
+    let debouncer: Debouncer
 
-
-    init(viewModel: SearchAccountViewModel, factory: SearchControllerFactory) {
+    init(viewModel: SearchAccountViewModel, factory: SearchControllerFactory & DebouncerFactory) {
         self.viewModel = viewModel
         self.searchController = factory.makeSearchController()
+        self.debouncer = factory.makeDebouncer(delay: 0.8)
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -39,8 +40,6 @@ class SearchAccountViewController: UIViewController {
         bindView(searchAccountView)
         
     }
-
-
 
 }
 

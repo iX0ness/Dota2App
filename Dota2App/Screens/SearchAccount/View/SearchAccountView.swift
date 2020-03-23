@@ -25,8 +25,6 @@ class SearchAccountView: UIView {
         return tableView
     }()
     
-    
-
     init(viewModel: SearchAccountViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero)

@@ -52,25 +52,12 @@ class AccountTableViewCell: UITableViewCell {
         super.prepareForReuse()
         accountImageView.image = nil
         accountImageView.cancelImageLoad()
-        
     }
-    
     
     func configure(with account: AccountResponse) {
         let accountAvatarURL = URL(string: account.avatarfull)!
         accountImageView.loadImage(at: accountAvatarURL, with: .custom(size: CGSize(width: 60.0, height: 60.0)))
         accountTitleLabel.text = account.personaname
-    }
-}
-
-
-protocol ReusableView: class {
-    static var defaultReuseIdentifier: String { get }
-}
-
-extension ReusableView where Self: UIView {
-    static var defaultReuseIdentifier: String {
-        return NSStringFromClass(self)
     }
 }
 

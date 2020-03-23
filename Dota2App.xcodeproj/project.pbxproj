@@ -34,7 +34,7 @@
 		8B043B07241A343200997C8A /* AppDependencyContainer+NetworkingClientProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043B06241A343200997C8A /* AppDependencyContainer+NetworkingClientProvider.swift */; };
 		8B043B09241A43C000997C8A /* AppDependencyContainer+ServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043B08241A43C000997C8A /* AppDependencyContainer+ServicesProvider.swift */; };
 		8B043B16241B7CB300997C8A /* SearchAccountViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043B15241B7CB300997C8A /* SearchAccountViewController+Extension.swift */; };
-		8B043B19241BB5D500997C8A /* Throttle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043B18241BB5D500997C8A /* Throttle.swift */; };
+		8B043B19241BB5D500997C8A /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043B18241BB5D500997C8A /* Debouncer.swift */; };
 		8B6EB8482410039700D6CA85 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB8472410039700D6CA85 /* Helper.swift */; };
 		8B6EB84D24166E0900D6CA85 /* GetAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB84C24166E0900D6CA85 /* GetAccounts.swift */; };
 		8B6EB850241673DB00D6CA85 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB84F241673DB00D6CA85 /* AccountResponse.swift */; };
@@ -43,6 +43,8 @@
 		8BCFFDA82420EC2C00751874 /* SearchAccountViewController+UISearchResultsUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCFFDA72420EC2C00751874 /* SearchAccountViewController+UISearchResultsUpdating.swift */; };
 		8BCFFDAA2422145500751874 /* EmptySearchAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCFFDA92422145500751874 /* EmptySearchAccountView.swift */; };
 		8BCFFDAD242221CE00751874 /* EmptySearchAccountView+EmptySearchAccountViewConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCFFDAC242221CE00751874 /* EmptySearchAccountView+EmptySearchAccountViewConstraints.swift */; };
+		8BFA084E2428FE6100461767 /* AppDependencyContainer+DebouncerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFA084D2428FE6100461767 /* AppDependencyContainer+DebouncerFactory.swift */; };
+		8BFA08502429019D00461767 /* UIView+ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFA084F2429019D00461767 /* UIView+ReusableView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -75,7 +77,7 @@
 		8B043B06241A343200997C8A /* AppDependencyContainer+NetworkingClientProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+NetworkingClientProvider.swift"; sourceTree = "<group>"; };
 		8B043B08241A43C000997C8A /* AppDependencyContainer+ServicesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+ServicesProvider.swift"; sourceTree = "<group>"; };
 		8B043B15241B7CB300997C8A /* SearchAccountViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchAccountViewController+Extension.swift"; sourceTree = "<group>"; };
-		8B043B18241BB5D500997C8A /* Throttle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Throttle.swift; sourceTree = "<group>"; };
+		8B043B18241BB5D500997C8A /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
 		8B6EB8472410039700D6CA85 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		8B6EB84C24166E0900D6CA85 /* GetAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccounts.swift; sourceTree = "<group>"; };
 		8B6EB84F241673DB00D6CA85 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
@@ -84,6 +86,8 @@
 		8BCFFDA72420EC2C00751874 /* SearchAccountViewController+UISearchResultsUpdating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchAccountViewController+UISearchResultsUpdating.swift"; sourceTree = "<group>"; };
 		8BCFFDA92422145500751874 /* EmptySearchAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySearchAccountView.swift; sourceTree = "<group>"; };
 		8BCFFDAC242221CE00751874 /* EmptySearchAccountView+EmptySearchAccountViewConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmptySearchAccountView+EmptySearchAccountViewConstraints.swift"; sourceTree = "<group>"; };
+		8BFA084D2428FE6100461767 /* AppDependencyContainer+DebouncerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+DebouncerFactory.swift"; sourceTree = "<group>"; };
+		8BFA084F2429019D00461767 /* UIView+ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ReusableView.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +229,7 @@
 			isa = PBXGroup;
 			children = (
 				321C356D241AD0CC00E24B65 /* AppDependencyContainer+SearchControllerFactory.swift */,
+				8BFA084D2428FE6100461767 /* AppDependencyContainer+DebouncerFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -273,18 +278,18 @@
 			path = Providers;
 			sourceTree = "<group>";
 		};
-		8B043B17241BB5C600997C8A /* Throttle */ = {
+		8B043B17241BB5C600997C8A /* Debouncer */ = {
 			isa = PBXGroup;
 			children = (
-				8B043B18241BB5D500997C8A /* Throttle.swift */,
+				8B043B18241BB5D500997C8A /* Debouncer.swift */,
 			);
-			path = Throttle;
+			path = Debouncer;
 			sourceTree = "<group>";
 		};
 		8B6EB8462410038800D6CA85 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				8B043B17241BB5C600997C8A /* Throttle */,
+				8B043B17241BB5C600997C8A /* Debouncer */,
 				3206B8B024181ABE00A3C27F /* ImageLoader */,
 				8B6EB8472410039700D6CA85 /* Helper.swift */,
 			);
@@ -337,6 +342,7 @@
 		8BCFFDAE24224CC300751874 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
+				8BFA084F2429019D00461767 /* UIView+ReusableView.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -413,6 +419,7 @@
 			files = (
 				320AC4CD240F0343000228BD /* SearchAccountViewController+UITableViewDataSource+Delegate.swift in Sources */,
 				8B043B09241A43C000997C8A /* AppDependencyContainer+ServicesProvider.swift in Sources */,
+				8BFA08502429019D00461767 /* UIView+ReusableView.swift in Sources */,
 				8B043B16241B7CB300997C8A /* SearchAccountViewController+Extension.swift in Sources */,
 				8BCFFDA82420EC2C00751874 /* SearchAccountViewController+UISearchResultsUpdating.swift in Sources */,
 				8B6EB8482410039700D6CA85 /* Helper.swift in Sources */,
@@ -425,7 +432,7 @@
 				8B6EB85424167CC200D6CA85 /* WonLostResponse.swift in Sources */,
 				320AC4D0240F0445000228BD /* Account.swift in Sources */,
 				8B043B07241A343200997C8A /* AppDependencyContainer+NetworkingClientProvider.swift in Sources */,
-				8B043B19241BB5D500997C8A /* Throttle.swift in Sources */,
+				8B043B19241BB5D500997C8A /* Debouncer.swift in Sources */,
 				8BCFFDAA2422145500751874 /* EmptySearchAccountView.swift in Sources */,
 				3206B8A324102C4B00A3C27F /* APIProtocols.swift in Sources */,
 				3282E756240EDCC90002E111 /* SearchAccountViewModel.swift in Sources */,
@@ -439,6 +446,7 @@
 				3282E73C240ED6740002E111 /* SceneDelegate.swift in Sources */,
 				320AC4C9240EECE6000228BD /* R.swift in Sources */,
 				8B043AEE24169CB400997C8A /* APIFacade.swift in Sources */,
+				8BFA084E2428FE6100461767 /* AppDependencyContainer+DebouncerFactory.swift in Sources */,
 				321C356E241AD0CC00E24B65 /* AppDependencyContainer+SearchControllerFactory.swift in Sources */,
 				3206B8B524181ABE00A3C27F /* UIImageLoader.swift in Sources */,
 				8B6EB850241673DB00D6CA85 /* AccountResponse.swift in Sources */,
@@ -581,13 +589,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EDG9RYZ466;
+				DEVELOPMENT_TEAM = 9C825Y4865;
 				INFOPLIST_FILE = Dota2App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = iX0ness.Dota2App;
+				PRODUCT_BUNDLE_IDENTIFIER = iX0ness.Dota2App1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -599,13 +607,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = EDG9RYZ466;
+				DEVELOPMENT_TEAM = 9C825Y4865;
 				INFOPLIST_FILE = Dota2App/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = iX0ness.Dota2App;
+				PRODUCT_BUNDLE_IDENTIFIER = iX0ness.Dota2App1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

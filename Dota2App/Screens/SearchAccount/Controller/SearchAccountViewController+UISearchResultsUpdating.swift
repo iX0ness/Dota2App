@@ -21,7 +21,10 @@ extension SearchAccountViewController: UISearchResultsUpdating {
     }
     
     func updateSearchResults(for searchController: UISearchController) {
-        searchForAccount(named: searchController.searchBar.text!)
+        debouncer.run { [weak self] in
+            guard let accountName = searchController.searchBar.text else {return}
+            self?.searchForAccount(named: accountName)
+        }
     }
     
     private func searchForAccount(named accountName: String) {
