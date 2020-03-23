@@ -21,6 +21,7 @@ class SearchAccountView: UIView {
     lazy var accountsTableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundView = emptyAccountView
+        tableView.backgroundColor = UIColor(red: 51/255, green: 53/255, blue: 65/255, alpha: 1.0)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()

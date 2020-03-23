@@ -42,6 +42,7 @@ class AccountTableViewCell: UITableViewCell {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         constructHierarchy()
         activateAccountDetailsStackViewConstraints()
+        
     }
 
     required init?(coder: NSCoder) {
@@ -58,6 +59,22 @@ class AccountTableViewCell: UITableViewCell {
         let accountAvatarURL = URL(string: account.avatarfull)!
         accountImageView.loadImage(at: accountAvatarURL, with: .custom(size: CGSize(width: 60.0, height: 60.0)))
         accountTitleLabel.text = account.personaname
+        
+    }
+    
+    func setupCardStyle() {
+        contentView.layer.cornerRadius = 4.0
+        contentView.layer.borderWidth = 1.0
+        contentView.layer.borderColor = UIColor.clear.cgColor
+        contentView.layer.masksToBounds = false
+        layer.shadowColor = UIColor.gray.cgColor
+        layer.shadowOffset = CGSize(width: 0, height: 1.0)
+        layer.shadowRadius = 4.0
+        layer.shadowOpacity = 1.0
+        layer.masksToBounds = false
+        clipsToBounds = true
+        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: contentView.layer.cornerRadius).cgPath
+        
     }
 }
 
