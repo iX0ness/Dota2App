@@ -35,6 +35,8 @@ extension SearchAccountViewController: UISearchResultsUpdating {
 
 extension SearchAccountViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        guard let view = view as? SearchAccountView else {return}
+        view.accountsTableView.setContentOffset(.zero, animated: false)
         viewModel.fetchedAccounts.removeAll()
     }
     

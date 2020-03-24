@@ -17,6 +17,9 @@ enum R {
         static let navBarColor = UIColor(red: 151/255, green: 151/255, blue: 151/255, alpha: 1.0)
         static let searchBarTintColor = UIColor(red: 51/255, green: 53/255, blue: 65/255, alpha: 1.0)
         static let searchTextFieldTextColor = UIColor(red: 51/255, green: 53/255, blue: 65/255, alpha: 1.0)
+        static let accountsTableViewBackgroundColor = UIColor(red: 51/255, green: 53/255, blue: 65/255, alpha: 1.0)
+        static let searchAccountsViewBackgroundColor = UIColor(red: 51/255, green: 53/255, blue: 65/255, alpha: 1.0)
+        static let accountCellBackgroundColor = UIColor(red: 82/255, green: 85/255, blue: 114/255, alpha: 0.3)
     }
     
     enum TypeAliases {

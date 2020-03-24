@@ -16,6 +16,7 @@ protocol AccountTableViewCellConstraints {
 extension AccountTableViewCell: AccountTableViewCellConstraints {
 
     func constructHierarchy() {
+        addSubview(dimView)
         addSubview(accountDetailsStackView)
     }
 
@@ -27,5 +28,15 @@ extension AccountTableViewCell: AccountTableViewCellConstraints {
             accountDetailsStackView.centerYAnchor.constraint(equalTo: centerYAnchor)
         ])
     }
+    
+    func activateDimViewConstraints() {
+        NSLayoutConstraint.activate([
+            dimView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            dimView.topAnchor.constraint(equalTo: topAnchor),
+            dimView.trailingAnchor.constraint(equalTo: trailingAnchor),
+            dimView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+    }
+    
 }
 

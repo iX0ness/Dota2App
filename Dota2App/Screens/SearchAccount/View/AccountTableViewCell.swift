@@ -24,8 +24,16 @@ class AccountTableViewCell: UITableViewCell {
 
     lazy var accountTitleLabel: UILabel = {
         let label = UILabel()
+        label.textColor = .white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
+    }()
+    
+    let dimView: UIView = {
+        let view = UIView()
+        view.backgroundColor = R.SearchAccount.dimViewBackgroundColor
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
     }()
     
     lazy var accountDetailsStackView: UIStackView = {
@@ -41,7 +49,10 @@ class AccountTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         constructHierarchy()
+        activateDimViewConstraints()
         activateAccountDetailsStackViewConstraints()
+        setupCardStyle()
+        backgroundColor = R.SearchAccount.accountCellBackgroundColor
         
     }
 
@@ -51,29 +62,25 @@ class AccountTableViewCell: UITableViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
-        accountImageView.image = nil
         accountImageView.cancelImageLoad()
+        accountImageView.image = nil
+        
     }
     
     func configure(with account: AccountResponse) {
         let accountAvatarURL = URL(string: account.avatarfull)!
-        accountImageView.loadImage(at: accountAvatarURL, with: .custom(size: CGSize(width: 60.0, height: 60.0)))
+        accountImageView.loadImage(at: accountAvatarURL, with: .custom(size: prefferedImageSize))
         accountTitleLabel.text = account.personaname
-        
+        layoutIfNeeded()
     }
     
+    
     func setupCardStyle() {
-        contentView.layer.cornerRadius = 4.0
-        contentView.layer.borderWidth = 1.0
-        contentView.layer.borderColor = UIColor.clear.cgColor
-        contentView.layer.masksToBounds = false
-        layer.shadowColor = UIColor.gray.cgColor
-        layer.shadowOffset = CGSize(width: 0, height: 1.0)
-        layer.shadowRadius = 4.0
-        layer.shadowOpacity = 1.0
-        layer.masksToBounds = false
+        backgroundColor = UIColor.white
+        layer.borderColor = UIColor.black.cgColor
+        layer.borderWidth = 1
+        layer.cornerRadius = 8
         clipsToBounds = true
-        layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: contentView.layer.cornerRadius).cgPath
         
     }
 }

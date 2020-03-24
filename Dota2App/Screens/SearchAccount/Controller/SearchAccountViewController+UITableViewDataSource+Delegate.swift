@@ -10,36 +10,40 @@ import Foundation
 import UIKit
 
 extension SearchAccountViewController: UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
         if viewModel.fetchedAccounts.count > 0 {
-            tableView.backgroundView?.isHidden  = true
-            tableView.separatorStyle = .singleLine
+            tableView.isScrollEnabled = true
+            hideBackgroundView(in: tableView)
+            return viewModel.fetchedAccounts.count
         } else {
-            tableView.backgroundView?.isHidden  = false
-            tableView.separatorStyle = .none
+            tableView.isScrollEnabled = false
+            showBackGroundView(in: tableView)
+            return 0
+            
         }
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.fetchedAccounts.count > 0 ? 1 : 0
         
-        return viewModel.fetchedAccounts.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.defaultReuseIdentifier, for: indexPath) as! AccountTableViewCell
         let account = getAccount(at: indexPath)
         cell.configure(with: account)
-        //cell.setupCardStyle()
-        
-        cell.backgroundColor = UIColor.white
-        cell.layer.borderColor = UIColor.black.cgColor
-        cell.layer.borderWidth = 1
-        cell.layer.cornerRadius = 8
-        cell.clipsToBounds = true
         return cell
     }
         
 }
 
 extension SearchAccountViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 80
     }
@@ -48,7 +52,6 @@ extension SearchAccountViewController: UITableViewDelegate {
         return 10
     }
 
-    // Make the background color show through
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         headerView.backgroundColor = UIColor.clear
@@ -58,10 +61,18 @@ extension SearchAccountViewController: UITableViewDelegate {
 
 extension SearchAccountViewController {
     func getAccount(at indexPath: IndexPath) -> AccountResponse {
-        return viewModel.fetchedAccounts[indexPath.row]
+        return viewModel.fetchedAccounts[indexPath.section]
     }
     
+    private func hideBackgroundView(in tableView: UITableView) {
+        tableView.backgroundView?.isHidden  = true
+        tableView.separatorStyle = .none
+    }
     
+    private func showBackGroundView(in tableView: UITableView) {
+        tableView.backgroundView?.isHidden  = false
+        tableView.separatorStyle = .singleLine
+    }
 }
 
 
