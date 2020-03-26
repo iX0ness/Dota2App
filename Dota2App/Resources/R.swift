@@ -22,7 +22,9 @@ enum R {
         static let accountCellBackgroundColor = UIColor(red: 82/255, green: 85/255, blue: 114/255, alpha: 0.3)
     }
     
-    enum TypeAliases {
-        typealias AccountsCompletion<Value: Decodable> = (Result<Value, Error>) -> Void
+    enum PlayerDetails {
+        static let headerViewHeightMultiplier = CGFloat(0.4)
+        static let avatarViewTopAnchorConstant = CGFloat(20)
+        static let avatarViewWidthAnchorMultiplier = CGFloat(0.3)
     }
 }

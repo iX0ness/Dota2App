@@ -45,6 +45,9 @@
 		8BCFFDAD242221CE00751874 /* EmptySearchAccountView+EmptySearchAccountViewConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCFFDAC242221CE00751874 /* EmptySearchAccountView+EmptySearchAccountViewConstraints.swift */; };
 		8BFA084E2428FE6100461767 /* AppDependencyContainer+DebouncerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFA084D2428FE6100461767 /* AppDependencyContainer+DebouncerFactory.swift */; };
 		8BFA08502429019D00461767 /* UIView+ReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFA084F2429019D00461767 /* UIView+ReusableView.swift */; };
+		8BFA0861242D008300461767 /* PlayerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFA0860242D008300461767 /* PlayerDetailView.swift */; };
+		8BFA0863242D02E600461767 /* UIFont+DotaFontsr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFA0862242D02E600461767 /* UIFont+DotaFontsr.swift */; };
+		8BFA0866242D067500461767 /* PlayerDetailView+PlayerDetailViewConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFA0865242D067500461767 /* PlayerDetailView+PlayerDetailViewConstraints.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +91,9 @@
 		8BCFFDAC242221CE00751874 /* EmptySearchAccountView+EmptySearchAccountViewConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmptySearchAccountView+EmptySearchAccountViewConstraints.swift"; sourceTree = "<group>"; };
 		8BFA084D2428FE6100461767 /* AppDependencyContainer+DebouncerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+DebouncerFactory.swift"; sourceTree = "<group>"; };
 		8BFA084F2429019D00461767 /* UIView+ReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+ReusableView.swift"; sourceTree = "<group>"; };
+		8BFA0860242D008300461767 /* PlayerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailView.swift; sourceTree = "<group>"; };
+		8BFA0862242D02E600461767 /* UIFont+DotaFontsr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+DotaFontsr.swift"; sourceTree = "<group>"; };
+		8BFA0865242D067500461767 /* PlayerDetailView+PlayerDetailViewConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerDetailView+PlayerDetailViewConstraints.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -237,6 +243,7 @@
 		3282E753240EDC9B0002E111 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				8BFA085C242CFF6200461767 /* PlayerDetails */,
 				3282E754240EDCAC0002E111 /* SearchAccount */,
 			);
 			path = Screens;
@@ -343,8 +350,50 @@
 			isa = PBXGroup;
 			children = (
 				8BFA084F2429019D00461767 /* UIView+ReusableView.swift */,
+				8BFA0862242D02E600461767 /* UIFont+DotaFontsr.swift */,
 			);
 			path = UIKit;
+			sourceTree = "<group>";
+		};
+		8BFA085C242CFF6200461767 /* PlayerDetails */ = {
+			isa = PBXGroup;
+			children = (
+				8BFA085F242CFF8300461767 /* ViewModel */,
+				8BFA085E242CFF7B00461767 /* Controller */,
+				8BFA085D242CFF7400461767 /* View */,
+			);
+			path = PlayerDetails;
+			sourceTree = "<group>";
+		};
+		8BFA085D242CFF7400461767 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				8BFA0864242D03EB00461767 /* ViewConstraints */,
+				8BFA0860242D008300461767 /* PlayerDetailView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		8BFA085E242CFF7B00461767 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		8BFA085F242CFF8300461767 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		8BFA0864242D03EB00461767 /* ViewConstraints */ = {
+			isa = PBXGroup;
+			children = (
+				8BFA0865242D067500461767 /* PlayerDetailView+PlayerDetailViewConstraints.swift */,
+			);
+			path = ViewConstraints;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -437,6 +486,7 @@
 				3206B8A324102C4B00A3C27F /* APIProtocols.swift in Sources */,
 				3282E756240EDCC90002E111 /* SearchAccountViewModel.swift in Sources */,
 				3206B8B424181ABE00A3C27F /* UIImageView+Extension.swift in Sources */,
+				8BFA0863242D02E600461767 /* UIFont+DotaFontsr.swift in Sources */,
 				3282E73E240ED6740002E111 /* SearchAccountViewController.swift in Sources */,
 				3282E73A240ED6740002E111 /* AppDelegate.swift in Sources */,
 				8B6EB85624167D0800D6CA85 /* GetWonLostStatistic.swift in Sources */,
@@ -447,12 +497,14 @@
 				320AC4C9240EECE6000228BD /* R.swift in Sources */,
 				8B043AEE24169CB400997C8A /* APIFacade.swift in Sources */,
 				8BFA084E2428FE6100461767 /* AppDependencyContainer+DebouncerFactory.swift in Sources */,
+				8BFA0861242D008300461767 /* PlayerDetailView.swift in Sources */,
 				321C356E241AD0CC00E24B65 /* AppDependencyContainer+SearchControllerFactory.swift in Sources */,
 				3206B8B524181ABE00A3C27F /* UIImageLoader.swift in Sources */,
 				8B6EB850241673DB00D6CA85 /* AccountResponse.swift in Sources */,
 				3206B8AB2416BA7100A3C27F /* AccountService.swift in Sources */,
 				320AC4CB240EEEB6000228BD /* AccountTableViewCell+AccountTableViewCellConstraints.swift in Sources */,
 				320AC4C3240EE79F000228BD /* SearchAccountView+SearchAccountViewConstraints.swift in Sources */,
+				8BFA0866242D067500461767 /* PlayerDetailView+PlayerDetailViewConstraints.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
