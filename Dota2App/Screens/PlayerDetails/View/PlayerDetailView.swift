@@ -8,16 +8,20 @@
 
 import UIKit
 
-class PlayerDetailView: UIView {
+class PlayerDetailsView: UIView {
+    
+    let viewModel: PlayerDetailsViewModel
     
     var headerView: UIView = {
         let view = UIView()
+        view.backgroundColor = .lightGray
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     lazy var avatarView: UIImageView = {
         let imageView = UIImageView()
+        imageView.backgroundColor = .red
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -25,6 +29,7 @@ class PlayerDetailView: UIView {
     
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
+        label.text = "kurwa"
         label.textColor = .white
         label.font = UIFont.DotaFonts.body
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -33,6 +38,7 @@ class PlayerDetailView: UIView {
     
     private lazy var countryLabel: UILabel = {
         let label = UILabel()
+        label.text = "kurwa"
         label.textColor = .white
         label.font = UIFont.DotaFonts.body
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -41,6 +47,7 @@ class PlayerDetailView: UIView {
     
     private lazy var wonCountLabel: UILabel = {
         let label = UILabel()
+        label.text = "250"
         label.textColor = .white
         label.font = UIFont.DotaFonts.body
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -49,6 +56,7 @@ class PlayerDetailView: UIView {
     
     private lazy var lostCountLabel: UILabel = {
         let label = UILabel()
+        label.text = "120"
         label.textColor = .white
         label.font = UIFont.DotaFonts.body
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -164,11 +172,24 @@ class PlayerDetailView: UIView {
         return tableView
     }()
     
-    override init(frame: CGRect) {
-        super.init(frame: frame)
+    init(viewModel: PlayerDetailsViewModel) {
+        self.viewModel = viewModel
+        super.init(frame: .zero)
+        constructHierarchy()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func layoutSubviews() {
+        activateHeaderViewConstraints()
+        activateAvatarViewConstraints()
+        activategeneralInfoStackViewConstraints()
+        activateMMMRStackViewConstraints()
+        activateRecentMatchesTableViewConstraints()
+        
+        roundAvatarImage()
+        setHeaderGradient(view: headerView)
     }
 }

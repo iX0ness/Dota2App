@@ -13,15 +13,17 @@ import UIKit
 //    let wonLostStatistic = GetWonLostStatistic(accountID: "221666230")
 
 class SearchAccountViewController: UIViewController {
-
+    
+    let factory: SearchControllerFactory & DebouncerFactory & PlayerDetailsFactory
     let viewModel: SearchAccountViewModel
     let searchController: UISearchController
     let debouncer: Debouncer
 
-    init(viewModel: SearchAccountViewModel, factory: SearchControllerFactory & DebouncerFactory) {
+    init(viewModel: SearchAccountViewModel, factory: SearchControllerFactory & DebouncerFactory & PlayerDetailsFactory) {
         self.viewModel = viewModel
         self.searchController = factory.makeSearchController()
         self.debouncer = factory.makeDebouncer(delay: 0.8)
+        self.factory = factory
         super.init(nibName: nil, bundle: nil)
     }
 
@@ -38,7 +40,6 @@ class SearchAccountViewController: UIViewController {
         guard let searchAccountView = view as? SearchAccountView else {return}
         setupView(searchAccountView)
         bindView(searchAccountView)
-        
     }
 
 }

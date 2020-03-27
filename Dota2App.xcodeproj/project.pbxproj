@@ -48,6 +48,10 @@
 		8BFA0861242D008300461767 /* PlayerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFA0860242D008300461767 /* PlayerDetailView.swift */; };
 		8BFA0863242D02E600461767 /* UIFont+DotaFontsr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFA0862242D02E600461767 /* UIFont+DotaFontsr.swift */; };
 		8BFA0866242D067500461767 /* PlayerDetailView+PlayerDetailViewConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFA0865242D067500461767 /* PlayerDetailView+PlayerDetailViewConstraints.swift */; };
+		8BFA0868242E2E0700461767 /* PlayerDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFA0867242E2E0700461767 /* PlayerDetailsViewController.swift */; };
+		8BFA086A242E2ECE00461767 /* PlayerDetailsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFA0869242E2ECE00461767 /* PlayerDetailsViewModel.swift */; };
+		8BFA086C242E39CD00461767 /* AppDependencyContainer+PlayerDetailsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFA086B242E39CD00461767 /* AppDependencyContainer+PlayerDetailsFactory.swift */; };
+		8BFA086E242E4C7E00461767 /* PlayerDetailsView+Styling.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BFA086D242E4C7E00461767 /* PlayerDetailsView+Styling.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -94,6 +98,10 @@
 		8BFA0860242D008300461767 /* PlayerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailView.swift; sourceTree = "<group>"; };
 		8BFA0862242D02E600461767 /* UIFont+DotaFontsr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIFont+DotaFontsr.swift"; sourceTree = "<group>"; };
 		8BFA0865242D067500461767 /* PlayerDetailView+PlayerDetailViewConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerDetailView+PlayerDetailViewConstraints.swift"; sourceTree = "<group>"; };
+		8BFA0867242E2E0700461767 /* PlayerDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewController.swift; sourceTree = "<group>"; };
+		8BFA0869242E2ECE00461767 /* PlayerDetailsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsViewModel.swift; sourceTree = "<group>"; };
+		8BFA086B242E39CD00461767 /* AppDependencyContainer+PlayerDetailsFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+PlayerDetailsFactory.swift"; sourceTree = "<group>"; };
+		8BFA086D242E4C7E00461767 /* PlayerDetailsView+Styling.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PlayerDetailsView+Styling.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +244,7 @@
 			children = (
 				321C356D241AD0CC00E24B65 /* AppDependencyContainer+SearchControllerFactory.swift */,
 				8BFA084D2428FE6100461767 /* AppDependencyContainer+DebouncerFactory.swift */,
+				8BFA086B242E39CD00461767 /* AppDependencyContainer+PlayerDetailsFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -368,7 +377,7 @@
 		8BFA085D242CFF7400461767 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8BFA0864242D03EB00461767 /* ViewConstraints */,
+				8BFA0864242D03EB00461767 /* Extensions */,
 				8BFA0860242D008300461767 /* PlayerDetailView.swift */,
 			);
 			path = View;
@@ -377,6 +386,7 @@
 		8BFA085E242CFF7B00461767 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				8BFA0867242E2E0700461767 /* PlayerDetailsViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -384,16 +394,18 @@
 		8BFA085F242CFF8300461767 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				8BFA0869242E2ECE00461767 /* PlayerDetailsViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		8BFA0864242D03EB00461767 /* ViewConstraints */ = {
+		8BFA0864242D03EB00461767 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
 				8BFA0865242D067500461767 /* PlayerDetailView+PlayerDetailViewConstraints.swift */,
+				8BFA086D242E4C7E00461767 /* PlayerDetailsView+Styling.swift */,
 			);
-			path = ViewConstraints;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -471,12 +483,15 @@
 				8BFA08502429019D00461767 /* UIView+ReusableView.swift in Sources */,
 				8B043B16241B7CB300997C8A /* SearchAccountViewController+Extension.swift in Sources */,
 				8BCFFDA82420EC2C00751874 /* SearchAccountViewController+UISearchResultsUpdating.swift in Sources */,
+				8BFA086A242E2ECE00461767 /* PlayerDetailsViewModel.swift in Sources */,
 				8B6EB8482410039700D6CA85 /* Helper.swift in Sources */,
 				8B6EB84D24166E0900D6CA85 /* GetAccounts.swift in Sources */,
 				8B043AFF2417E7A100997C8A /* TypeAliases.swift in Sources */,
+				8BFA086C242E39CD00461767 /* AppDependencyContainer+PlayerDetailsFactory.swift in Sources */,
 				3206B8A5241195ED00A3C27F /* NetworkingClient.swift in Sources */,
 				8BCFFDAD242221CE00751874 /* EmptySearchAccountView+EmptySearchAccountViewConstraints.swift in Sources */,
 				3206B8B624181ABE00A3C27F /* ImageLoader.swift in Sources */,
+				8BFA086E242E4C7E00461767 /* PlayerDetailsView+Styling.swift in Sources */,
 				3206B8A7241507E700A3C27F /* APIError.swift in Sources */,
 				8B6EB85424167CC200D6CA85 /* WonLostResponse.swift in Sources */,
 				320AC4D0240F0445000228BD /* Account.swift in Sources */,
@@ -500,6 +515,7 @@
 				8BFA0861242D008300461767 /* PlayerDetailView.swift in Sources */,
 				321C356E241AD0CC00E24B65 /* AppDependencyContainer+SearchControllerFactory.swift in Sources */,
 				3206B8B524181ABE00A3C27F /* UIImageLoader.swift in Sources */,
+				8BFA0868242E2E0700461767 /* PlayerDetailsViewController.swift in Sources */,
 				8B6EB850241673DB00D6CA85 /* AccountResponse.swift in Sources */,
 				3206B8AB2416BA7100A3C27F /* AccountService.swift in Sources */,
 				320AC4CB240EEEB6000228BD /* AccountTableViewCell+AccountTableViewCellConstraints.swift in Sources */,

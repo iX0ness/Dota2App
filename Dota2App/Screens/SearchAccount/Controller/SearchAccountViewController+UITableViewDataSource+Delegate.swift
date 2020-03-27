@@ -41,7 +41,9 @@ extension SearchAccountViewController: UITableViewDataSource {
 extension SearchAccountViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
+        let playerDetailsViewController = factory.makePlayerDetailsViewController()
+        navigationController?.pushViewController(playerDetailsViewController, animated: true)
+        tableView.deselectRow(at: indexPath, animated: false)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
