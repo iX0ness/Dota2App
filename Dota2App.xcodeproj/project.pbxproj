@@ -37,6 +37,8 @@
 		8B6EB850241673DB00D6CA85 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB84F241673DB00D6CA85 /* AccountResponse.swift */; };
 		8B6EB85424167CC200D6CA85 /* WonLostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB85324167CC200D6CA85 /* WonLostResponse.swift */; };
 		8B6EB85624167D0800D6CA85 /* GetWonLostStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB85524167D0800D6CA85 /* GetWonLostStatistic.swift */; };
+		8BA809AC24366FA60011B7F2 /* Loadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA809AB24366FA60011B7F2 /* Loadable.swift */; };
+		8BA809AF243671280011B7F2 /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BA809AE243671280011B7F2 /* ImageCache.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -72,6 +74,8 @@
 		8B6EB84F241673DB00D6CA85 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
 		8B6EB85324167CC200D6CA85 /* WonLostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WonLostResponse.swift; sourceTree = "<group>"; };
 		8B6EB85524167D0800D6CA85 /* GetWonLostStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWonLostStatistic.swift; sourceTree = "<group>"; };
+		8BA809AB24366FA60011B7F2 /* Loadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Loadable.swift; sourceTree = "<group>"; };
+		8BA809AE243671280011B7F2 /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -252,7 +256,8 @@
 		8B6EB8462410038800D6CA85 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				3206B8B024181ABE00A3C27F /* ImageLoader */,
+				8BA809AD243671100011B7F2 /* NormLoader */,
+				8B043AF22417AD5C00997C8A /* ImageLoader */,
 				8B6EB8472410039700D6CA85 /* Helper.swift */,
 			);
 			path = Helpers;
@@ -289,6 +294,15 @@
 				8B6EB85324167CC200D6CA85 /* WonLostResponse.swift */,
 			);
 			path = ResponseModels;
+			sourceTree = "<group>";
+		};
+		8BA809AD243671100011B7F2 /* NormLoader */ = {
+			isa = PBXGroup;
+			children = (
+				8BA809AB24366FA60011B7F2 /* Loadable.swift */,
+				8BA809AE243671280011B7F2 /* ImageCache.swift */,
+			);
+			path = NormLoader;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -363,6 +377,7 @@
 			files = (
 				320AC4CD240F0343000228BD /* SearchAccountViewController+UITableViewDataSource+Delegate.swift in Sources */,
 				8B043B09241A43C000997C8A /* AppDependencyContainer+ServicesProvider.swift in Sources */,
+				8BA809AC24366FA60011B7F2 /* Loadable.swift in Sources */,
 				8B6EB8482410039700D6CA85 /* Helper.swift in Sources */,
 				8B6EB84D24166E0900D6CA85 /* GetAccounts.swift in Sources */,
 				8B043AFF2417E7A100997C8A /* TypeAliases.swift in Sources */,
@@ -389,6 +404,7 @@
 				3206B8AB2416BA7100A3C27F /* AccountService.swift in Sources */,
 				320AC4CB240EEEB6000228BD /* AccountTableViewCell+Constraints.swift in Sources */,
 				320AC4C3240EE79F000228BD /* SearchAccountView+Constraints.swift in Sources */,
+				8BA809AF243671280011B7F2 /* ImageCache.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
