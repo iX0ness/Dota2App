@@ -10,31 +10,42 @@ import UIKit
 
 protocol AccountTableViewCellConstraints {
     func constructHierarchy()
-    func activateAccountDetailsStackViewConstraints()
+    func activateDimViewConstraints()
+    func activateAccountImageViewConstraints()
+    func activateAccountTitleLabelConstraints()
 }
 
 extension AccountTableViewCell: AccountTableViewCellConstraints {
-
+    
     func constructHierarchy() {
         addSubview(dimView)
-        addSubview(accountDetailsStackView)
+        addSubview(accountImageView)
+        addSubview(accountTitleLabel)
     }
 
-    func activateAccountDetailsStackViewConstraints() {
-        NSLayoutConstraint.activate([
-            accountDetailsStackView.leadingAnchor.constraint(equalToSystemSpacingAfter: layoutMarginsGuide.leadingAnchor, multiplier: 1.0),
-            accountDetailsStackView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
-            accountDetailsStackView.heightAnchor.constraint(equalToConstant: 50),
-            accountDetailsStackView.centerYAnchor.constraint(equalTo: centerYAnchor)
-        ])
-    }
-    
     func activateDimViewConstraints() {
         NSLayoutConstraint.activate([
             dimView.leadingAnchor.constraint(equalTo: leadingAnchor),
             dimView.topAnchor.constraint(equalTo: topAnchor),
             dimView.trailingAnchor.constraint(equalTo: trailingAnchor),
             dimView.bottomAnchor.constraint(equalTo: bottomAnchor)
+        ])
+    }
+    
+    func activateAccountImageViewConstraints() {
+        NSLayoutConstraint.activate([
+            accountImageView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
+            accountImageView.widthAnchor.constraint(equalToConstant: 60),
+            accountImageView.heightAnchor.constraint(equalToConstant: 60),
+            accountImageView.centerYAnchor.constraint(equalTo: centerYAnchor)
+        ])
+    }
+    
+    func activateAccountTitleLabelConstraints() {
+        NSLayoutConstraint.activate([
+            accountTitleLabel.leadingAnchor.constraint(equalToSystemSpacingAfter: accountImageView.trailingAnchor, multiplier: 3.0),
+            accountTitleLabel.centerYAnchor.constraint(equalTo: centerYAnchor),
+            accountTitleLabel.trailingAnchor.constraint(greaterThanOrEqualTo: layoutMarginsGuide.trailingAnchor)
         ])
     }
     
