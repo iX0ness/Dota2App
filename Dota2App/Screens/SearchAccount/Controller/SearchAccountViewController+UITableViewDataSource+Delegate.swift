@@ -30,7 +30,9 @@ extension SearchAccountViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.defaultReuseIdentifier, for: indexPath) as! AccountTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: AccountTableViewCell.defaultReuseIdentifier, for: indexPath) as? AccountTableViewCell else {
+            fatalError("Cell must be dequeued")
+        }
         guard viewModel.fetchedAccounts.count > indexPath.section else {return UITableViewCell()}
         guard let account = getAccount(at: indexPath) else {return UITableViewCell()}
         cell.configure(with: account)

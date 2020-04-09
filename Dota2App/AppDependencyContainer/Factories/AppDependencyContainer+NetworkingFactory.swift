@@ -1,19 +1,18 @@
 //
-//  AppDependencyContainer+NetworkingClient.swift
+//  AppDependencyContainer+NetworkingFactory.swift
 //  Dota2App
 //
-//  Created by Mykhaylo Levchuk on 12/03/2020.
+//  Created by Mykhaylo Levchuk on 09/04/2020.
 //  Copyright © 2020 Levchuk Misha. All rights reserved.
 //
 
 import Foundation
 
-
-protocol NetworkingClientProvider {
+protocol NetworkingFactory {
     func makeNetworkingClient() -> NetworkingClient
 }
 
-extension AppDependencyContainer: NetworkingClientProvider {
+extension AppDependencyContainer: NetworkingFactory {
     func makeNetworkingClient() -> NetworkingClient {
         return NetworkingClient()
     }

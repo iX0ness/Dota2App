@@ -8,13 +8,17 @@
 
 import Foundation
 
-
 protocol ServicesProvider {
     func makeAccountService() ->  AccountService
+    func makePlayerDetailsService() -> PlayerDetailsService
 }
 
 extension AppDependencyContainer: ServicesProvider {
     func makeAccountService() -> AccountService {
-        return AccountService(networkingClient: makeNetworkingClient())
+        return AccountService(factory: self)
+    }
+    
+    func makePlayerDetailsService() -> PlayerDetailsService {
+        return PlayerDetailsService(factory: self)
     }
 }

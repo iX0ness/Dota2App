@@ -28,7 +28,6 @@
 		3282E756240EDCC90002E111 /* SearchAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3282E755240EDCC90002E111 /* SearchAccountViewModel.swift */; };
 		8B043AEE24169CB400997C8A /* APIFacade.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043AED24169CB400997C8A /* APIFacade.swift */; };
 		8B043AFF2417E7A100997C8A /* TypeAliases.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043AFE2417E7A100997C8A /* TypeAliases.swift */; };
-		8B043B07241A343200997C8A /* AppDependencyContainer+NetworkingClientProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043B06241A343200997C8A /* AppDependencyContainer+NetworkingClientProvider.swift */; };
 		8B043B09241A43C000997C8A /* AppDependencyContainer+ServicesProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043B08241A43C000997C8A /* AppDependencyContainer+ServicesProvider.swift */; };
 		8B043B16241B7CB300997C8A /* SearchAccountViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043B15241B7CB300997C8A /* SearchAccountViewController+Extension.swift */; };
 		8B043B19241BB5D500997C8A /* Debouncer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B043B18241BB5D500997C8A /* Debouncer.swift */; };
@@ -40,6 +39,12 @@
 		8B6EB850241673DB00D6CA85 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB84F241673DB00D6CA85 /* AccountResponse.swift */; };
 		8B6EB85424167CC200D6CA85 /* WonLostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB85324167CC200D6CA85 /* WonLostResponse.swift */; };
 		8B6EB85624167D0800D6CA85 /* GetWonLostStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB85524167D0800D6CA85 /* GetWonLostStatistic.swift */; };
+		8BB2ED79243F9DFB00FEF194 /* PlayerDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2ED78243F9DFB00FEF194 /* PlayerDetailsService.swift */; };
+		8BB2ED7C243F9F6D00FEF194 /* PlayerInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2ED7B243F9F6D00FEF194 /* PlayerInfoService.swift */; };
+		8BB2ED7E243FA12300FEF194 /* WonLostStatisticService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2ED7D243FA12300FEF194 /* WonLostStatisticService.swift */; };
+		8BB2ED80243FA14F00FEF194 /* RecentMatchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2ED7F243FA14F00FEF194 /* RecentMatchesService.swift */; };
+		8BB2ED82243FA38E00FEF194 /* AppDependencyContainer+PlayerDetailsServicesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2ED81243FA38E00FEF194 /* AppDependencyContainer+PlayerDetailsServicesFactory.swift */; };
+		8BB2ED84243FA82500FEF194 /* AppDependencyContainer+NetworkingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2ED83243FA82500FEF194 /* AppDependencyContainer+NetworkingFactory.swift */; };
 		8BCFFDA82420EC2C00751874 /* SearchAccountViewController+UISearchResultsUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCFFDA72420EC2C00751874 /* SearchAccountViewController+UISearchResultsUpdating.swift */; };
 		8BCFFDAA2422145500751874 /* EmptySearchAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCFFDA92422145500751874 /* EmptySearchAccountView.swift */; };
 		8BCFFDAD242221CE00751874 /* EmptySearchAccountView+EmptySearchAccountViewConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCFFDAC242221CE00751874 /* EmptySearchAccountView+EmptySearchAccountViewConstraints.swift */; };
@@ -58,7 +63,7 @@
 		3206B8A224102C4B00A3C27F /* APIProtocols.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIProtocols.swift; sourceTree = "<group>"; };
 		3206B8A4241195ED00A3C27F /* NetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingClient.swift; sourceTree = "<group>"; };
 		3206B8A6241507E700A3C27F /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
-		3206B8AA2416BA7100A3C27F /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AccountService.swift; path = Dota2App/AppDependencyContainer/Factories/AccountService.swift; sourceTree = SOURCE_ROOT; };
+		3206B8AA2416BA7100A3C27F /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AccountService.swift; path = Dota2App/Facade/Services/AccountService/AccountService.swift; sourceTree = SOURCE_ROOT; };
 		320AC4C2240EE79F000228BD /* SearchAccountView+SearchAccountViewConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchAccountView+SearchAccountViewConstraints.swift"; sourceTree = "<group>"; };
 		320AC4C4240EEA3A000228BD /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		320AC4C8240EECE6000228BD /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
@@ -78,7 +83,6 @@
 		3282E755240EDCC90002E111 /* SearchAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAccountViewModel.swift; sourceTree = "<group>"; };
 		8B043AED24169CB400997C8A /* APIFacade.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIFacade.swift; sourceTree = "<group>"; };
 		8B043AFE2417E7A100997C8A /* TypeAliases.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeAliases.swift; sourceTree = "<group>"; };
-		8B043B06241A343200997C8A /* AppDependencyContainer+NetworkingClientProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+NetworkingClientProvider.swift"; sourceTree = "<group>"; };
 		8B043B08241A43C000997C8A /* AppDependencyContainer+ServicesProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+ServicesProvider.swift"; sourceTree = "<group>"; };
 		8B043B15241B7CB300997C8A /* SearchAccountViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchAccountViewController+Extension.swift"; sourceTree = "<group>"; };
 		8B043B18241BB5D500997C8A /* Debouncer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Debouncer.swift; sourceTree = "<group>"; };
@@ -90,6 +94,12 @@
 		8B6EB84F241673DB00D6CA85 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
 		8B6EB85324167CC200D6CA85 /* WonLostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WonLostResponse.swift; sourceTree = "<group>"; };
 		8B6EB85524167D0800D6CA85 /* GetWonLostStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWonLostStatistic.swift; sourceTree = "<group>"; };
+		8BB2ED78243F9DFB00FEF194 /* PlayerDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsService.swift; sourceTree = "<group>"; };
+		8BB2ED7B243F9F6D00FEF194 /* PlayerInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfoService.swift; sourceTree = "<group>"; };
+		8BB2ED7D243FA12300FEF194 /* WonLostStatisticService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WonLostStatisticService.swift; sourceTree = "<group>"; };
+		8BB2ED7F243FA14F00FEF194 /* RecentMatchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatchesService.swift; sourceTree = "<group>"; };
+		8BB2ED81243FA38E00FEF194 /* AppDependencyContainer+PlayerDetailsServicesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+PlayerDetailsServicesFactory.swift"; sourceTree = "<group>"; };
+		8BB2ED83243FA82500FEF194 /* AppDependencyContainer+NetworkingFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+NetworkingFactory.swift"; sourceTree = "<group>"; };
 		8BCFFDA72420EC2C00751874 /* SearchAccountViewController+UISearchResultsUpdating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchAccountViewController+UISearchResultsUpdating.swift"; sourceTree = "<group>"; };
 		8BCFFDA92422145500751874 /* EmptySearchAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySearchAccountView.swift; sourceTree = "<group>"; };
 		8BCFFDAC242221CE00751874 /* EmptySearchAccountView+EmptySearchAccountViewConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmptySearchAccountView+EmptySearchAccountViewConstraints.swift"; sourceTree = "<group>"; };
@@ -232,9 +242,11 @@
 		3282E750240EDBAC0002E111 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
+				8BB2ED85243FA94D00FEF194 /* ServicesFactory */,
 				321C356D241AD0CC00E24B65 /* AppDependencyContainer+SearchControllerFactory.swift */,
 				8BFA084D2428FE6100461767 /* AppDependencyContainer+DebouncerFactory.swift */,
 				8BFA086B242E39CD00461767 /* AppDependencyContainer+PlayerDetailsFactory.swift */,
+				8BB2ED83243FA82500FEF194 /* AppDependencyContainer+NetworkingFactory.swift */,
 			);
 			path = Factories;
 			sourceTree = "<group>";
@@ -270,7 +282,8 @@
 		8B043AEF24169CDD00997C8A /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				3206B8AA2416BA7100A3C27F /* AccountService.swift */,
+				8BB2ED77243F9DBC00FEF194 /* AccountService */,
+				8BB2ED76243F9DA900FEF194 /* PlayerDetailsService */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -279,7 +292,6 @@
 			isa = PBXGroup;
 			children = (
 				8B043B08241A43C000997C8A /* AppDependencyContainer+ServicesProvider.swift */,
-				8B043B06241A343200997C8A /* AppDependencyContainer+NetworkingClientProvider.swift */,
 			);
 			path = Providers;
 			sourceTree = "<group>";
@@ -350,6 +362,41 @@
 				8B6EB85324167CC200D6CA85 /* WonLostResponse.swift */,
 			);
 			path = ResponseModels;
+			sourceTree = "<group>";
+		};
+		8BB2ED76243F9DA900FEF194 /* PlayerDetailsService */ = {
+			isa = PBXGroup;
+			children = (
+				8BB2ED7A243F9E0800FEF194 /* SubServices */,
+				8BB2ED78243F9DFB00FEF194 /* PlayerDetailsService.swift */,
+			);
+			path = PlayerDetailsService;
+			sourceTree = "<group>";
+		};
+		8BB2ED77243F9DBC00FEF194 /* AccountService */ = {
+			isa = PBXGroup;
+			children = (
+				3206B8AA2416BA7100A3C27F /* AccountService.swift */,
+			);
+			path = AccountService;
+			sourceTree = "<group>";
+		};
+		8BB2ED7A243F9E0800FEF194 /* SubServices */ = {
+			isa = PBXGroup;
+			children = (
+				8BB2ED7B243F9F6D00FEF194 /* PlayerInfoService.swift */,
+				8BB2ED7D243FA12300FEF194 /* WonLostStatisticService.swift */,
+				8BB2ED7F243FA14F00FEF194 /* RecentMatchesService.swift */,
+			);
+			path = SubServices;
+			sourceTree = "<group>";
+		};
+		8BB2ED85243FA94D00FEF194 /* ServicesFactory */ = {
+			isa = PBXGroup;
+			children = (
+				8BB2ED81243FA38E00FEF194 /* AppDependencyContainer+PlayerDetailsServicesFactory.swift */,
+			);
+			path = ServicesFactory;
 			sourceTree = "<group>";
 		};
 		8BCFFDAB242221AB00751874 /* ViewConstraints */ = {
@@ -487,7 +534,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				320AC4CD240F0343000228BD /* SearchAccountViewController+UITableViewDataSource+Delegate.swift in Sources */,
+				8BB2ED82243FA38E00FEF194 /* AppDependencyContainer+PlayerDetailsServicesFactory.swift in Sources */,
 				8B043B09241A43C000997C8A /* AppDependencyContainer+ServicesProvider.swift in Sources */,
+				8BB2ED7C243F9F6D00FEF194 /* PlayerInfoService.swift in Sources */,
 				8BFA08502429019D00461767 /* UIView+ReusableView.swift in Sources */,
 				8B043B16241B7CB300997C8A /* SearchAccountViewController+Extension.swift in Sources */,
 				8BCFFDA82420EC2C00751874 /* SearchAccountViewController+UISearchResultsUpdating.swift in Sources */,
@@ -502,10 +551,10 @@
 				3206B8A7241507E700A3C27F /* APIError.swift in Sources */,
 				8B6EB85424167CC200D6CA85 /* WonLostResponse.swift in Sources */,
 				320AC4D0240F0445000228BD /* Account.swift in Sources */,
-				8B043B07241A343200997C8A /* AppDependencyContainer+NetworkingClientProvider.swift in Sources */,
 				8B043B19241BB5D500997C8A /* Debouncer.swift in Sources */,
 				8BCFFDAA2422145500751874 /* EmptySearchAccountView.swift in Sources */,
 				3206B8A324102C4B00A3C27F /* APIProtocols.swift in Sources */,
+				8BB2ED7E243FA12300FEF194 /* WonLostStatisticService.swift in Sources */,
 				3282E756240EDCC90002E111 /* SearchAccountViewModel.swift in Sources */,
 				8BFA0863242D02E600461767 /* UIFont+DotaFontsr.swift in Sources */,
 				3282E73E240ED6740002E111 /* SearchAccountViewController.swift in Sources */,
@@ -513,14 +562,17 @@
 				8B6EB85624167D0800D6CA85 /* GetWonLostStatistic.swift in Sources */,
 				3251B891240EE3F90032685D /* SearchAccountView.swift in Sources */,
 				3282E74E240EDAD40002E111 /* AppDependencyContainer.swift in Sources */,
+				8BB2ED80243FA14F00FEF194 /* RecentMatchesService.swift in Sources */,
 				320AC4C5240EEA3A000228BD /* AccountTableViewCell.swift in Sources */,
 				3282E73C240ED6740002E111 /* SceneDelegate.swift in Sources */,
 				8B0604552437959C00D1A53A /* ImageCache.swift in Sources */,
 				320AC4C9240EECE6000228BD /* R.swift in Sources */,
 				8B043AEE24169CB400997C8A /* APIFacade.swift in Sources */,
 				8B06044F2437905800D1A53A /* LoadableImageView.swift in Sources */,
+				8BB2ED79243F9DFB00FEF194 /* PlayerDetailsService.swift in Sources */,
 				8BFA084E2428FE6100461767 /* AppDependencyContainer+DebouncerFactory.swift in Sources */,
 				8BFA0861242D008300461767 /* PlayerDetailView.swift in Sources */,
+				8BB2ED84243FA82500FEF194 /* AppDependencyContainer+NetworkingFactory.swift in Sources */,
 				321C356E241AD0CC00E24B65 /* AppDependencyContainer+SearchControllerFactory.swift in Sources */,
 				8BFA0868242E2E0700461767 /* PlayerDetailsViewController.swift in Sources */,
 				8B6EB850241673DB00D6CA85 /* AccountResponse.swift in Sources */,

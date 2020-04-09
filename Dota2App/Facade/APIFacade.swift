@@ -12,12 +12,14 @@ protocol AccountServiceProvider {
     func fetchAccounts(_ accountName: String, completion: @escaping AccountsCompletion<[AccountResponse]>) -> URLSessionDataTask?
 }
 
-
 class APIFacade {
     
     private let accountsService: AccountService
-    init(accountsService: AccountService) {
-        self.accountsService = accountsService
+    private let playerDetailsService: PlayerDetailsService
+    
+    init(servicesProvider: ServicesProvider) {
+        self.accountsService = servicesProvider.makeAccountService()
+        self.playerDetailsService = servicesProvider.makePlayerDetailsService()
     }
    
 }

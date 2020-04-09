@@ -12,8 +12,8 @@ class AccountService {
 
     private let networkingClient: NetworkingClient
     
-    init(networkingClient: NetworkingClient = NetworkingClient()) {
-        self.networkingClient = networkingClient
+    init(factory: NetworkingFactory) {
+        networkingClient = factory.makeNetworkingClient()
     }
 
     func getAccounts(with accountName: String, completion: @escaping AccountsCompletion<[AccountResponse]>) -> URLSessionDataTask? {

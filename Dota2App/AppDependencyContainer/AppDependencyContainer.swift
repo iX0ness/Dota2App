@@ -12,7 +12,7 @@ import UIKit
 class AppDependencyContainer {
     
     private lazy var apiFacade: APIFacade = {
-        let facade = APIFacade(accountsService: makeAccountService())
+        let facade = APIFacade(servicesProvider: self)
         return facade
     }()
     
