@@ -57,13 +57,11 @@ class AccountTableViewCell: UITableViewCell {
     }
     
     func configure(with account: AccountResponse) {
-        
         accountImageView.loadImage(from: account.avatarURLString) { (image) in
             let resizedImage = Helper.resizedImageWith(image: image, targetSize: self.prefferedImageSize)
             self.accountImageView.image = resizedImage
         }
         accountTitleLabel.text = account.personaname
-        
     }
     
     func setupCardStyle() {

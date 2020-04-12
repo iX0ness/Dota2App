@@ -8,10 +8,6 @@
 
 import UIKit
 
-//    let networkingClient = NetworkingClient()
-//    let accounts = GetAccounts(accountName: "342878356")
-//    let wonLostStatistic = GetWonLostStatistic(accountID: "221666230")
-
 class SearchAccountViewController: UIViewController {
     
     let factory: SearchControllerFactory & DebouncerFactory & PlayerDetailsFactory

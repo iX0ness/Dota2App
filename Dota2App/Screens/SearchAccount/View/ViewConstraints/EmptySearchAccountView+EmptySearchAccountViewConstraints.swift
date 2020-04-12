@@ -17,11 +17,6 @@ protocol EmptySearchAccountViewConstraints {
 
 extension EmptySearchAccountView: EmptySearchAccountViewConstraints {
     
-    
-    
-    
-    
-    
     func constructHierarchy() {
         addSubview(logoImageView)
         addSubview(dimView)
@@ -44,6 +39,5 @@ extension EmptySearchAccountView: EmptySearchAccountViewConstraints {
             dimView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
-    
-    
+
 }

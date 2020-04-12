@@ -12,8 +12,24 @@ protocol AccountServiceProvider {
     func fetchAccounts(_ accountName: String, completion: @escaping AccountsCompletion<[AccountResponse]>) -> URLSessionDataTask?
 }
 
-class APIFacade {
+protocol PlayerDetailsServiceProvider {
+    func fetchPlayerDetails(_ accointID: String, completion: @escaping  PlayerDetailsCompletion)
+}
+
+struct PlayerDetailsRequest {
+    let playerInfoRequest: GetPlayerInfo
+    let wonLostStatisticRequest: GetWonLostStatistic
+    let recentMatchesRequest: GetRecentMatches
     
+    init(accountID: String) {
+        playerInfoRequest = GetPlayerInfo(accountID: accountID)
+        wonLostStatisticRequest = GetWonLostStatistic(accountID: accountID)
+        recentMatchesRequest = GetRecentMatches(accountID: accountID)
+    }
+}
+
+class APIFacade {
+
     private let accountsService: AccountService
     private let playerDetailsService: PlayerDetailsService
     
@@ -25,8 +41,11 @@ class APIFacade {
 }
 
 extension APIFacade: AccountServiceProvider {
+    
     func fetchAccounts(_ accountName: String, completion: @escaping AccountsCompletion<[AccountResponse]>) -> URLSessionDataTask? {
-        let task = accountsService.getAccounts(with: accountName) { (result) in
+        let accountRequest = GetAccounts(accountName: accountName)
+        
+        let task = accountsService.sendRequest(accountRequest) { (result) in
             switch result {
             case .success(let accounts):
                 completion(.success(accounts))
@@ -35,8 +54,18 @@ extension APIFacade: AccountServiceProvider {
                 completion(.failure(error))
             }
         }
-        
         return task
     }
+    
 }
 
+extension APIFacade: PlayerDetailsServiceProvider {
+    func fetchPlayerDetails(_ accointID: String, completion: @escaping PlayerDetailsCompletion) {
+        let playerDetailsRequest = PlayerDetailsRequest(accountID: accointID)
+        playerDetailsService.sendPlayerDetailsRequest(playerDetailsRequest) { (result) in
+            completion(result)
+        }
+        
+    }
+    
+}

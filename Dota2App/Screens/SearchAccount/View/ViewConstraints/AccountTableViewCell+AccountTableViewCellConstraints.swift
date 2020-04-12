@@ -22,7 +22,7 @@ extension AccountTableViewCell: AccountTableViewCellConstraints {
         addSubview(accountImageView)
         addSubview(accountTitleLabel)
     }
-
+    
     func activateDimViewConstraints() {
         NSLayoutConstraint.activate([
             dimView.leadingAnchor.constraint(equalTo: leadingAnchor),

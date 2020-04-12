@@ -28,4 +28,13 @@ class PlayerDetailsViewController: UIViewController {
     override func loadView() {
         view = PlayerDetailsView(viewModel: viewModel)
     }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        viewModel.didFetchPlayerDetails = { [weak self] playerDetails in
+            print(playerDetails)
+        }
+        
+    }
 }

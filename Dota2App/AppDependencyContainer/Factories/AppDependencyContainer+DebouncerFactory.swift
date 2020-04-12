@@ -8,7 +8,6 @@
 
 import UIKit
 
-
 protocol DebouncerFactory {
     func makeDebouncer(delay: TimeInterval) -> Debouncer
 }

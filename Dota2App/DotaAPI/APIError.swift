@@ -12,20 +12,18 @@ enum APIError: Error, CustomStringConvertible {
     case noDataError
     case parsingError(message: String)
     case urlConstructionError
-
+    
     var description: String {
         switch self {
-        case .noDataError:
-            return "No data: source does not contain data for your request"
-
+        case .noDataError: return "No data: source does not contain data for your request"
+            
         case .parsingError(let message):
             return """
-                    Parsing error: data can't be parsed to specified format.
-                    Message: \(message)
-                    """
+            Parsing error: data can't be parsed to specified format.
+            Message: \(message)
+            """
             
-        case .urlConstructionError:
-            return "URL error: the url can't be constructed for this path"
+        case .urlConstructionError: return "URL error: the url can't be constructed for this path"
         }
     }
 }

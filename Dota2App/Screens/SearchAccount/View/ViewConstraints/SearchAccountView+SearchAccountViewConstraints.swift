@@ -6,7 +6,6 @@
 //  Copyright © 2020 Levchuk Misha. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 protocol SearchAccountViewConstraints {
@@ -18,7 +17,7 @@ extension SearchAccountView: SearchAccountViewConstraints {
     func constructHierarchy() {
         addSubview(accountsTableView)
     }
-
+    
     func activateAccountsTableViewConstraints() {
         NSLayoutConstraint.activate([
             accountsTableView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),

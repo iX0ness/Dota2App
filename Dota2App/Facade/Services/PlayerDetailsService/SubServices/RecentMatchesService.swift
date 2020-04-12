@@ -14,4 +14,19 @@ class RecentMatchesService {
     init(factory: NetworkingFactory) {
         self.networkingClient = factory.makeNetworkingClient()
     }
+    
+    func sendRequest(_ recentMatchesRequest: GetRecentMatches, completion: @escaping RecentMatchesCompletion) -> URLSessionDataTask? {
+        let task = networkingClient.send(request: recentMatchesRequest) { result in
+            switch result {
+            case .success(let recentMatches):
+                completion(.success(recentMatches))
+                
+            case .failure(let error):
+                completion(.failure(error))
+                
+            }
+        }
+        task?.resume()
+        return task
+    }
 }

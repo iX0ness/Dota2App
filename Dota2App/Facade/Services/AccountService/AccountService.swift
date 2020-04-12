@@ -16,10 +16,8 @@ class AccountService {
         networkingClient = factory.makeNetworkingClient()
     }
 
-    func getAccounts(with accountName: String, completion: @escaping AccountsCompletion<[AccountResponse]>) -> URLSessionDataTask? {
-        let accountRequest = GetAccounts(accountName: accountName)
-
-        let task = networkingClient.send(request: accountRequest) { (result) in
+    func sendRequest(_ accountsRequest: GetAccounts, completion: @escaping AccountsCompletion<[AccountResponse]>) -> URLSessionDataTask? {
+        let task = networkingClient.send(request: accountsRequest) { result in
             switch result {
             case .success(let accounts):
                 completion(.success(accounts))
@@ -27,7 +25,7 @@ class AccountService {
                 completion(.failure(error))
             }
         }
-        
+        task?.resume()
         return task
     }
 }

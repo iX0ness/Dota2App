@@ -17,6 +17,5 @@ struct AccountResponse: Decodable {
         case account_id
         case personaname
         case avatarURLString = "avatarfull"
-    
     }
 }

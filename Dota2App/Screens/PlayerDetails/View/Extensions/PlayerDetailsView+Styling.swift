@@ -16,14 +16,14 @@ extension PlayerDetailsView {
         avatarView.layer.borderColor = UIColor.white.cgColor
         avatarView.clipsToBounds = true
     }
-
+    
     // Move to extension in future
     func setHeaderGradient(view: UIView) {
         let gradient = CAGradientLayer()
-//        gradient.frame = view.frame
-//        gradient.colors = [AppConstants.PlayerInfo.Styles.gradientColors.initColor.cgColor, AppConstants.PlayerInfo.Styles.gradientColors.endColor.cgColor]
-//        gradient.startPoint = AppConstants.PlayerInfo.Styles.orientation.points().startPoint
-//        gradient.endPoint = AppConstants.PlayerInfo.Styles.orientation.points().endPoint
+        //        gradient.frame = view.frame
+        //        gradient.colors = [AppConstants.PlayerInfo.Styles.gradientColors.initColor.cgColor, AppConstants.PlayerInfo.Styles.gradientColors.endColor.cgColor]
+        //        gradient.startPoint = AppConstants.PlayerInfo.Styles.orientation.points().startPoint
+        //        gradient.endPoint = AppConstants.PlayerInfo.Styles.orientation.points().endPoint
         
         gradient.frame = view.bounds
         view.layer.insertSublayer(gradient, at: 0)

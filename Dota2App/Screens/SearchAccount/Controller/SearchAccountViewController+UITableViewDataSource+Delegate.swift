@@ -38,7 +38,7 @@ extension SearchAccountViewController: UITableViewDataSource {
         cell.configure(with: account)
         return cell
     }
-        
+    
 }
 
 extension SearchAccountViewController: UITableViewDelegate {
@@ -56,7 +56,7 @@ extension SearchAccountViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 10
     }
-
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         headerView.backgroundColor = UIColor.clear

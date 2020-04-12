@@ -16,4 +16,18 @@ class WonLostStatisticService {
         self.networkingClient = factory.makeNetworkingClient()
     }
     
+    func sendRequest(_ wonLostStatisticRequest: GetWonLostStatistic, completion: @escaping WonLostStatisticCompletion) -> URLSessionDataTask? {
+        let task = networkingClient.send(request: wonLostStatisticRequest) { result in
+            switch result {
+            case .success(let wonLostStatistic):
+                completion(.success(wonLostStatistic))
+                
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+        
+        task?.resume()
+        return task
+    }
 }

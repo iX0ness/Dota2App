@@ -15,4 +15,19 @@ class PlayerInfoService {
     init(factory: NetworkingFactory) {
         self.networkingClient = factory.makeNetworkingClient()
     }
+    
+    func sendRequest(_ getPlayerInfoRequest: GetPlayerInfo, completion: @escaping PlayerInfoCompletion) -> URLSessionDataTask? {
+        let task = networkingClient.send(request: getPlayerInfoRequest) { result in
+            switch result {
+            case .success(let playerInfo):
+                completion(.success(playerInfo))
+                
+            case .failure(let error):
+                completion(.failure(error))
+            }
+        }
+        
+        task?.resume()
+        return task
+    }
 }

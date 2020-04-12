@@ -1,18 +1,18 @@
 //
-//  GetWonLostStatistic.swift
+//  GetRecentMatches.swift
 //  Dota2App
 //
-//  Created by Mykhaylo Levchuk on 09/03/2020.
+//  Created by Mykhaylo Levchuk on 10/04/2020.
 //  Copyright © 2020 Levchuk Misha. All rights reserved.
 //
 
 import Foundation
 
-struct GetWonLostStatistic: APIRequest {
-    typealias Response = WonLostResponse
+struct GetRecentMatches: APIRequest {
+    typealias Response = [MatchResponse]
     
     var path: String {
-        return "players/\(accountID)/wl"
+        return "players/\(accountID)/recentMatches"
     }
     
     let accountID: String

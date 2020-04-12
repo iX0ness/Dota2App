@@ -10,6 +10,7 @@ import Foundation
 import UIKit
 
 extension SearchAccountViewController {
+    
     func setupView(_ view: SearchAccountView) {
         
         /// Setup table view delegate

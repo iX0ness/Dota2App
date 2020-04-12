@@ -18,6 +18,6 @@ extension AppDependencyContainer: PlayerDetailsFactory {
     }
     
     private func makePlayerDetailsViewModel() -> PlayerDetailsViewModel {
-        return PlayerDetailsViewModel()
+        return PlayerDetailsViewModel(provider: apiFacade)
     }
 }

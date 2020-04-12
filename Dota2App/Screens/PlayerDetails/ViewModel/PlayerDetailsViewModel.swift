@@ -8,6 +8,26 @@
 
 import UIKit
 
-class PlayerDetailsViewModel: NSObject {
+class PlayerDetailsViewModel {
     
+    let playerDetailsProvider: PlayerDetailsServiceProvider
+    var didFetchPlayerDetails: ((PlayerDetails) -> Void)?
+    var playerDetails: PlayerDetails? {
+        didSet {
+            if let playerDetails = playerDetails {
+                didFetchPlayerDetails?(playerDetails)
+            }
+        }
+    }
+    
+    init(provider: PlayerDetailsServiceProvider) {
+        playerDetailsProvider = provider
+        getPlayerDetails()
+    }
+    
+    func getPlayerDetails() {
+        playerDetailsProvider.fetchPlayerDetails("1054954790") { (result) in
+            self.playerDetails = result
+        }
+    }
 }

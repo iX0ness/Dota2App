@@ -6,12 +6,11 @@
 //  Copyright © 2020 Levchuk Misha. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class AppDependencyContainer {
     
-    private lazy var apiFacade: APIFacade = {
+    lazy var apiFacade: APIFacade = {
         let facade = APIFacade(servicesProvider: self)
         return facade
     }()

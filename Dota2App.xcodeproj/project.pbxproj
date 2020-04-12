@@ -45,6 +45,13 @@
 		8BB2ED80243FA14F00FEF194 /* RecentMatchesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2ED7F243FA14F00FEF194 /* RecentMatchesService.swift */; };
 		8BB2ED82243FA38E00FEF194 /* AppDependencyContainer+PlayerDetailsServicesFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2ED81243FA38E00FEF194 /* AppDependencyContainer+PlayerDetailsServicesFactory.swift */; };
 		8BB2ED84243FA82500FEF194 /* AppDependencyContainer+NetworkingFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2ED83243FA82500FEF194 /* AppDependencyContainer+NetworkingFactory.swift */; };
+		8BB2ED8A2440B91300FEF194 /* PlayerInfoResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2ED892440B91300FEF194 /* PlayerInfoResponse.swift */; };
+		8BB2ED8C2440B94700FEF194 /* ProfileResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2ED8B2440B94700FEF194 /* ProfileResponse.swift */; };
+		8BB2ED8E2440B98C00FEF194 /* MMREstimateResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2ED8D2440B98C00FEF194 /* MMREstimateResponse.swift */; };
+		8BB2ED902440B9E500FEF194 /* GetPlayerInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2ED8F2440B9E500FEF194 /* GetPlayerInfo.swift */; };
+		8BB2ED922440C5D300FEF194 /* GetRecentMatches.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2ED912440C5D300FEF194 /* GetRecentMatches.swift */; };
+		8BB2ED942440C5F400FEF194 /* MatchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2ED932440C5F400FEF194 /* MatchResponse.swift */; };
+		8BB2ED962441E4BE00FEF194 /* PlayerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2ED952441E4BE00FEF194 /* PlayerDetails.swift */; };
 		8BCFFDA82420EC2C00751874 /* SearchAccountViewController+UISearchResultsUpdating.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCFFDA72420EC2C00751874 /* SearchAccountViewController+UISearchResultsUpdating.swift */; };
 		8BCFFDAA2422145500751874 /* EmptySearchAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCFFDA92422145500751874 /* EmptySearchAccountView.swift */; };
 		8BCFFDAD242221CE00751874 /* EmptySearchAccountView+EmptySearchAccountViewConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCFFDAC242221CE00751874 /* EmptySearchAccountView+EmptySearchAccountViewConstraints.swift */; };
@@ -100,6 +107,13 @@
 		8BB2ED7F243FA14F00FEF194 /* RecentMatchesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecentMatchesService.swift; sourceTree = "<group>"; };
 		8BB2ED81243FA38E00FEF194 /* AppDependencyContainer+PlayerDetailsServicesFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+PlayerDetailsServicesFactory.swift"; sourceTree = "<group>"; };
 		8BB2ED83243FA82500FEF194 /* AppDependencyContainer+NetworkingFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+NetworkingFactory.swift"; sourceTree = "<group>"; };
+		8BB2ED892440B91300FEF194 /* PlayerInfoResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfoResponse.swift; sourceTree = "<group>"; };
+		8BB2ED8B2440B94700FEF194 /* ProfileResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileResponse.swift; sourceTree = "<group>"; };
+		8BB2ED8D2440B98C00FEF194 /* MMREstimateResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MMREstimateResponse.swift; sourceTree = "<group>"; };
+		8BB2ED8F2440B9E500FEF194 /* GetPlayerInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetPlayerInfo.swift; sourceTree = "<group>"; };
+		8BB2ED912440C5D300FEF194 /* GetRecentMatches.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetRecentMatches.swift; sourceTree = "<group>"; };
+		8BB2ED932440C5F400FEF194 /* MatchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchResponse.swift; sourceTree = "<group>"; };
+		8BB2ED952441E4BE00FEF194 /* PlayerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetails.swift; sourceTree = "<group>"; };
 		8BCFFDA72420EC2C00751874 /* SearchAccountViewController+UISearchResultsUpdating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchAccountViewController+UISearchResultsUpdating.swift"; sourceTree = "<group>"; };
 		8BCFFDA92422145500751874 /* EmptySearchAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySearchAccountView.swift; sourceTree = "<group>"; };
 		8BCFFDAC242221CE00751874 /* EmptySearchAccountView+EmptySearchAccountViewConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmptySearchAccountView+EmptySearchAccountViewConstraints.swift"; sourceTree = "<group>"; };
@@ -161,6 +175,7 @@
 			isa = PBXGroup;
 			children = (
 				320AC4CF240F0445000228BD /* Account.swift */,
+				8BB2ED952441E4BE00FEF194 /* PlayerDetails.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -242,7 +257,7 @@
 		3282E750240EDBAC0002E111 /* Factories */ = {
 			isa = PBXGroup;
 			children = (
-				8BB2ED85243FA94D00FEF194 /* ServicesFactory */,
+				8BB2ED81243FA38E00FEF194 /* AppDependencyContainer+PlayerDetailsServicesFactory.swift */,
 				321C356D241AD0CC00E24B65 /* AppDependencyContainer+SearchControllerFactory.swift */,
 				8BFA084D2428FE6100461767 /* AppDependencyContainer+DebouncerFactory.swift */,
 				8BFA086B242E39CD00461767 /* AppDependencyContainer+PlayerDetailsFactory.swift */,
@@ -351,6 +366,8 @@
 			children = (
 				8B6EB84C24166E0900D6CA85 /* GetAccounts.swift */,
 				8B6EB85524167D0800D6CA85 /* GetWonLostStatistic.swift */,
+				8BB2ED8F2440B9E500FEF194 /* GetPlayerInfo.swift */,
+				8BB2ED912440C5D300FEF194 /* GetRecentMatches.swift */,
 			);
 			path = Requests;
 			sourceTree = "<group>";
@@ -358,8 +375,10 @@
 		8B6EB84E241673C200D6CA85 /* ResponseModels */ = {
 			isa = PBXGroup;
 			children = (
+				8BB2ED882440B89D00FEF194 /* PlayerInfoResponse */,
 				8B6EB84F241673DB00D6CA85 /* AccountResponse.swift */,
 				8B6EB85324167CC200D6CA85 /* WonLostResponse.swift */,
+				8BB2ED932440C5F400FEF194 /* MatchResponse.swift */,
 			);
 			path = ResponseModels;
 			sourceTree = "<group>";
@@ -391,12 +410,14 @@
 			path = SubServices;
 			sourceTree = "<group>";
 		};
-		8BB2ED85243FA94D00FEF194 /* ServicesFactory */ = {
+		8BB2ED882440B89D00FEF194 /* PlayerInfoResponse */ = {
 			isa = PBXGroup;
 			children = (
-				8BB2ED81243FA38E00FEF194 /* AppDependencyContainer+PlayerDetailsServicesFactory.swift */,
+				8BB2ED892440B91300FEF194 /* PlayerInfoResponse.swift */,
+				8BB2ED8B2440B94700FEF194 /* ProfileResponse.swift */,
+				8BB2ED8D2440B98C00FEF194 /* MMREstimateResponse.swift */,
 			);
-			path = ServicesFactory;
+			path = PlayerInfoResponse;
 			sourceTree = "<group>";
 		};
 		8BCFFDAB242221AB00751874 /* ViewConstraints */ = {
@@ -551,6 +572,7 @@
 				3206B8A7241507E700A3C27F /* APIError.swift in Sources */,
 				8B6EB85424167CC200D6CA85 /* WonLostResponse.swift in Sources */,
 				320AC4D0240F0445000228BD /* Account.swift in Sources */,
+				8BB2ED942440C5F400FEF194 /* MatchResponse.swift in Sources */,
 				8B043B19241BB5D500997C8A /* Debouncer.swift in Sources */,
 				8BCFFDAA2422145500751874 /* EmptySearchAccountView.swift in Sources */,
 				3206B8A324102C4B00A3C27F /* APIProtocols.swift in Sources */,
@@ -559,13 +581,16 @@
 				8BFA0863242D02E600461767 /* UIFont+DotaFontsr.swift in Sources */,
 				3282E73E240ED6740002E111 /* SearchAccountViewController.swift in Sources */,
 				3282E73A240ED6740002E111 /* AppDelegate.swift in Sources */,
+				8BB2ED962441E4BE00FEF194 /* PlayerDetails.swift in Sources */,
 				8B6EB85624167D0800D6CA85 /* GetWonLostStatistic.swift in Sources */,
 				3251B891240EE3F90032685D /* SearchAccountView.swift in Sources */,
+				8BB2ED922440C5D300FEF194 /* GetRecentMatches.swift in Sources */,
 				3282E74E240EDAD40002E111 /* AppDependencyContainer.swift in Sources */,
 				8BB2ED80243FA14F00FEF194 /* RecentMatchesService.swift in Sources */,
 				320AC4C5240EEA3A000228BD /* AccountTableViewCell.swift in Sources */,
 				3282E73C240ED6740002E111 /* SceneDelegate.swift in Sources */,
 				8B0604552437959C00D1A53A /* ImageCache.swift in Sources */,
+				8BB2ED8A2440B91300FEF194 /* PlayerInfoResponse.swift in Sources */,
 				320AC4C9240EECE6000228BD /* R.swift in Sources */,
 				8B043AEE24169CB400997C8A /* APIFacade.swift in Sources */,
 				8B06044F2437905800D1A53A /* LoadableImageView.swift in Sources */,
@@ -573,10 +598,13 @@
 				8BFA084E2428FE6100461767 /* AppDependencyContainer+DebouncerFactory.swift in Sources */,
 				8BFA0861242D008300461767 /* PlayerDetailView.swift in Sources */,
 				8BB2ED84243FA82500FEF194 /* AppDependencyContainer+NetworkingFactory.swift in Sources */,
+				8BB2ED8C2440B94700FEF194 /* ProfileResponse.swift in Sources */,
 				321C356E241AD0CC00E24B65 /* AppDependencyContainer+SearchControllerFactory.swift in Sources */,
+				8BB2ED8E2440B98C00FEF194 /* MMREstimateResponse.swift in Sources */,
 				8BFA0868242E2E0700461767 /* PlayerDetailsViewController.swift in Sources */,
 				8B6EB850241673DB00D6CA85 /* AccountResponse.swift in Sources */,
 				3206B8AB2416BA7100A3C27F /* AccountService.swift in Sources */,
+				8BB2ED902440B9E500FEF194 /* GetPlayerInfo.swift in Sources */,
 				320AC4CB240EEEB6000228BD /* AccountTableViewCell+AccountTableViewCellConstraints.swift in Sources */,
 				320AC4C3240EE79F000228BD /* SearchAccountView+SearchAccountViewConstraints.swift in Sources */,
 				8BFA0866242D067500461767 /* PlayerDetailView+PlayerDetailViewConstraints.swift in Sources */,

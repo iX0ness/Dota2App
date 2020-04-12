@@ -34,12 +34,10 @@ class EmptySearchAccountView: UIView {
         super.init(coder: coder)
     }
     
-    
     override func layoutSubviews() {
         super.layoutSubviews()
         activateLogoImageViewConstraints()
         activateDimViewconstraints()
     }
-    
     
 }
