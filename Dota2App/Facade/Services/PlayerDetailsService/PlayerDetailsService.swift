@@ -25,7 +25,7 @@ class PlayerDetailsService {
     }
     
     func sendPlayerDetailsRequest(_ request: PlayerDetailsRequest, completion: @escaping PlayerDetailsCompletion) {
-        var playerDetails = PlayerDetails()
+        var playerDetails = PlayerDetailsResponse()
         
         dispatchGroup.enter()
         _ = self.playerInfoService.sendRequest(request.playerInfoRequest, completion: { result in

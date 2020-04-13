@@ -8,8 +8,10 @@
 
 import Foundation
 
-struct PlayerDetails {
+struct PlayerDetailsResponse {
     var playerInfo: (playerInfro: PlayerInfoResponse?, error: Error?)?
     var wonLostStatistic: (wonLostStatistic: WonLostResponse?, error: Error?)?
     var recentMatches: (recentMatches: [MatchResponse]?, error: Error?)?
 }
+
+

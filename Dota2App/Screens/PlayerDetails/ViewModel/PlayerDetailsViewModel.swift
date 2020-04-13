@@ -11,8 +11,8 @@ import UIKit
 class PlayerDetailsViewModel {
     
     let playerDetailsProvider: PlayerDetailsServiceProvider
-    var didFetchPlayerDetails: ((PlayerDetails) -> Void)?
-    var playerDetails: PlayerDetails? {
+    var didFetchPlayerDetails: ((PlayerDetailsResponse) -> Void)?
+    var playerDetails: PlayerDetailsResponse? {
         didSet {
             if let playerDetails = playerDetails {
                 didFetchPlayerDetails?(playerDetails)
@@ -29,5 +29,9 @@ class PlayerDetailsViewModel {
         playerDetailsProvider.fetchPlayerDetails("1054954790") { (result) in
             self.playerDetails = result
         }
+    }
+    
+    func getPlayerDetailsModel(for response: PlayerDetailsResponse) ->  PlayerDetails? {
+        return nil
     }
 }

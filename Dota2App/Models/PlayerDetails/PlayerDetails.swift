@@ -1,0 +1,41 @@
+//
+//  PlayerDetails.swift
+//  Dota2App
+//
+//  Created by Mykhaylo Levchuk on 13/04/2020.
+//  Copyright © 2020 Levchuk Misha. All rights reserved.
+//
+
+import UIKit
+
+struct PlayerDetails {
+    let profile: Profile
+    let wonLostStatistic:  WonLostStatistic
+    let recentMatches: [Match]
+}
+
+struct Profile {
+    let name: String
+    let country: String
+    let soloRank: String
+    let competitiveRank: String
+    let mmr: String
+}
+
+struct WonLostStatistic {
+    let won: String
+    let lost: String
+}
+
+struct Match {
+    let hero: Hero
+    let didWinMatch: Bool
+    let duration: String
+    let kills: String
+    let assists: String
+    let deaths: String
+}
+
+struct Hero {
+    let name: String
+}
