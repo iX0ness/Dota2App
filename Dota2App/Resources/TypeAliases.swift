@@ -12,4 +12,4 @@ typealias AccountsCompletion<Value: Decodable> = (Result<Value, Error>) -> Void
 typealias WonLostStatisticCompletion = (Result<WonLostResponse, Error>) -> Void
 typealias PlayerInfoCompletion = (Result<PlayerInfoResponse, Error>) -> Void
 typealias RecentMatchesCompletion = (Result<[MatchResponse], Error>) -> Void
-typealias PlayerDetailsCompletion = (PlayerDetailsResponse) -> Void
+typealias PlayerDetailsCompletion = (PlayerDetails) -> Void

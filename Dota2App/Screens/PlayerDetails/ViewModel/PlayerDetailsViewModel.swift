@@ -11,8 +11,8 @@ import UIKit
 class PlayerDetailsViewModel {
     
     let playerDetailsProvider: PlayerDetailsServiceProvider
-    var didFetchPlayerDetails: ((PlayerDetailsResponse) -> Void)?
-    var playerDetails: PlayerDetailsResponse? {
+    var didFetchPlayerDetails: ((PlayerDetails) -> Void)?
+    var playerDetails: PlayerDetails? {
         didSet {
             if let playerDetails = playerDetails {
                 didFetchPlayerDetails?(playerDetails)

@@ -9,9 +9,9 @@
 import UIKit
 
 struct PlayerDetails {
-    let profile: Profile
-    let wonLostStatistic:  WonLostStatistic
-    let recentMatches: [Match]
+    var profile: Profile?
+    var wonLostStatistic:  WonLostStatistic?
+    var recentMatches: [Match]?
 }
 
 struct Profile {
@@ -28,8 +28,8 @@ struct WonLostStatistic {
 }
 
 struct Match {
-    let hero: Hero
-    let didWinMatch: Bool
+    //let hero: Hero
+    let didWinMatch: String
     let duration: String
     let kills: String
     let assists: String

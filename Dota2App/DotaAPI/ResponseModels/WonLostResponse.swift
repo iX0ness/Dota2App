@@ -8,7 +8,20 @@
 
 import Foundation
 
+protocol WonLostRepresentable {
+    func getModel() -> WonLostStatistic
+}
+
 struct WonLostResponse: Decodable {
     let win: Int
     let lose: Int
+}
+
+extension WonLostResponse: WonLostRepresentable {
+    func getModel() -> WonLostStatistic {
+        return WonLostStatistic(
+            won: String(win),
+            lost: String(lose)
+        )
+    }
 }

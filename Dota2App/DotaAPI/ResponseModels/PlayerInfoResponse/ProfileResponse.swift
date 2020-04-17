@@ -11,7 +11,6 @@ import Foundation
 struct ProfileResponse: Decodable {
     let account_id: Int
     let personaname: String?
-    let name: String?
     let plus: Bool?
     let cheese: Int
     let steamid: String?

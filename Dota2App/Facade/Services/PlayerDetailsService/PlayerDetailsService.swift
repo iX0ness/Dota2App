@@ -25,17 +25,17 @@ class PlayerDetailsService {
     }
     
     func sendPlayerDetailsRequest(_ request: PlayerDetailsRequest, completion: @escaping PlayerDetailsCompletion) {
-        var playerDetails = PlayerDetailsResponse()
+        var playerDetails = PlayerDetails()
         
         dispatchGroup.enter()
         _ = self.playerInfoService.sendRequest(request.playerInfoRequest, completion: { result in
             switch result {
                 
-            case .success(let playerInfo):
-                playerDetails.playerInfo = (playerInfo, nil)
+            case .success(let playerInfoResponse):
+                playerDetails.profile = playerInfoResponse.getModel()
                 
             case .failure(let error):
-                playerDetails.playerInfo = (nil, error)
+                print(error)
             }
             self.dispatchGroup.leave()
             
@@ -45,11 +45,11 @@ class PlayerDetailsService {
         _ = self.wonLostStatisticService.sendRequest(request.wonLostStatisticRequest, completion: { result in
             switch result {
                 
-            case .success(let wonLostStatistic):
-                playerDetails.wonLostStatistic = (wonLostStatistic, nil)
+            case .success(let wonLostResponse):
+                playerDetails.wonLostStatistic = wonLostResponse.getModel()
                 
             case .failure(let error):
-                playerDetails.wonLostStatistic = (nil, error)
+                print(error)
             }
             self.dispatchGroup.leave()
         })
@@ -59,12 +59,12 @@ class PlayerDetailsService {
             switch result {
                 
             case .success(let recentMatches):
-                playerDetails.recentMatches = (recentMatches, nil)
+                playerDetails.recentMatches = recentMatches.map{ $0.getModel()}
                 completion(playerDetails)
                 
             case .failure(let error):
                 completion(playerDetails)
-                playerDetails.recentMatches = (nil, error)
+                print(error)
             }
             self.dispatchGroup.leave()
         })
