@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+struct HeroResponse: Decodable {
+    let id: Int
+    let _name: String
+    
+    enum CodingKeys: String, CodingKey  {
+        case id
+        case _name = "localized_name"
+    }
+}

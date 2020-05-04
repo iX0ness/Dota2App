@@ -13,7 +13,11 @@ protocol AccountServiceProvider {
 }
 
 protocol PlayerDetailsServiceProvider {
-    func fetchPlayerDetails(_ accointID: String, completion: @escaping  PlayerDetailsCompletion)
+    func fetchPlayerDetails(_ accointID: String,
+                            playerInfoCompletion: @escaping PlayerInfoCompletion,
+                            wonLostStatisticCompletion: @escaping WonLostStatisticCompletion,
+                            recentMatchesCompletion: @escaping RecentMatchesCompletion)
+    var heroesRepo: HeroesRepository {get}
 }
 
 struct PlayerDetailsRequest {
@@ -29,15 +33,17 @@ struct PlayerDetailsRequest {
 }
 
 class APIFacade {
-
+    
     private let accountsService: AccountService
     private let playerDetailsService: PlayerDetailsService
+    internal let heroesRepository: HeroesRepository
     
-    init(servicesProvider: ServicesProvider) {
+    init(servicesProvider: ServicesProvider & HeroesRepositoryProvider) {
         self.accountsService = servicesProvider.makeAccountService()
         self.playerDetailsService = servicesProvider.makePlayerDetailsService()
+        self.heroesRepository = servicesProvider.makeHeroesRepository()
     }
-   
+    
 }
 
 extension APIFacade: AccountServiceProvider {
@@ -49,7 +55,7 @@ extension APIFacade: AccountServiceProvider {
             switch result {
             case .success(let accounts):
                 completion(.success(accounts))
-        
+                
             case .failure(let error):
                 completion(.failure(error))
             }
@@ -60,11 +66,42 @@ extension APIFacade: AccountServiceProvider {
 }
 
 extension APIFacade: PlayerDetailsServiceProvider {
-    func fetchPlayerDetails(_ accointID: String, completion: @escaping PlayerDetailsCompletion) {
+    var heroesRepo: HeroesRepository {
+        return heroesRepository
+    }
+    
+    func fetchPlayerDetails(_ accointID: String,
+                            playerInfoCompletion: @escaping PlayerInfoCompletion,
+                            wonLostStatisticCompletion: @escaping WonLostStatisticCompletion,
+                            recentMatchesCompletion: @escaping RecentMatchesCompletion) {
+        
         let playerDetailsRequest = PlayerDetailsRequest(accountID: accointID)
-        playerDetailsService.sendPlayerDetailsRequest(playerDetailsRequest) { (result) in
-            completion(result)
-        }
+        playerDetailsService.sendPlayerDetailsRequest(playerDetailsRequest,
+                                                      
+                                                      playerInfoCompletion: { result in
+                                                        switch result {
+                                                        case .success(let playerInfoResponse):
+                                                            playerInfoCompletion(playerInfoResponse)
+                                                        case .failure(let error):
+                                                            print(error)
+                                                        }
+        },
+                                                      wonLostStatisticCompletion: { result in
+                                                        switch result {
+                                                        case .success(let wonLostResponse):
+                                                            wonLostStatisticCompletion(wonLostResponse)
+                                                        case .failure(let error):
+                                                            print(error)
+                                                        }
+        },
+                                                      recentMatchesCompletion: { result in
+                                                        switch result {
+                                                        case .success(let recentMatchesResponse):
+                                                            recentMatchesCompletion(recentMatchesResponse)
+                                                        case .failure(let error):
+                                                            print(error)
+                                                        }
+        })
         
     }
     

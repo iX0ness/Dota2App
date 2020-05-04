@@ -10,28 +10,70 @@ import UIKit
 
 class PlayerDetailsViewModel {
     
-    let playerDetailsProvider: PlayerDetailsServiceProvider
-    var didFetchPlayerDetails: ((PlayerDetails) -> Void)?
-    var playerDetails: PlayerDetails? {
+    private let playerDetailsProvider: PlayerDetailsServiceProvider
+    private var didOccurError: Bool = false {
+        willSet {
+            if newValue != didOccurError {
+                fetchErrorCallback?()
+            }
+        }
+    }
+    
+    var didProfileFetch: ((Profile) -> Void)?
+    var didWonLostStatisticFetch: ((WonLostStatistic) -> Void)?
+    var didRecentMatchesFetch: (([Match]) -> Void)?
+    var fetchErrorCallback: (() -> Void)?
+    
+    
+    private var playerInfoResponse: PlayerInfoResponse? {
         didSet {
-            if let playerDetails = playerDetails {
-                didFetchPlayerDetails?(playerDetails)
+            if let playerInfo = playerInfoResponse {
+                let profile = playerInfo.getProfileModel()
+                didProfileFetch?(profile)
+            } else {
+                didOccurError = true
+            }
+        }
+    }
+    
+    private var wonLostStatisticResponse: WonLostResponse? {
+        didSet {
+            if let wonLostStatistic = wonLostStatisticResponse {
+                let wonLostStatisticModel = wonLostStatistic.getWonLostModel()
+                didWonLostStatisticFetch?(wonLostStatisticModel)
+            } else {
+                didOccurError = true
+            }
+        }
+    }
+    
+    private var recentMatchesResponse: [MatchResponse]? {
+        didSet {
+            if let recentMatches = recentMatchesResponse {
+                let recentMatches = recentMatches.map({ $0.getMatchModel() })
+                didRecentMatchesFetch?(recentMatches)
+            } else {
+                didOccurError = true
             }
         }
     }
     
     init(provider: PlayerDetailsServiceProvider) {
         playerDetailsProvider = provider
-        getPlayerDetails()
+        fetchPlayerDetails()
     }
     
-    func getPlayerDetails() {
-        playerDetailsProvider.fetchPlayerDetails("1054954790") { (result) in
-            self.playerDetails = result
-        }
+    func fetchPlayerDetails() {
+        playerDetailsProvider.fetchPlayerDetails("1054954790",
+                                                 playerInfoCompletion: { playerInfoResponse in
+                                                    self.playerInfoResponse = playerInfoResponse
+        },
+                                                 wonLostStatisticCompletion: { wonLostResponse in
+                                                    self.wonLostStatisticResponse = wonLostResponse
+        },
+                                                 recentMatchesCompletion: { recentMatchesResponse in
+                                                    self.recentMatchesResponse = recentMatchesResponse
+        })
     }
     
-    func getPlayerDetailsModel(for response: PlayerDetailsResponse) ->  PlayerDetails? {
-        return nil
-    }
 }

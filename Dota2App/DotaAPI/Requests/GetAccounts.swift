@@ -10,13 +10,9 @@ import Foundation
 
 struct GetAccounts: APIRequest {
     typealias Response = [AccountResponse]
-    
-    var path: String {
-        return "search?q=\(accountName)"
-    }
-    
     let accountName: String
-    
+    var path: String { return "search?q=\(accountName)" }
+
     init(accountName: String) {
         self.accountName = accountName
     }

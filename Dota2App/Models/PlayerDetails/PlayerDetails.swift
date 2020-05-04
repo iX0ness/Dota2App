@@ -28,7 +28,7 @@ struct WonLostStatistic {
 }
 
 struct Match {
-    //let hero: Hero
+    let heroID: Int
     let didWinMatch: String
     let duration: String
     let kills: String

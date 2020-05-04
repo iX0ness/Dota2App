@@ -9,7 +9,14 @@
 import Foundation
 
 typealias AccountsCompletion<Value: Decodable> = (Result<Value, Error>) -> Void
-typealias WonLostStatisticCompletion = (Result<WonLostResponse, Error>) -> Void
-typealias PlayerInfoCompletion = (Result<PlayerInfoResponse, Error>) -> Void
-typealias RecentMatchesCompletion = (Result<[MatchResponse], Error>) -> Void
-typealias PlayerDetailsCompletion = (PlayerDetails) -> Void
+typealias PlayerInfoResult = (Result<PlayerInfoResponse, Error>) -> Void
+typealias WonLostStatisticResult = (Result<WonLostResponse, Error>) -> Void
+typealias RecentMatchesResult = (Result<[MatchResponse], Error>) -> Void
+typealias HeroesCompletion = (Result<[HeroResponse], Error>) -> Void
+
+typealias PlayerInfoCompletion = (PlayerInfoResponse) -> Void
+typealias WonLostStatisticCompletion = (WonLostResponse) -> Void
+typealias RecentMatchesCompletion = ([MatchResponse]) -> Void
+
+
+

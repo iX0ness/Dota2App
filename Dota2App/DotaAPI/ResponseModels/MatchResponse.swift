@@ -16,7 +16,7 @@ protocol MatchRepresentable {
     var assists: String { get }
     var deaths: String { get }
     
-    func getModel() -> Match
+    func getMatchModel() -> Match
 }
 
 struct MatchResponse: Decodable {
@@ -68,8 +68,8 @@ extension MatchResponse: MatchRepresentable {
         return String(_deaths)
     }
     
-    func getModel() -> Match {
-        return Match(didWinMatch: matchResult, duration: duration, kills: kills, assists: assists, deaths: deaths)
+    func getMatchModel() -> Match {
+        return Match(heroID: hero_id, didWinMatch: matchResult, duration: duration, kills: kills, assists: assists, deaths: deaths)
     }
     
     private func isRadiantTeam(_ slot: Int) -> Bool {

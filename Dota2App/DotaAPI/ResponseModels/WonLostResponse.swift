@@ -9,16 +9,16 @@
 import Foundation
 
 protocol WonLostRepresentable {
-    func getModel() -> WonLostStatistic
+    func getWonLostModel() -> WonLostStatistic
 }
 
 struct WonLostResponse: Decodable {
-    let win: Int
-    let lose: Int
+    private let win: Int
+    private let lose: Int
 }
 
 extension WonLostResponse: WonLostRepresentable {
-    func getModel() -> WonLostStatistic {
+    func getWonLostModel() -> WonLostStatistic {
         return WonLostStatistic(
             won: String(win),
             lost: String(lose)

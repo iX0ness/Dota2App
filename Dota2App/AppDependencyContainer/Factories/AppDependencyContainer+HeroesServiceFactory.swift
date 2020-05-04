@@ -7,3 +7,13 @@
 //
 
 import Foundation
+
+protocol HeroesRepositoryProvider {
+    func makeHeroesRepository() -> HeroesRepository
+}
+
+extension AppDependencyContainer: HeroesRepositoryProvider {
+    func makeHeroesRepository() -> HeroesRepository {
+        return HeroesRepository(factory: self)
+    }
+}

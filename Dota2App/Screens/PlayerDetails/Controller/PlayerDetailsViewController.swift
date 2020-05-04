@@ -11,6 +11,9 @@ import UIKit
 class PlayerDetailsViewController: UIViewController {
     
     let viewModel: PlayerDetailsViewModel
+    var alertController: UIAlertController?
+    var alertController2: UIAlertController?
+    var isPresenting = false
     
     init(viewModel: PlayerDetailsViewModel) {
         self.viewModel = viewModel
@@ -31,10 +34,31 @@ class PlayerDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        viewModel.didFetchPlayerDetails = { [weak self] playerDetails in
-            print(playerDetails)
+        notifyErrorAlert()
+    }
+    
+    
+    func notifyErrorAlert() {
+        viewModel.fetchErrorCallback = { [weak self] in
+            guard let self = self else { return }
+            self.presentAlert()
         }
-        
+    }
+    
+    func presentAlert() {
+        DispatchQueue.main.async {
+            self.alertController = UIAlertController().create()
+            self.present(self.alertController!, animated: true, completion: nil)
+        }
+    }
+    
+}
+
+private extension UIAlertController {
+    func create() -> UIAlertController {
+        let alertController = UIAlertController(title: "Error", message: "Profile data could not been fetched completely", preferredStyle: .alert)
+        let dissmissAction = UIAlertAction(title: "Close", style: .default, handler: nil)
+        alertController.addAction(dissmissAction)
+        return alertController
     }
 }

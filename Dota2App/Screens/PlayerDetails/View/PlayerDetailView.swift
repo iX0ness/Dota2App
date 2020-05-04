@@ -29,7 +29,7 @@ class PlayerDetailsView: UIView {
     
     private lazy var nameLabel: UILabel = {
         let label = UILabel()
-        label.text = "kurwa"
+        label.text = "Name: "
         label.textColor = .white
         label.font = UIFont.DotaFonts.body
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -38,7 +38,7 @@ class PlayerDetailsView: UIView {
     
     private lazy var countryLabel: UILabel = {
         let label = UILabel()
-        label.text = "kurwa"
+        label.text = "Country: "
         label.textColor = .white
         label.font = UIFont.DotaFonts.body
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -47,7 +47,7 @@ class PlayerDetailsView: UIView {
     
     private lazy var wonCountLabel: UILabel = {
         let label = UILabel()
-        label.text = "250"
+        label.text = "Won: "
         label.textColor = .white
         label.font = UIFont.DotaFonts.body
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -56,7 +56,7 @@ class PlayerDetailsView: UIView {
     
     private lazy var lostCountLabel: UILabel = {
         let label = UILabel()
-        label.text = "120"
+        label.text = "Lost: "
         label.textColor = .white
         label.font = UIFont.DotaFonts.body
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -138,7 +138,7 @@ class PlayerDetailsView: UIView {
     
     private lazy var mmrValueLabel: UILabel = {
         let label = UILabel()
-        label.text = "5640"
+        //label.text = ""
         label.textAlignment = .center
         label.textColor = .white
         label.font = UIFont.DotaFonts.body
@@ -148,7 +148,7 @@ class PlayerDetailsView: UIView {
     
     private lazy var soloRankValueLabel: UILabel = {
         let label = UILabel()
-        label.text = "5640"
+        //label.text = ""
         label.textAlignment = .center
         label.textColor = .white
         label.font = UIFont.DotaFonts.body
@@ -158,7 +158,7 @@ class PlayerDetailsView: UIView {
     
     private lazy var teamRankValueLabel: UILabel = {
         let label = UILabel()
-        label.text = "5640"
+        //label.text = ""
         label.textAlignment = .center
         label.textColor = .white
         label.font = UIFont.DotaFonts.body
@@ -176,6 +176,7 @@ class PlayerDetailsView: UIView {
         self.viewModel = viewModel
         super.init(frame: .zero)
         constructHierarchy()
+        bind()
     }
     
     required init?(coder: NSCoder) {
@@ -191,5 +192,29 @@ class PlayerDetailsView: UIView {
         
         roundAvatarImage()
         setHeaderGradient(view: headerView)
+    }
+    
+    func bind() {
+        viewModel.didProfileFetch = { [weak self] profile in
+            guard let self = self else { return }
+           
+            DispatchQueue.main.async {
+                self.nameLabel.text?.append(profile.name)
+                self.countryLabel.text?.append(profile.country)
+                self.mmrValueLabel.text = profile.mmr
+                self.soloRankValueLabel.text = profile.soloRank
+                self.teamRankValueLabel.text = profile.competitiveRank
+            }
+            
+        }
+        
+        viewModel.didWonLostStatisticFetch = { [weak self] statistic in
+            guard let self = self else { return }
+            
+            DispatchQueue.main.async {
+                self.wonCountLabel.text?.append(statistic.won)
+                self.lostCountLabel.text?.append(statistic.lost)
+            }
+        }
     }
 }

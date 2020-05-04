@@ -7,3 +7,9 @@
 //
 
 import Foundation
+
+protocol HeroesRepositoryFactory {
+    var heroesRepository: HeroesRepository { get }
+}
+
+

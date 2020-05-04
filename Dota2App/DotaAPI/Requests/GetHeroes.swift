@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+struct GetHeroes: APIRequest {
+    typealias Response = [HeroResponse]
+    var path: String { return "heroes" }
+}

@@ -10,12 +10,8 @@ import Foundation
 
 struct GetWonLostStatistic: APIRequest {
     typealias Response = WonLostResponse
-    
-    var path: String {
-        return "players/\(accountID)/wl"
-    }
-    
     let accountID: String
+    var path: String { return "players/\(accountID)/wl" }
     
     init(accountID: String) {
         self.accountID = accountID

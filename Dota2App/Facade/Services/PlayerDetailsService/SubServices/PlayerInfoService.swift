@@ -9,22 +9,15 @@
 import Foundation
 
 class PlayerInfoService {
-    
     private let networkingClient: NetworkingClient
     
     init(factory: NetworkingFactory) {
-        self.networkingClient = factory.makeNetworkingClient()
+        networkingClient = factory.makeNetworkingClient()
     }
     
-    func sendRequest(_ getPlayerInfoRequest: GetPlayerInfo, completion: @escaping PlayerInfoCompletion) -> URLSessionDataTask? {
+    func sendRequest(_ getPlayerInfoRequest: GetPlayerInfo, completion: @escaping PlayerInfoResult) -> URLSessionDataTask? {
         let task = networkingClient.send(request: getPlayerInfoRequest) { result in
-            switch result {
-            case .success(let playerInfo):
-                completion(.success(playerInfo))
-                
-            case .failure(let error):
-                completion(.failure(error))
-            }
+            completion(result)
         }
         
         task?.resume()

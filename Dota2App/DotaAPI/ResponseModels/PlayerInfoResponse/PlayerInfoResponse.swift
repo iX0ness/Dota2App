@@ -16,7 +16,7 @@ protocol ProfileRepresentable {
     var mmr: String { get }
     var emptyValuePlaceholder: String { get }
     
-    func getModel() -> Profile
+    func getProfileModel() -> Profile
 }
 
 struct PlayerInfoResponse: Decodable {
@@ -56,7 +56,7 @@ extension PlayerInfoResponse: ProfileRepresentable {
         return "N/A"
     }
     
-    func getModel() -> Profile {
+    func getProfileModel() -> Profile {
         return Profile(
             name: name,
             country: country,

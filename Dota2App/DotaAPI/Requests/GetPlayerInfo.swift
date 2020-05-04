@@ -10,12 +10,8 @@ import Foundation
 
 struct GetPlayerInfo: APIRequest {
     typealias Response = PlayerInfoResponse
-    
-    var path: String {
-        return "players/\(accountID)"
-    }
-    
     let accountID: String
+    var path: String { return "players/\(accountID)" }
     
     init(accountID: String) {
         self.accountID = accountID

@@ -10,12 +10,8 @@ import Foundation
 
 struct GetRecentMatches: APIRequest {
     typealias Response = [MatchResponse]
-    
-    var path: String {
-        return "players/\(accountID)/recentMatches"
-    }
-    
     let accountID: String
+    var path: String { return "players/\(accountID)/recentMatches" }
     
     init(accountID: String) {
         self.accountID = accountID
