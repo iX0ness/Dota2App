@@ -41,6 +41,10 @@
 		8B6EB85424167CC200D6CA85 /* WonLostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB85324167CC200D6CA85 /* WonLostResponse.swift */; };
 		8B6EB85624167D0800D6CA85 /* GetWonLostStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB85524167D0800D6CA85 /* GetWonLostStatistic.swift */; };
 		8B8584D5245C284B002F7698 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8584D4245C284B002F7698 /* UIAlertController+Extension.swift */; };
+		8B8585272461F4E7002F7698 /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8585262461F4E7002F7698 /* MatchTableViewCell.swift */; };
+		8B8585292461F509002F7698 /* MatchTableViewCell+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8585282461F509002F7698 /* MatchTableViewCell+Constraints.swift */; };
+		8B85852B2461F51B002F7698 /* MatchStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B85852A2461F51B002F7698 /* MatchStatsView.swift */; };
+		8B85852D2461F662002F7698 /* UIView+FitToContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B85852C2461F662002F7698 /* UIView+FitToContainerView.swift */; };
 		8BAA6F94244E1A6E0030FAEB /* AppDependencyContainer+HeroesRepositoryFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BAA6F93244E1A6E0030FAEB /* AppDependencyContainer+HeroesRepositoryFactory.swift */; };
 		8BB2ED79243F9DFB00FEF194 /* PlayerDetailsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2ED78243F9DFB00FEF194 /* PlayerDetailsService.swift */; };
 		8BB2ED7C243F9F6D00FEF194 /* PlayerInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2ED7B243F9F6D00FEF194 /* PlayerInfoService.swift */; };
@@ -110,6 +114,10 @@
 		8B6EB85324167CC200D6CA85 /* WonLostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WonLostResponse.swift; sourceTree = "<group>"; };
 		8B6EB85524167D0800D6CA85 /* GetWonLostStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWonLostStatistic.swift; sourceTree = "<group>"; };
 		8B8584D4245C284B002F7698 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
+		8B8585262461F4E7002F7698 /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
+		8B8585282461F509002F7698 /* MatchTableViewCell+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchTableViewCell+Constraints.swift"; sourceTree = "<group>"; };
+		8B85852A2461F51B002F7698 /* MatchStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStatsView.swift; sourceTree = "<group>"; };
+		8B85852C2461F662002F7698 /* UIView+FitToContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+FitToContainerView.swift"; sourceTree = "<group>"; };
 		8BAA6F93244E1A6E0030FAEB /* AppDependencyContainer+HeroesRepositoryFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+HeroesRepositoryFactory.swift"; sourceTree = "<group>"; };
 		8BB2ED78243F9DFB00FEF194 /* PlayerDetailsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsService.swift; sourceTree = "<group>"; };
 		8BB2ED7B243F9F6D00FEF194 /* PlayerInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerInfoService.swift; sourceTree = "<group>"; };
@@ -419,6 +427,16 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		8B8585252461F470002F7698 /* RecentMatchesTableView */ = {
+			isa = PBXGroup;
+			children = (
+				8B8585262461F4E7002F7698 /* MatchTableViewCell.swift */,
+				8B8585282461F509002F7698 /* MatchTableViewCell+Constraints.swift */,
+				8B85852A2461F51B002F7698 /* MatchStatsView.swift */,
+			);
+			path = RecentMatchesTableView;
+			sourceTree = "<group>";
+		};
 		8BB2ED76243F9DA900FEF194 /* PlayerDetailsService */ = {
 			isa = PBXGroup;
 			children = (
@@ -473,6 +491,7 @@
 				8B0604502437951400D1A53A /* LoadableImageView */,
 				8BFA084F2429019D00461767 /* UIView+ReusableView.swift */,
 				8BFA0862242D02E600461767 /* UIFont+DotaFontsr.swift */,
+				8B85852C2461F662002F7698 /* UIView+FitToContainerView.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -490,6 +509,7 @@
 		8BFA085D242CFF7400461767 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				8B8585252461F470002F7698 /* RecentMatchesTableView */,
 				8BFA0864242D03EB00461767 /* Extensions */,
 				8BFA0860242D008300461767 /* PlayerDetailView.swift */,
 			);
@@ -607,8 +627,10 @@
 				8BAA6F94244E1A6E0030FAEB /* AppDependencyContainer+HeroesRepositoryFactory.swift in Sources */,
 				3206B8A5241195ED00A3C27F /* NetworkingClient.swift in Sources */,
 				8BCFFDAD242221CE00751874 /* EmptySearchAccountView+EmptySearchAccountViewConstraints.swift in Sources */,
+				8B85852D2461F662002F7698 /* UIView+FitToContainerView.swift in Sources */,
 				8BFA086E242E4C7E00461767 /* PlayerDetailsView+Styling.swift in Sources */,
 				3206B8A7241507E700A3C27F /* APIError.swift in Sources */,
+				8B8585292461F509002F7698 /* MatchTableViewCell+Constraints.swift in Sources */,
 				8B6EB85424167CC200D6CA85 /* WonLostResponse.swift in Sources */,
 				8BEF78C6244A374300A0B14F /* HeroResponse.swift in Sources */,
 				320AC4D0240F0445000228BD /* Account.swift in Sources */,
@@ -624,6 +646,7 @@
 				3282E73A240ED6740002E111 /* AppDelegate.swift in Sources */,
 				8BB2ED962441E4BE00FEF194 /* PlayerDetailsResponse.swift in Sources */,
 				8B6EB85624167D0800D6CA85 /* GetWonLostStatistic.swift in Sources */,
+				8B85852B2461F51B002F7698 /* MatchStatsView.swift in Sources */,
 				3251B891240EE3F90032685D /* SearchAccountView.swift in Sources */,
 				8BB2ED922440C5D300FEF194 /* GetRecentMatches.swift in Sources */,
 				8BCC135C244A2DCF00BCFCF9 /* HeroesService.swift in Sources */,
@@ -640,6 +663,7 @@
 				8BB2ED79243F9DFB00FEF194 /* PlayerDetailsService.swift in Sources */,
 				8BFA084E2428FE6100461767 /* AppDependencyContainer+DebouncerFactory.swift in Sources */,
 				8BFA0861242D008300461767 /* PlayerDetailView.swift in Sources */,
+				8B8585272461F4E7002F7698 /* MatchTableViewCell.swift in Sources */,
 				8BB2ED84243FA82500FEF194 /* AppDependencyContainer+NetworkingFactory.swift in Sources */,
 				8BB2ED8C2440B94700FEF194 /* ProfileResponse.swift in Sources */,
 				321C356E241AD0CC00E24B65 /* AppDependencyContainer+SearchControllerFactory.swift in Sources */,

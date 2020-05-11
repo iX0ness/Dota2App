@@ -35,8 +35,15 @@ class PlayerDetailsViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         notifyErrorAlert()
+        setDelegates()
+        bind()
     }
     
+    func setDelegates() {
+        guard let view = view as? PlayerDetailsView else { return }
+        view.recentMatchesTableView.delegate = self
+        view.recentMatchesTableView.dataSource = self
+    }
     
     func notifyErrorAlert() {
         viewModel.fetchErrorCallback = { [weak self] in
@@ -51,6 +58,41 @@ class PlayerDetailsViewController: UIViewController {
             self.present(self.alertController!, animated: true, completion: nil)
         }
     }
+    
+    func bind() {
+        viewModel.didRecentMatchesFetch = { [weak self]  in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                guard let view = self.view as? PlayerDetailsView else { return }
+                view.recentMatchesTableView.reloadData()
+            }
+            
+        }
+    }
+    
+}
+
+extension PlayerDetailsViewController: UITableViewDelegate, UITableViewDataSource {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return viewModel.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: MatchTableViewCell.defaultReuseIdentifier, for: indexPath) as? MatchTableViewCell else {
+            fatalError("Table view should be able to dequeue cell")
+        }
+        
+        let match = viewModel.getMatch(at: indexPath)
+        cell.configure(with: match)
+        
+        return cell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 90
+    }
+    
     
 }
 

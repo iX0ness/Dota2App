@@ -168,6 +168,7 @@ class PlayerDetailsView: UIView {
     
     lazy var recentMatchesTableView: UITableView = {
         let tableView = UITableView(frame: .zero)
+        tableView.register(MatchTableViewCell.self, forCellReuseIdentifier: MatchTableViewCell.defaultReuseIdentifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
     }()

@@ -19,12 +19,6 @@ class PlayerDetailsViewModel {
         }
     }
     
-    var didProfileFetch: ((Profile) -> Void)?
-    var didWonLostStatisticFetch: ((WonLostStatistic) -> Void)?
-    var didRecentMatchesFetch: (([Match]) -> Void)?
-    var fetchErrorCallback: (() -> Void)?
-    
-    
     private var playerInfoResponse: PlayerInfoResponse? {
         didSet {
             if let playerInfo = playerInfoResponse {
@@ -47,16 +41,24 @@ class PlayerDetailsViewModel {
         }
     }
     
-    private var recentMatchesResponse: [MatchResponse]? {
+    private var recentMatchesResponse: [MatchResponse] = [] {
         didSet {
-            if let recentMatches = recentMatchesResponse {
-                let recentMatches = recentMatches.map({ $0.getMatchModel() })
-                didRecentMatchesFetch?(recentMatches)
+            if !recentMatchesResponse.isEmpty {
+                didRecentMatchesFetch?()
             } else {
                 didOccurError = true
             }
         }
     }
+    
+    var count: Int {
+        return recentMatchesResponse.count
+    }
+    
+    var didProfileFetch: ((Profile) -> Void)?
+    var didWonLostStatisticFetch: ((WonLostStatistic) -> Void)?
+    var didRecentMatchesFetch: (() -> Void)?
+    var fetchErrorCallback: (() -> Void)?
     
     init(provider: PlayerDetailsServiceProvider) {
         playerDetailsProvider = provider
@@ -74,6 +76,10 @@ class PlayerDetailsViewModel {
                                                  recentMatchesCompletion: { recentMatchesResponse in
                                                     self.recentMatchesResponse = recentMatchesResponse
         })
+    }
+    
+    func getMatch(at indexPath: IndexPath) -> Match {
+        return recentMatchesResponse[indexPath.row].getMatchModel()
     }
     
 }

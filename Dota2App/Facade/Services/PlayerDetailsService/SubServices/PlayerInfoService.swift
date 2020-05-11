@@ -17,6 +17,7 @@ class PlayerInfoService {
     
     func sendRequest(_ getPlayerInfoRequest: GetPlayerInfo, completion: @escaping PlayerInfoResult) -> URLSessionDataTask? {
         let task = networkingClient.send(request: getPlayerInfoRequest) { result in
+            print(result)
             completion(result)
         }
         
