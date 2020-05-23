@@ -63,6 +63,8 @@ class PlayerDetailsViewModel {
     init(provider: PlayerDetailsServiceProvider) {
         playerDetailsProvider = provider
         fetchPlayerDetails()
+       
+        
     }
     
     func fetchPlayerDetails() {

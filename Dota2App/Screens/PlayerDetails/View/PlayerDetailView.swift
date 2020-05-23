@@ -19,8 +19,8 @@ class PlayerDetailsView: UIView {
         return view
     }()
     
-    lazy var avatarView: UIImageView = {
-        let imageView = UIImageView()
+    lazy var avatarView: LoadableImageView = {
+        let imageView = LoadableImageView()
         imageView.backgroundColor = .red
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -200,6 +200,10 @@ class PlayerDetailsView: UIView {
             guard let self = self else { return }
            
             DispatchQueue.main.async {
+                
+                self.avatarView.loadImage(from: profile.avatarURLString) { image in
+                    self.avatarView.image = image
+                }
                 self.nameLabel.text?.append(profile.name)
                 self.countryLabel.text?.append(profile.country)
                 self.mmrValueLabel.text = profile.mmr

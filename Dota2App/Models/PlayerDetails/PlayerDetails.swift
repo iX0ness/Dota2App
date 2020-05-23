@@ -20,6 +20,7 @@ struct Profile {
     let soloRank: String
     let competitiveRank: String
     let mmr: String
+    let avatarURLString: String
 }
 
 struct WonLostStatistic {
@@ -28,7 +29,7 @@ struct WonLostStatistic {
 }
 
 struct Match {
-    let heroID: Int
+    let heroName: String
     let didWinMatch: String
     let duration: String
     let kills: String

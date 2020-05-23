@@ -17,8 +17,10 @@ protocol PlayerDetailsServiceProvider {
                             playerInfoCompletion: @escaping PlayerInfoCompletion,
                             wonLostStatisticCompletion: @escaping WonLostStatisticCompletion,
                             recentMatchesCompletion: @escaping RecentMatchesCompletion)
-    var heroesRepo: HeroesRepository {get}
+    
 }
+
+
 
 struct PlayerDetailsRequest {
     let playerInfoRequest: GetPlayerInfo
@@ -42,6 +44,14 @@ class APIFacade {
         self.accountsService = servicesProvider.makeAccountService()
         self.playerDetailsService = servicesProvider.makePlayerDetailsService()
         self.heroesRepository = servicesProvider.makeHeroesRepository()
+        saveHeroesToDocuments()
+    }
+    
+    func saveHeroesToDocuments() {
+        heroesRepository.heroesHandler = { [weak self] heroes in
+            guard let self = self else { return }
+            UserDefaults.standard.saveHoroes(heroes)
+        }
     }
     
 }
@@ -66,9 +76,6 @@ extension APIFacade: AccountServiceProvider {
 }
 
 extension APIFacade: PlayerDetailsServiceProvider {
-    var heroesRepo: HeroesRepository {
-        return heroesRepository
-    }
     
     func fetchPlayerDetails(_ accointID: String,
                             playerInfoCompletion: @escaping PlayerInfoCompletion,
@@ -105,4 +112,9 @@ extension APIFacade: PlayerDetailsServiceProvider {
         
     }
     
+    
+    
 }
+
+
+

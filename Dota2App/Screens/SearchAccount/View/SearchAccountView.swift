@@ -41,5 +41,7 @@ class SearchAccountView: UIView {
     override func layoutSubviews() {
         super.layoutSubviews()
         activateAccountsTableViewConstraints()
+        accountsTableView.reloadData()
     }
+    
 }

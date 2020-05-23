@@ -12,10 +12,12 @@ enum APIError: Error, CustomStringConvertible {
     case noDataError
     case parsingError(message: String)
     case urlConstructionError
+    case noValueForKeyError
     
     var description: String {
         switch self {
-        case .noDataError: return "No data: source does not contain data for your request"
+        case .noDataError:
+            return "No data: source does not contain data for your request"
             
         case .parsingError(let message):
             return """
@@ -23,7 +25,13 @@ enum APIError: Error, CustomStringConvertible {
             Message: \(message)
             """
             
-        case .urlConstructionError: return "URL error: the url can't be constructed for this path"
+        case .urlConstructionError:
+            return "URL error: the url can't be constructed for this path"
+            
+        
+       
+        case .noValueForKeyError:
+            return "No value for 'heroes' key fonded"
         }
     }
 }

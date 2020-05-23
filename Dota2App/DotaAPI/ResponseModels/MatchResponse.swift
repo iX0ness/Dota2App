@@ -44,8 +44,10 @@ struct MatchResponse: Decodable {
 }
 
 extension MatchResponse: MatchRepresentable {
-
-//    var hero: Hero {}
+    
+    var heroName: String {
+        return getHeroName(by: hero_id) ?? "Unknown"
+    }
     
     var matchResult: String {
         let didWinMatch = isRadiantTeam(player_slot) ? radiant_win : !radiant_win
@@ -69,7 +71,7 @@ extension MatchResponse: MatchRepresentable {
     }
     
     func getMatchModel() -> Match {
-        return Match(heroID: hero_id, didWinMatch: matchResult, duration: duration, kills: kills, assists: assists, deaths: deaths)
+        return Match(heroName: heroName, didWinMatch: matchResult, duration: duration, kills: kills, assists: assists, deaths: deaths)
     }
     
     private func isRadiantTeam(_ slot: Int) -> Bool {
@@ -84,5 +86,17 @@ extension MatchResponse: MatchRepresentable {
         return formattedDuration ?? "00:00:00"
     }
     
+    func getHeroName(by heroID: Int) -> String? {
+        guard let result = UserDefaults.standard.getHeroes() else { return nil }
+        switch result {
+        case .success(let heroes):
+            let hero = heroes.first(where: { $0.id == heroID })
+            return hero?._name
+            
+        case .failure(let error):
+            print(error)
+            return nil
+        }
+    }
 }
 

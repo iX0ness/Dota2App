@@ -16,7 +16,7 @@ struct ProfileResponse: Decodable {
     let steamid: String?
     let avatar: String?
     let avatarmedium: String?
-    let avatarfull: String?
+    let avatarfull: String
     let profileurl: String?
     let last_login: String?
     let loccountrycode: String?

@@ -35,12 +35,12 @@
 		8B0604522437952C00D1A53A /* ImageLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0604512437952C00D1A53A /* ImageLoadable.swift */; };
 		8B0604552437959C00D1A53A /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0604542437959C00D1A53A /* ImageCache.swift */; };
 		8B4EFEFF2444BFFC00549CA9 /* PlayerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4EFEFE2444BFFC00549CA9 /* PlayerDetails.swift */; };
+		8B637588247941F70009F4AD /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B637587247941F70009F4AD /* UserDefaults+Extension.swift */; };
 		8B6EB8482410039700D6CA85 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB8472410039700D6CA85 /* Helper.swift */; };
 		8B6EB84D24166E0900D6CA85 /* GetAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB84C24166E0900D6CA85 /* GetAccounts.swift */; };
 		8B6EB850241673DB00D6CA85 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB84F241673DB00D6CA85 /* AccountResponse.swift */; };
 		8B6EB85424167CC200D6CA85 /* WonLostResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB85324167CC200D6CA85 /* WonLostResponse.swift */; };
 		8B6EB85624167D0800D6CA85 /* GetWonLostStatistic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB85524167D0800D6CA85 /* GetWonLostStatistic.swift */; };
-		8B8584D5245C284B002F7698 /* UIAlertController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8584D4245C284B002F7698 /* UIAlertController+Extension.swift */; };
 		8B8585272461F4E7002F7698 /* MatchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8585262461F4E7002F7698 /* MatchTableViewCell.swift */; };
 		8B8585292461F509002F7698 /* MatchTableViewCell+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B8585282461F509002F7698 /* MatchTableViewCell+Constraints.swift */; };
 		8B85852B2461F51B002F7698 /* MatchStatsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B85852A2461F51B002F7698 /* MatchStatsView.swift */; };
@@ -108,12 +108,12 @@
 		8B0604512437952C00D1A53A /* ImageLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoadable.swift; sourceTree = "<group>"; };
 		8B0604542437959C00D1A53A /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		8B4EFEFE2444BFFC00549CA9 /* PlayerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetails.swift; sourceTree = "<group>"; };
+		8B637587247941F70009F4AD /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
 		8B6EB8472410039700D6CA85 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		8B6EB84C24166E0900D6CA85 /* GetAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccounts.swift; sourceTree = "<group>"; };
 		8B6EB84F241673DB00D6CA85 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
 		8B6EB85324167CC200D6CA85 /* WonLostResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WonLostResponse.swift; sourceTree = "<group>"; };
 		8B6EB85524167D0800D6CA85 /* GetWonLostStatistic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetWonLostStatistic.swift; sourceTree = "<group>"; };
-		8B8584D4245C284B002F7698 /* UIAlertController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+Extension.swift"; sourceTree = "<group>"; };
 		8B8585262461F4E7002F7698 /* MatchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchTableViewCell.swift; sourceTree = "<group>"; };
 		8B8585282461F509002F7698 /* MatchTableViewCell+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MatchTableViewCell+Constraints.swift"; sourceTree = "<group>"; };
 		8B85852A2461F51B002F7698 /* MatchStatsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchStatsView.swift; sourceTree = "<group>"; };
@@ -369,10 +369,18 @@
 			path = PlayerDetails;
 			sourceTree = "<group>";
 		};
+		8B637586247941D90009F4AD /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				8B637587247941F70009F4AD /* UserDefaults+Extension.swift */,
+			);
+			path = UserDefaults;
+			sourceTree = "<group>";
+		};
 		8B6EB8462410038800D6CA85 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
-				8B8584D3245C2831002F7698 /* Extensions */,
+				8B637586247941D90009F4AD /* UserDefaults */,
 				8B043B17241BB5C600997C8A /* Debouncer */,
 				8B6EB8472410039700D6CA85 /* Helper.swift */,
 			);
@@ -417,14 +425,6 @@
 				8BEF78C5244A374300A0B14F /* HeroResponse.swift */,
 			);
 			path = ResponseModels;
-			sourceTree = "<group>";
-		};
-		8B8584D3245C2831002F7698 /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				8B8584D4245C284B002F7698 /* UIAlertController+Extension.swift */,
-			);
-			path = Extensions;
 			sourceTree = "<group>";
 		};
 		8B8585252461F470002F7698 /* RecentMatchesTableView */ = {
@@ -652,7 +652,6 @@
 				8BCC135C244A2DCF00BCFCF9 /* HeroesService.swift in Sources */,
 				3282E74E240EDAD40002E111 /* AppDependencyContainer.swift in Sources */,
 				8BB2ED80243FA14F00FEF194 /* RecentMatchesService.swift in Sources */,
-				8B8584D5245C284B002F7698 /* UIAlertController+Extension.swift in Sources */,
 				320AC4C5240EEA3A000228BD /* AccountTableViewCell.swift in Sources */,
 				3282E73C240ED6740002E111 /* SceneDelegate.swift in Sources */,
 				8B0604552437959C00D1A53A /* ImageCache.swift in Sources */,
@@ -670,6 +669,7 @@
 				8BB2ED8E2440B98C00FEF194 /* MMREstimateResponse.swift in Sources */,
 				8BFA0868242E2E0700461767 /* PlayerDetailsViewController.swift in Sources */,
 				8B6EB850241673DB00D6CA85 /* AccountResponse.swift in Sources */,
+				8B637588247941F70009F4AD /* UserDefaults+Extension.swift in Sources */,
 				3206B8AB2416BA7100A3C27F /* AccountService.swift in Sources */,
 				8BB2ED902440B9E500FEF194 /* GetPlayerInfo.swift in Sources */,
 				320AC4CB240EEEB6000228BD /* AccountTableViewCell+AccountTableViewCellConstraints.swift in Sources */,

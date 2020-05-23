@@ -14,6 +14,7 @@ protocol ProfileRepresentable {
     var soloRank: String { get }
     var competitiveRank: String {get }
     var mmr: String { get }
+    var avatarURLString: String { get }
     var emptyValuePlaceholder: String { get }
     
     func getProfileModel() -> Profile
@@ -29,6 +30,7 @@ struct PlayerInfoResponse: Decodable {
 }
 
 extension PlayerInfoResponse: ProfileRepresentable {
+    
     internal var name: String {
         return profile.personaname ?? emptyValuePlaceholder
     }
@@ -52,6 +54,10 @@ extension PlayerInfoResponse: ProfileRepresentable {
         return String(mmr)
     }
     
+    var avatarURLString: String {
+        return profile.avatarfull
+    }
+    
     internal var emptyValuePlaceholder: String {
         return "N/A"
     }
@@ -62,6 +68,7 @@ extension PlayerInfoResponse: ProfileRepresentable {
             country: country,
             soloRank: soloRank,
             competitiveRank: competitiveRank,
-            mmr: mmr)
+            mmr: mmr,
+            avatarURLString: avatarURLString)
     }
 }

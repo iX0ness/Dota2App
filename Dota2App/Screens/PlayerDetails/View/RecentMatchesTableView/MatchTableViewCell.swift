@@ -12,7 +12,7 @@ class MatchTableViewCell: UITableViewCell {
     
     lazy var heroIcon: UIImageView = {
         let imageView = UIImageView()
-        imageView.contentMode = .scaleAspectFill
+        imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
     }()
@@ -39,12 +39,6 @@ class MatchTableViewCell: UITableViewCell {
         return view
     }()
     
-    
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
@@ -52,20 +46,18 @@ class MatchTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         setupLayout()
+        
     }
     
-    
-    
-    
     func configure(with match: Match) {
-        
-        
-        //        heroIcon.image = match.hero.image
-        //        heroNameLabel.text = match.hero.name
+        heroIcon.image = UIImage(named: String(match.heroName))
+        heroNameLabel.text = match.heroName
         matchStatsView.setResult(match.didWinMatch)
         matchStatsView.setDuration(match.duration)
         matchStatsView.setKills(match.kills)
         matchStatsView.setDeaths(match.deaths)
         matchStatsView.setAssists(match.assists)
     }
+    
+    
 }
