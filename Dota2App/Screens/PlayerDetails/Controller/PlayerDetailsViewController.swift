@@ -36,7 +36,18 @@ class PlayerDetailsViewController: UIViewController {
         super.viewDidLoad()
         notifyErrorAlert()
         setDelegates()
+        setupNavigationBar()
         bind()
+    }
+    
+    func setupNavigationBar() {
+        self.navigationItem.largeTitleDisplayMode = .never
+        if let navigationBar = navigationController?.navigationBar {
+            navigationBar.topItem?.title = "Search account"
+            navigationBar.prefersLargeTitles = true
+            navigationBar.barTintColor = R.SearchAccount.emptyViewBackgroundColor
+//            navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+        }
     }
     
     func setDelegates() {

@@ -34,8 +34,14 @@ class SearchAccountViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         guard let searchAccountView = view as? SearchAccountView else {return}
-        setupView(searchAccountView)
+        //setupView(searchAccountView)
         bindView(searchAccountView)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        guard let searchAccountView = view as? SearchAccountView else {return}
+        setupView(searchAccountView)
     }
 
 }

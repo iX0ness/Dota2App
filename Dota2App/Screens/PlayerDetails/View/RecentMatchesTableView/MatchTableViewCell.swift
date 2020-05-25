@@ -21,6 +21,7 @@ class MatchTableViewCell: UITableViewCell {
         let label = UILabel()
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 10)
+        label.textColor = UIColor.white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -31,7 +32,6 @@ class MatchTableViewCell: UITableViewCell {
         return view
     }()
     
-    
     lazy var matchStatsView: MatchStatsView = {
         let view = MatchStatsView(frame: .zero)
         view.placeInContainer(matchStatsContainerView)
@@ -39,14 +39,18 @@ class MatchTableViewCell: UITableViewCell {
         return view
     }()
     
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        backgroundColor = UIColor(red: 25/255, green: 25/255, blue: 34/255, alpha: 1.0)
+        
     }
     
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     override func layoutSubviews() {
         super.layoutSubviews()
         setupLayout()
-        
     }
     
     func configure(with match: Match) {
@@ -58,6 +62,5 @@ class MatchTableViewCell: UITableViewCell {
         matchStatsView.setDeaths(match.deaths)
         matchStatsView.setAssists(match.assists)
     }
-    
     
 }

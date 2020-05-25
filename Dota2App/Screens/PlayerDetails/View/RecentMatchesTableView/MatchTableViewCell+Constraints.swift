@@ -29,9 +29,9 @@ extension MatchTableViewCell {
     
     func activateHeroIconConstraints() {
         let heroIconHeightAnchor = heroIcon.heightAnchor.constraint(equalTo: heightAnchor, multiplier: 0.8)
-        let heroIconLeadingAnchor = heroIcon.leadingAnchor.constraint(equalTo: leadingAnchor)
+        let heroIconLeadingAnchor = heroIcon.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor)
         let heroIconWidthAnchor = heroIcon.widthAnchor.constraint(equalTo: heightAnchor, multiplier: 0.8)
-        let heroIconCenterYAnchor = heroIcon.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+        let heroIconCenterYAnchor = heroIcon.centerYAnchor.constraint(equalTo: centerYAnchor)
         
         heroIconHeightAnchor.isActive = true
         heroIconLeadingAnchor.isActive = true
@@ -40,7 +40,7 @@ extension MatchTableViewCell {
     }
     
     func activateHeroNameLabelConstraints() {
-        let heroNameLabelTopAnchor = heroNameLabel.topAnchor.constraint(equalTo: heroIcon.bottomAnchor, constant: 3)
+        let heroNameLabelTopAnchor = heroNameLabel.topAnchor.constraint(equalTo: heroIcon.bottomAnchor, constant: -10)
         let heroNameLabelWidthAnchor = heroNameLabel.widthAnchor.constraint(equalToConstant: 100)
         let heroNameLabelCenterXAnchor = heroNameLabel.centerXAnchor.constraint(equalTo: heroIcon.centerXAnchor)
         

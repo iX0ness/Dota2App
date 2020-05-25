@@ -14,7 +14,7 @@ class PlayerDetailsView: UIView {
     
     var headerView: UIView = {
         let view = UIView()
-        view.backgroundColor = .lightGray
+        view.backgroundColor = R.SearchAccount.accountCellBackgroundColor
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -168,6 +168,7 @@ class PlayerDetailsView: UIView {
     
     lazy var recentMatchesTableView: UITableView = {
         let tableView = UITableView(frame: .zero)
+        tableView.backgroundColor = UIColor(red: 25/255, green: 25/255, blue: 34/255, alpha: 1.0)
         tableView.register(MatchTableViewCell.self, forCellReuseIdentifier: MatchTableViewCell.defaultReuseIdentifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -185,6 +186,7 @@ class PlayerDetailsView: UIView {
     }
     
     override func layoutSubviews() {
+        super.layoutSubviews()
         activateHeaderViewConstraints()
         activateAvatarViewConstraints()
         activategeneralInfoStackViewConstraints()
@@ -198,7 +200,7 @@ class PlayerDetailsView: UIView {
     func bind() {
         viewModel.didProfileFetch = { [weak self] profile in
             guard let self = self else { return }
-           
+            
             DispatchQueue.main.async {
                 
                 self.avatarView.loadImage(from: profile.avatarURLString) { image in
