@@ -41,7 +41,6 @@ class SearchAccountViewController: UIViewController {
         super.viewDidLoad()
         bind()
         setDelegates()
-    
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -123,7 +122,7 @@ extension SearchAccountViewController: UITableViewDelegate, UITableViewDataSourc
             fatalError("Cell must be dequeued")
         }
     
-        let account = viewModel.getAccount(at: indexPath)
+        guard let account = viewModel.getAccount(at: indexPath) else { return UITableViewCell() }
         cell.configure(with: account)
         return cell
     }

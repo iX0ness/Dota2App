@@ -45,7 +45,7 @@ class SearchAccountViewModel {
         }
     }
     
-    func getAccount(at indexPath: IndexPath) -> AccountResponse {
+    func getAccount(at indexPath: IndexPath) -> AccountResponse? {
         return fetchedAccounts[indexPath.section]
     }
     

@@ -11,10 +11,8 @@
 		3206B8A5241195ED00A3C27F /* NetworkingClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206B8A4241195ED00A3C27F /* NetworkingClient.swift */; };
 		3206B8A7241507E700A3C27F /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206B8A6241507E700A3C27F /* APIError.swift */; };
 		3206B8AB2416BA7100A3C27F /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206B8AA2416BA7100A3C27F /* AccountService.swift */; };
-		320AC4C3240EE79F000228BD /* SearchAccountView+SearchAccountViewConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320AC4C2240EE79F000228BD /* SearchAccountView+SearchAccountViewConstraints.swift */; };
 		320AC4C5240EEA3A000228BD /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320AC4C4240EEA3A000228BD /* AccountTableViewCell.swift */; };
 		320AC4C9240EECE6000228BD /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320AC4C8240EECE6000228BD /* R.swift */; };
-		320AC4CB240EEEB6000228BD /* AccountTableViewCell+AccountTableViewCellConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320AC4CA240EEEB6000228BD /* AccountTableViewCell+AccountTableViewCellConstraints.swift */; };
 		320AC4D0240F0445000228BD /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320AC4CF240F0445000228BD /* Account.swift */; };
 		321C356E241AD0CC00E24B65 /* AppDependencyContainer+SearchControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C356D241AD0CC00E24B65 /* AppDependencyContainer+SearchControllerFactory.swift */; };
 		3251B891240EE3F90032685D /* SearchAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3251B890240EE3F90032685D /* SearchAccountView.swift */; };
@@ -57,7 +55,6 @@
 		8BB2ED962441E4BE00FEF194 /* PlayerDetailsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BB2ED952441E4BE00FEF194 /* PlayerDetailsResponse.swift */; };
 		8BCC135C244A2DCF00BCFCF9 /* HeroesService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCC135B244A2DCF00BCFCF9 /* HeroesService.swift */; };
 		8BCFFDAA2422145500751874 /* EmptySearchAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCFFDA92422145500751874 /* EmptySearchAccountView.swift */; };
-		8BCFFDAD242221CE00751874 /* EmptySearchAccountView+EmptySearchAccountViewConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BCFFDAC242221CE00751874 /* EmptySearchAccountView+EmptySearchAccountViewConstraints.swift */; };
 		8BEF78C2244A339E00A0B14F /* AppDependencyContainer+HeroesServiceFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEF78C1244A339E00A0B14F /* AppDependencyContainer+HeroesServiceFactory.swift */; };
 		8BEF78C4244A364100A0B14F /* GetHeroes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEF78C3244A364100A0B14F /* GetHeroes.swift */; };
 		8BEF78C6244A374300A0B14F /* HeroResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8BEF78C5244A374300A0B14F /* HeroResponse.swift */; };
@@ -75,10 +72,8 @@
 		3206B8A4241195ED00A3C27F /* NetworkingClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkingClient.swift; sourceTree = "<group>"; };
 		3206B8A6241507E700A3C27F /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		3206B8AA2416BA7100A3C27F /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AccountService.swift; path = Dota2App/Facade/Services/AccountService/AccountService.swift; sourceTree = SOURCE_ROOT; };
-		320AC4C2240EE79F000228BD /* SearchAccountView+SearchAccountViewConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchAccountView+SearchAccountViewConstraints.swift"; sourceTree = "<group>"; };
 		320AC4C4240EEA3A000228BD /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
 		320AC4C8240EECE6000228BD /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
-		320AC4CA240EEEB6000228BD /* AccountTableViewCell+AccountTableViewCellConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountTableViewCell+AccountTableViewCellConstraints.swift"; sourceTree = "<group>"; };
 		320AC4CF240F0445000228BD /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		321C356D241AD0CC00E24B65 /* AppDependencyContainer+SearchControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+SearchControllerFactory.swift"; sourceTree = "<group>"; };
 		3251B890240EE3F90032685D /* SearchAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAccountView.swift; sourceTree = "<group>"; };
@@ -123,7 +118,6 @@
 		8BB2ED952441E4BE00FEF194 /* PlayerDetailsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsResponse.swift; sourceTree = "<group>"; };
 		8BCC135B244A2DCF00BCFCF9 /* HeroesService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroesService.swift; sourceTree = "<group>"; };
 		8BCFFDA92422145500751874 /* EmptySearchAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmptySearchAccountView.swift; sourceTree = "<group>"; };
-		8BCFFDAC242221CE00751874 /* EmptySearchAccountView+EmptySearchAccountViewConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "EmptySearchAccountView+EmptySearchAccountViewConstraints.swift"; sourceTree = "<group>"; };
 		8BEF78C1244A339E00A0B14F /* AppDependencyContainer+HeroesServiceFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+HeroesServiceFactory.swift"; sourceTree = "<group>"; };
 		8BEF78C3244A364100A0B14F /* GetHeroes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetHeroes.swift; sourceTree = "<group>"; };
 		8BEF78C5244A374300A0B14F /* HeroResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeroResponse.swift; sourceTree = "<group>"; };
@@ -198,7 +192,6 @@
 		3251B88E240EE3DC0032685D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				8BCFFDAB242221AB00751874 /* ViewConstraints */,
 				3251B890240EE3F90032685D /* SearchAccountView.swift */,
 				320AC4C4240EEA3A000228BD /* AccountTableViewCell.swift */,
 				8BCFFDA92422145500751874 /* EmptySearchAccountView.swift */,
@@ -354,6 +347,7 @@
 		8B6EB8462410038800D6CA85 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				8B0604502437951400D1A53A /* LoadableImageView */,
 				8B043B17241BB5C600997C8A /* Debouncer */,
 				8B6EB8472410039700D6CA85 /* Helper.swift */,
 			);
@@ -431,20 +425,9 @@
 			path = PlayerInfoResponse;
 			sourceTree = "<group>";
 		};
-		8BCFFDAB242221AB00751874 /* ViewConstraints */ = {
-			isa = PBXGroup;
-			children = (
-				320AC4C2240EE79F000228BD /* SearchAccountView+SearchAccountViewConstraints.swift */,
-				320AC4CA240EEEB6000228BD /* AccountTableViewCell+AccountTableViewCellConstraints.swift */,
-				8BCFFDAC242221CE00751874 /* EmptySearchAccountView+EmptySearchAccountViewConstraints.swift */,
-			);
-			path = ViewConstraints;
-			sourceTree = "<group>";
-		};
 		8BCFFDAE24224CC300751874 /* UIKit */ = {
 			isa = PBXGroup;
 			children = (
-				8B0604502437951400D1A53A /* LoadableImageView */,
 				8BFA084F2429019D00461767 /* UIView+Extension.swift */,
 				8BFA0862242D02E600461767 /* UIFont+Extension.swift */,
 			);
@@ -578,7 +561,6 @@
 				8BFA086C242E39CD00461767 /* AppDependencyContainer+PlayerDetailsFactory.swift in Sources */,
 				8BAA6F94244E1A6E0030FAEB /* AppDependencyContainer+HeroesRepositoryFactory.swift in Sources */,
 				3206B8A5241195ED00A3C27F /* NetworkingClient.swift in Sources */,
-				8BCFFDAD242221CE00751874 /* EmptySearchAccountView+EmptySearchAccountViewConstraints.swift in Sources */,
 				3206B8A7241507E700A3C27F /* APIError.swift in Sources */,
 				8B6EB85424167CC200D6CA85 /* WonLostResponse.swift in Sources */,
 				8BEF78C6244A374300A0B14F /* HeroResponse.swift in Sources */,
@@ -621,8 +603,6 @@
 				8B637588247941F70009F4AD /* UserDefaults+Extension.swift in Sources */,
 				3206B8AB2416BA7100A3C27F /* AccountService.swift in Sources */,
 				8BB2ED902440B9E500FEF194 /* GetPlayerInfo.swift in Sources */,
-				320AC4CB240EEEB6000228BD /* AccountTableViewCell+AccountTableViewCellConstraints.swift in Sources */,
-				320AC4C3240EE79F000228BD /* SearchAccountView+SearchAccountViewConstraints.swift in Sources */,
 				8B0604522437952C00D1A53A /* ImageLoadable.swift in Sources */,
 				8BEF78C2244A339E00A0B14F /* AppDependencyContainer+HeroesServiceFactory.swift in Sources */,
 			);

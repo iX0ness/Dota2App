@@ -10,13 +10,17 @@ import UIKit
 
 class SearchAccountView: UIView {
     
+    // MARK: - Object Properties
+    
     let viewModel: SearchAccountViewModel
     
-    lazy var emptyAccountView: EmptySearchAccountView = {
+    // MARK: - View Properties
+    
+    private lazy var emptyAccountView: EmptySearchAccountView = {
         let view = EmptySearchAccountView()
         return view
     }()
-
+    
     lazy var accountsTableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundView = emptyAccountView
@@ -26,10 +30,11 @@ class SearchAccountView: UIView {
         return tableView
     }()
     
+    // MARK: - View Lifecycle
+    
     init(viewModel: SearchAccountViewModel) {
         self.viewModel = viewModel
         super.init(frame: .zero)
-        constructHierarchy()
         accountsTableView.register(AccountTableViewCell.self, forCellReuseIdentifier: AccountTableViewCell.defaultReuseIdentifier)
         backgroundColor = R.SearchAccount.searchAccountsViewBackgroundColor
     }
@@ -40,8 +45,35 @@ class SearchAccountView: UIView {
 
     override func layoutSubviews() {
         super.layoutSubviews()
-        activateAccountsTableViewConstraints()
+        setupLayout()
         accountsTableView.reloadData()
     }
     
+    // MARK: - Object Methods
+    
+    // MARK: - Setup View Hierarchy
+    
+    private func setupLayout() {
+        addSubviews()
+        activateConstraints()
+    }
+    
+    private func addSubviews() {
+        addSubview(accountsTableView)
+    }
+    
+    private func activateConstraints() {
+        activateAccountsTableViewConstraints()
+    }
+    
+    private func activateAccountsTableViewConstraints() {
+        NSLayoutConstraint.activate([
+            accountsTableView.leadingAnchor.constraint(equalTo: layoutMarginsGuide.leadingAnchor),
+            accountsTableView.topAnchor.constraint(equalTo: topAnchor),
+            accountsTableView.trailingAnchor.constraint(equalTo: layoutMarginsGuide.trailingAnchor),
+            accountsTableView.bottomAnchor.constraint(equalTo: bottomAnchor),
+        ])
+    }
+    
+    // MARK: - Constants
 }

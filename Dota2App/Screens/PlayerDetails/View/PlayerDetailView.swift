@@ -268,7 +268,7 @@ class PlayerDetailsView: UIView {
             generalInfoStackView.topAnchor.constraint(equalTo: avatarView.topAnchor),
             generalInfoStackView.leadingAnchor.constraint(equalTo: avatarView.trailingAnchor, constant: ViewMetrics.GeneralInfoStackView.paddingLeading),
             generalInfoStackView.trailingAnchor.constraint(equalTo: headerView.trailingAnchor, constant: ViewMetrics.GeneralInfoStackView.paddingTrailing),
-            generalInfoStackView.bottomAnchor.constraint(equalTo: avatarView.bottomAnchor)
+            generalInfoStackView.bottomAnchor.constraint(equalTo: avatarView.bottomAnchor),
         ])
     }
     
