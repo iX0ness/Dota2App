@@ -17,6 +17,3 @@ typealias HeroesCompletion = (Result<[HeroResponse], Error>) -> Void
 typealias PlayerInfoCompletion = (PlayerInfoResponse) -> Void
 typealias WonLostStatisticCompletion = (WonLostResponse) -> Void
 typealias RecentMatchesCompletion = ([MatchResponse]) -> Void
-
-
-

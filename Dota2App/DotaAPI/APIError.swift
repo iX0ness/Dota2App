@@ -28,8 +28,6 @@ enum APIError: Error, CustomStringConvertible {
         case .urlConstructionError:
             return "URL error: the url can't be constructed for this path"
             
-        
-       
         case .noValueForKeyError:
             return "No value for 'heroes' key fonded"
         }

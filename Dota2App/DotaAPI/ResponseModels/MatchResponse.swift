@@ -9,13 +9,11 @@
 import Foundation
 
 protocol MatchRepresentable {
-    //var hero: Hero { get }
     var matchResult: String { get }
     var duration: String { get }
     var kills: String { get }
     var assists: String { get }
     var deaths: String { get }
-    
     func getMatchModel() -> Match
 }
 

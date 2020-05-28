@@ -10,23 +10,23 @@ import UIKit
 
 class PlayerDetailsViewController: UIViewController {
     
-    let viewModel: PlayerDetailsViewModel
-    var alertController: UIAlertController?
-    var alertController2: UIAlertController?
-    var isPresenting = false
+    // MARK: - Object properties
+    
+    private let viewModel: PlayerDetailsViewModel
+    private var alertController: UIAlertController?
+    
+    // MARK: - Object Lifecycle
     
     init(viewModel: PlayerDetailsViewModel) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
     
-    deinit {
-        print("Deinitialized")
-    }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    // MARK: - View Lifecycle
     
     override func loadView() {
         view = PlayerDetailsView(viewModel: viewModel)
@@ -34,29 +34,22 @@ class PlayerDetailsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        notifyErrorAlert()
-        setDelegates()
-        setupNavigationBar()
         bind()
+        setupNavigationBar()
+        setupTableView()
     }
     
-    func setupNavigationBar() {
-        self.navigationItem.largeTitleDisplayMode = .never
-        if let navigationBar = navigationController?.navigationBar {
-            navigationBar.topItem?.title = "Search account"
-            navigationBar.prefersLargeTitles = true
-            navigationBar.barTintColor = R.SearchAccount.emptyViewBackgroundColor
-//            navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
+    // MARK: - Obejct Methods
+    
+    func bind() {
+        viewModel.didRecentMatchesFetch = { [weak self]  in
+            guard let self = self else { return }
+            DispatchQueue.main.async {
+                guard let view = self.view as? PlayerDetailsView else { return }
+                view.recentMatchesTableView.reloadData()
+            }
         }
-    }
-    
-    func setDelegates() {
-        guard let view = view as? PlayerDetailsView else { return }
-        view.recentMatchesTableView.delegate = self
-        view.recentMatchesTableView.dataSource = self
-    }
-    
-    func notifyErrorAlert() {
+        
         viewModel.fetchErrorCallback = { [weak self] in
             guard let self = self else { return }
             self.presentAlert()
@@ -70,18 +63,21 @@ class PlayerDetailsViewController: UIViewController {
         }
     }
     
-    func bind() {
-        viewModel.didRecentMatchesFetch = { [weak self]  in
-            guard let self = self else { return }
-            DispatchQueue.main.async {
-                guard let view = self.view as? PlayerDetailsView else { return }
-                view.recentMatchesTableView.reloadData()
-            }
-            
-        }
+    func setupNavigationBar() {
+        navigationItem.largeTitleDisplayMode = .never
+        guard let navigationBar = navigationController?.navigationBar else { return }
+        navigationBar.barTintColor = R.SearchAccount.emptyViewBackgroundColor
     }
     
+    func setupTableView() {
+        guard let view = view as? PlayerDetailsView else { return }
+        view.recentMatchesTableView.delegate = self
+        view.recentMatchesTableView.dataSource = self
+    }
+
 }
+
+// MARK: - UITableViewDelegate, UITableViewDataSource
 
 extension PlayerDetailsViewController: UITableViewDelegate, UITableViewDataSource {
     
@@ -96,7 +92,6 @@ extension PlayerDetailsViewController: UITableViewDelegate, UITableViewDataSourc
         
         let match = viewModel.getMatch(at: indexPath)
         cell.configure(with: match)
-        
         return cell
     }
     
@@ -104,8 +99,9 @@ extension PlayerDetailsViewController: UITableViewDelegate, UITableViewDataSourc
         return 110
     }
     
-    
 }
+
+// MARK: - UIAlertController
 
 private extension UIAlertController {
     func create() -> UIAlertController {

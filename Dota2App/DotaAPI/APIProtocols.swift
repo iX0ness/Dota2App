@@ -12,7 +12,7 @@ typealias CompletionHandler<Value> = (Result<Value, Error>) -> Void
 
 protocol APIRequest: Encodable {
     associatedtype Response: Decodable
-    var path: String {get}
+    var path: String { get }
 }
 
 protocol APIClient {

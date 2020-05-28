@@ -49,7 +49,7 @@ class APIFacade {
     
     func saveHeroesToDocuments() {
         heroesRepository.heroesHandler = { [weak self] heroes in
-            guard let self = self else { return }
+            guard let _ = self else { return }
             UserDefaults.standard.saveHoroes(heroes)
         }
     }

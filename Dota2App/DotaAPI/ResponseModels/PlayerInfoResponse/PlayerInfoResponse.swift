@@ -16,7 +16,6 @@ protocol ProfileRepresentable {
     var mmr: String { get }
     var avatarURLString: String { get }
     var emptyValuePlaceholder: String { get }
-    
     func getProfileModel() -> Profile
 }
 

@@ -1,12 +1,22 @@
 //
-//  UIView+FitToContainerView.swift
+//  UIView+ReusableView.swift
 //  Dota2App
 //
-//  Created by Mykhaylo Levchuk on 05/05/2020.
+//  Created by Mykhaylo Levchuk on 23/03/2020.
 //  Copyright © 2020 Levchuk Misha. All rights reserved.
 //
 
 import UIKit
+
+protocol ReusableView: class {
+    static var defaultReuseIdentifier: String { get }
+}
+
+extension ReusableView where Self: UIView {
+    static var defaultReuseIdentifier: String {
+        return NSStringFromClass(self)
+    }
+}
 
 extension UIView {
     func placeInContainer(_ superView: UIView) {
@@ -17,14 +27,5 @@ extension UIView {
             self.bottomAnchor.constraint(equalTo: superView.bottomAnchor),
             self.trailingAnchor.constraint(equalTo: superView.trailingAnchor)
         ])
-    }
-}
-
-extension UIView {
-    func addBottomBorderWithColor(color: UIColor, width: CGFloat) {
-        let border = CALayer()
-        border.backgroundColor = color.cgColor
-        border.frame = CGRect(x: 0, y: self.frame.size.height - width, width: self.frame.size.width, height: width)
-        self.layer.addSublayer(border)
     }
 }

@@ -46,10 +46,8 @@ class NetworkingClient: APIClient {
             
         }
         dataTask.resume()
-        
         return dataTask
     }
-    
     
     func createEndpoint<T: APIRequest>(for request: T) ->  URL? {
         guard let url = URL(string: request.path, relativeTo: baseURL) else {

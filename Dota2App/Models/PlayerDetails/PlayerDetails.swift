@@ -36,7 +36,3 @@ struct Match {
     let assists: String
     let deaths: String
 }
-
-struct Hero {
-    let name: String
-}

@@ -8,10 +8,9 @@
 
 import UIKit
 
-
 class LoadableImageView: UIImageView, Loadable {
-    var currentTask: URLSessionDataTask?
     
+    var currentTask: URLSessionDataTask?
     var imageURLString: String?
     
     func loadImage(from urlString: String, completion: @escaping (UIImage) -> Void) {
@@ -38,29 +37,18 @@ class LoadableImageView: UIImageView, Loadable {
                     }
 
                     if let unwrappedData = data, let downloadedImage = UIImage(data: unwrappedData) {
-                        
                             ImageCache.shared.save(image: downloadedImage, forKey: urlString)
                             if self.imageURLString == urlString {
                                 DispatchQueue.main.async {
                                     completion(downloadedImage)
                                 }
-                                
                             }
-                        
                     }
-
                 }
-                
-                
                 self.currentTask = dataTask
                 dataTask.resume()
             }
-            
-            
         }
-
     }
-    
-    
     
 }

@@ -19,9 +19,6 @@ struct WonLostResponse: Decodable {
 
 extension WonLostResponse: WonLostRepresentable {
     func getWonLostModel() -> WonLostStatistic {
-        return WonLostStatistic(
-            won: String(win),
-            lost: String(lose)
-        )
+        return WonLostStatistic(won: String(win), lost: String(lose))
     }
 }

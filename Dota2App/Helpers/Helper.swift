@@ -18,7 +18,7 @@ class Helper {
         let newHeight = targetSize.height / image.size.height
         var newSize: CGSize
         
-        if(newWidth > newHeight) {
+        if newWidth > newHeight {
             newSize = CGSize(width: imageSize.width * newHeight, height: imageSize.height * newHeight)
         } else {
             newSize = CGSize(width: imageSize.width * newWidth,  height: imageSize.height * newWidth)

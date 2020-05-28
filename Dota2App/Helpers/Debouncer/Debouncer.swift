@@ -6,7 +6,6 @@
 //  Copyright © 2020 Levchuk Misha. All rights reserved.
 //
 
-
 import Foundation
 
 public class Debouncer {

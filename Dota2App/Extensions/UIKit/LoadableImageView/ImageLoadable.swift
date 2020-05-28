@@ -9,8 +9,7 @@
 import UIKit
 
 protocol Loadable {
-    var currentTask: URLSessionDataTask? {get}
-    var imageURLString: String? {get}
-    
+    var currentTask: URLSessionDataTask? { get }
+    var imageURLString: String? { get }
     func loadImage(from urlString: String, completion: @escaping (UIImage) -> Void)
 }

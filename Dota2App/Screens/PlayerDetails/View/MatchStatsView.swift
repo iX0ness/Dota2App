@@ -18,6 +18,8 @@ protocol ResultSetable {
 
 class MatchStatsView: UIView {
     
+    // MARK: - View Properties
+    
     private lazy var resultTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Result"
@@ -161,7 +163,7 @@ class MatchStatsView: UIView {
         return stackView
     }()
     
-    
+    // MARK: - View Lifecycle
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -171,33 +173,40 @@ class MatchStatsView: UIView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
     override func layoutSubviews() {
         super.layoutSubviews()
-        buildHierarchy()
-        activateMatchStatsStackViewConstraints()
+        setupLayout()
     }
-
-    func buildHierarchy() {
+    
+    // MARK: - Setup View Hierarchy
+    
+    private func setupLayout() {
+        addSubviews()
+        activateConstraints()
+    }
+    
+    private func addSubviews() {
         addSubview(matchStatsStackView)
     }
     
-    func activateMatchStatsStackViewConstraints() {
-        let matchStatsStackViewTopAnchor = matchStatsStackView.topAnchor.constraint(equalTo: topAnchor)
-        let matchStatsStackViewLeadingAnchor = matchStatsStackView.leadingAnchor.constraint(equalTo: leadingAnchor)
-        let matchStatsStackViewBottomAnchor = matchStatsStackView.bottomAnchor.constraint(equalTo: bottomAnchor)
-        let matchStatsStackViewTrailingAnchor = matchStatsStackView.trailingAnchor.constraint(equalTo: trailingAnchor)
-        
-        matchStatsStackViewTopAnchor.isActive = true
-        matchStatsStackViewLeadingAnchor.isActive = true
-        matchStatsStackViewBottomAnchor.isActive = true
-        matchStatsStackViewTrailingAnchor.isActive = true
-        
+    private func activateConstraints() {
+        activateMatchStatsStackViewConstraints()
     }
-    
+
+    private func activateMatchStatsStackViewConstraints() {
+        NSLayoutConstraint.activate([
+            matchStatsStackView.topAnchor.constraint(equalTo: topAnchor),
+            matchStatsStackView.leadingAnchor.constraint(equalTo: leadingAnchor),
+            matchStatsStackView.bottomAnchor.constraint(equalTo: bottomAnchor),
+            matchStatsStackView.trailingAnchor.constraint(equalTo: trailingAnchor),
+        ])
+    }
 }
 
+// MARK: - ResultSetable
+
 extension MatchStatsView: ResultSetable {
+    
     func setResult(_ didWinMatch: String) {
         resultValueLabel.text = didWinMatch
     }
@@ -217,5 +226,4 @@ extension MatchStatsView: ResultSetable {
     func setAssists(_ assists: String) {
         assistsValueLabel.text = assists
     }
-    
 }

@@ -10,7 +10,10 @@ import UIKit
 
 class PlayerDetailsViewModel {
     
+    // MARK: - Object properties
+    
     private let playerDetailsProvider: PlayerDetailsServiceProvider
+    
     private var didOccurError: Bool = false {
         willSet {
             if newValue != didOccurError {
@@ -30,6 +33,16 @@ class PlayerDetailsViewModel {
         }
     }
     
+    private var recentMatchesResponse: [MatchResponse] = [] {
+        didSet {
+            if !recentMatchesResponse.isEmpty {
+                didRecentMatchesFetch?()
+            } else {
+                didOccurError = true
+            }
+        }
+    }
+    
     private var wonLostStatisticResponse: WonLostResponse? {
         didSet {
             if let wonLostStatistic = wonLostStatisticResponse {
@@ -41,33 +54,29 @@ class PlayerDetailsViewModel {
         }
     }
     
-    private var recentMatchesResponse: [MatchResponse] = [] {
-        didSet {
-            if !recentMatchesResponse.isEmpty {
-                didRecentMatchesFetch?()
-            } else {
-                didOccurError = true
-            }
-        }
-    }
-    
     var count: Int {
         return recentMatchesResponse.count
     }
     
     var didProfileFetch: ((Profile) -> Void)?
-    var didWonLostStatisticFetch: ((WonLostStatistic) -> Void)?
     var didRecentMatchesFetch: (() -> Void)?
+    var didWonLostStatisticFetch: ((WonLostStatistic) -> Void)?
     var fetchErrorCallback: (() -> Void)?
+    
+    // MARK: - Object Lifecycle
     
     init(provider: PlayerDetailsServiceProvider) {
         playerDetailsProvider = provider
         fetchPlayerDetails()
-       
-        
     }
     
-    func fetchPlayerDetails() {
+    // MARK: - Object Methods
+    
+    func getMatch(at indexPath: IndexPath) -> Match {
+        return recentMatchesResponse[indexPath.row].getMatchModel()
+    }
+    
+    private func fetchPlayerDetails() {
         playerDetailsProvider.fetchPlayerDetails("1054954790",
                                                  playerInfoCompletion: { playerInfoResponse in
                                                     self.playerInfoResponse = playerInfoResponse
@@ -78,10 +87,6 @@ class PlayerDetailsViewModel {
                                                  recentMatchesCompletion: { recentMatchesResponse in
                                                     self.recentMatchesResponse = recentMatchesResponse
         })
-    }
-    
-    func getMatch(at indexPath: IndexPath) -> Match {
-        return recentMatchesResponse[indexPath.row].getMatchModel()
     }
     
 }

@@ -6,13 +6,14 @@
 //  Copyright © 2020 Levchuk Misha. All rights reserved.
 //
 
-import Foundation
 import UIKit
 
 class SearchAccountViewModel {
     
+    // MARK: - Object properties
+    
     private let accountsProvider: AccountServiceProvider
-    var dataTask: URLSessionDataTask?
+    private var dataTask: URLSessionDataTask?
     var didFetchAccounts: (() -> Void)?
     
     var fetchedAccounts: [AccountResponse] = [] {
@@ -21,13 +22,20 @@ class SearchAccountViewModel {
         }
     }
     
-    init(accountsProvider: AccountServiceProvider) {
-        self.accountsProvider = accountsProvider
-        
+    var count: Int {
+        return !fetchedAccounts.isEmpty ? fetchedAccounts.count : 0
     }
     
+    // MARK: - Object Lifecycle
+    
+    init(accountsProvider: AccountServiceProvider) {
+        self.accountsProvider = accountsProvider
+    }
+    
+    // MARK: - Object Methods
+    
     func getAccounts(named accountName: String) {
-        let _ = accountsProvider.fetchAccounts(accountName) { (result) in
+        let _ = accountsProvider.fetchAccounts(accountName) { result in
             switch result {
             case .success(let accounts):
                 self.fetchedAccounts = accounts
@@ -37,7 +45,8 @@ class SearchAccountViewModel {
         }
     }
     
+    func getAccount(at indexPath: IndexPath) -> AccountResponse {
+        return fetchedAccounts[indexPath.section]
+    }
+    
 }
-
-
-

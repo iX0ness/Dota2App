@@ -9,18 +9,13 @@
 import UIKit
 
 extension UserDefaults {
-    
-    
     func saveHoroes(_ heroes: [HeroResponse]) {
-        
         do {
             let data = try JSONEncoder().encode(heroes)
             UserDefaults.standard.set(data, forKey: "heroes")
         } catch {
             print(error)
         }
-        
-        
     }
     
     func getHeroes() -> Result<[HeroResponse], Error>? {
