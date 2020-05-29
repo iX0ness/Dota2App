@@ -68,7 +68,12 @@ class PlayerDetailsView: UIView {
     }()
     
     private lazy var generalInfoStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [nameLabel, countryLabel, wonCountLabel, lostCountLabel])
+        let stackView = UIStackView(arrangedSubviews: [
+            nameLabel,
+            countryLabel,
+            wonCountLabel,
+            lostCountLabel,
+        ])
         stackView.axis = .vertical
         stackView.alignment = .leading
         stackView.distribution = .fillProportionally
@@ -78,7 +83,11 @@ class PlayerDetailsView: UIView {
     }()
     
     private lazy var rankingStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [mmrStackView, soloRankStackView, teamRankStackView])
+        let stackView = UIStackView(arrangedSubviews: [
+            mmrStackView,
+            soloRankStackView,
+            teamRankStackView,
+        ])
         stackView.axis = .horizontal
         stackView.alignment = .center
         stackView.distribution = .equalSpacing
@@ -87,21 +96,30 @@ class PlayerDetailsView: UIView {
     }()
     
     private lazy var mmrStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [mmrTitleLabel, mmrValueLabel])
+        let stackView = UIStackView(arrangedSubviews: [
+            mmrTitleLabel,
+            mmrValueLabel,
+        ])
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
     private lazy var soloRankStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [soloRankTitleLabel, soloRankValueLabel])
+        let stackView = UIStackView(arrangedSubviews: [
+            soloRankTitleLabel,
+            soloRankValueLabel,
+        ])
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
     }()
     
     private lazy var teamRankStackView: UIStackView = {
-        let stackView = UIStackView(arrangedSubviews: [teamRankTitleLabel, teamRankValueLabel])
+        let stackView = UIStackView(arrangedSubviews: [
+            teamRankTitleLabel,
+            teamRankValueLabel,
+        ])
         stackView.axis = .vertical
         stackView.translatesAutoresizingMaskIntoConstraints = false
         return stackView
@@ -169,7 +187,7 @@ class PlayerDetailsView: UIView {
     
     lazy var recentMatchesTableView: UITableView = {
         let tableView = UITableView(frame: .zero)
-        tableView.backgroundColor = UIColor(red: 25/255, green: 25/255, blue: 34/255, alpha: 1.0)
+        tableView.backgroundColor = UIColor.DotaColor.midnight
         tableView.register(MatchTableViewCell.self, forCellReuseIdentifier: MatchTableViewCell.defaultReuseIdentifier)
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView

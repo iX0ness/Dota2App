@@ -39,5 +39,11 @@ extension UIColor {
             green: 26/255,
             blue: 39/255,
             alpha: 1.0)
+        
+        static let midnight = UIColor(
+            red: 25 / 255,
+            green: 25 / 255,
+            blue: 34 / 255,
+            alpha: 1.0)
     }
 }

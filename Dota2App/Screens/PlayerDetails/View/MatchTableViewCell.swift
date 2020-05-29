@@ -45,7 +45,7 @@ class MatchTableViewCell: UITableViewCell {
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        backgroundColor = UIColor(red: 25/255, green: 25/255, blue: 34/255, alpha: 1.0)
+        backgroundColor = UIColor.DotaColor.midnight
     }
     
     required init?(coder: NSCoder) {
