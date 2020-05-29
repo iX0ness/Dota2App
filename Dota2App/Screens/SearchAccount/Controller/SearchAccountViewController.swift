@@ -128,7 +128,9 @@ extension SearchAccountViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let playerDetailsViewController = factory.makePlayerDetailsViewController()
+        guard let accountID = viewModel.getAccount(at: indexPath)?.account_id else { return }
+        let playerDetailsViewController = factory.makePlayerDetailsViewController(with: accountID)
+        
         navigationController?.pushViewController(playerDetailsViewController, animated: true)
         tableView.deselectRow(at: indexPath, animated: false)
     }

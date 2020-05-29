@@ -13,7 +13,6 @@ class PlayerDetailsViewModel {
     // MARK: - Object properties
     
     private let playerDetailsProvider: PlayerDetailsServiceProvider
-    
     private var didOccurError: Bool = false {
         willSet {
             if newValue != didOccurError {
@@ -65,9 +64,10 @@ class PlayerDetailsViewModel {
     
     // MARK: - Object Lifecycle
     
-    init(provider: PlayerDetailsServiceProvider) {
+    init(provider: PlayerDetailsServiceProvider, accountID: Int) {
         playerDetailsProvider = provider
-        fetchPlayerDetails()
+        fetchPlayerDetails(with: String(accountID))
+        
     }
     
     // MARK: - Object Methods
@@ -76,8 +76,8 @@ class PlayerDetailsViewModel {
         return recentMatchesResponse[indexPath.row].getMatchModel()
     }
     
-    private func fetchPlayerDetails() {
-        playerDetailsProvider.fetchPlayerDetails("1054954790",
+    private func fetchPlayerDetails(with accountID: String) {
+        playerDetailsProvider.fetchPlayerDetails(accountID,
                                                  playerInfoCompletion: { playerInfoResponse in
                                                     self.playerInfoResponse = playerInfoResponse
         },

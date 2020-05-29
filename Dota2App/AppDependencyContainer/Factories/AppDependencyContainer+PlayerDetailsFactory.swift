@@ -9,15 +9,15 @@
 import UIKit
 
 protocol PlayerDetailsFactory {
-    func makePlayerDetailsViewController() -> PlayerDetailsViewController
+    func makePlayerDetailsViewController(with accountID: Int) -> PlayerDetailsViewController
 }
 
 extension AppDependencyContainer: PlayerDetailsFactory {
-    func makePlayerDetailsViewController() -> PlayerDetailsViewController {
-        return PlayerDetailsViewController(viewModel: makePlayerDetailsViewModel())
+    func makePlayerDetailsViewController(with accountID: Int) -> PlayerDetailsViewController {
+        return PlayerDetailsViewController(viewModel: makePlayerDetailsViewModel(accountID: accountID))
     }
     
-    private func makePlayerDetailsViewModel() -> PlayerDetailsViewModel {
-        return PlayerDetailsViewModel(provider: apiFacade)
+    private func makePlayerDetailsViewModel(accountID: Int) -> PlayerDetailsViewModel {
+        return PlayerDetailsViewModel(provider: apiFacade, accountID: accountID)
     }
 }

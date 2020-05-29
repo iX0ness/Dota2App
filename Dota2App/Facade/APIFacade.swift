@@ -17,7 +17,6 @@ protocol PlayerDetailsServiceProvider {
                             playerInfoCompletion: @escaping PlayerInfoCompletion,
                             wonLostStatisticCompletion: @escaping WonLostStatisticCompletion,
                             recentMatchesCompletion: @escaping RecentMatchesCompletion)
-    
 }
 
 
