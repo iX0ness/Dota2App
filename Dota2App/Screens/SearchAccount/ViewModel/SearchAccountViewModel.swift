@@ -50,6 +50,7 @@ class SearchAccountViewModel {
     }
     
     func getAccount(at indexPath: IndexPath) -> AccountResponse? {
+        guard !fetchedAccounts.isEmpty else { return nil }
         return fetchedAccounts[indexPath.section]
     }
     
