@@ -22,7 +22,7 @@ class MatchTableViewCell: UITableViewCell {
     private lazy var heroNameLabel: UILabel = {
         let label = UILabel()
         label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 10)
+        label.font = UIFont.DotaFont.subtitle
         label.textColor = UIColor.white
         label.translatesAutoresizingMaskIntoConstraints = false
         return label

@@ -66,7 +66,7 @@ class PlayerDetailsViewController: UIViewController {
     func setupNavigationBar() {
         navigationItem.largeTitleDisplayMode = .never
         guard let navigationBar = navigationController?.navigationBar else { return }
-        navigationBar.barTintColor = R.SearchAccount.emptyViewBackgroundColor
+        navigationBar.barTintColor = UIColor.DotaColor.charcoal
         navigationBar.tintColor = .white
     }
     

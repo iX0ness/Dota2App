@@ -32,7 +32,7 @@ class AccountTableViewCell: UITableViewCell {
     
     private let dimView: UIView = {
         let view = UIView()
-        view.backgroundColor = R.SearchAccount.dimViewBackgroundColor
+        view.backgroundColor = UIColor.DotaColor.clarifier
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -42,7 +42,7 @@ class AccountTableViewCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setupCardStyle()
-        backgroundColor = R.SearchAccount.accountCellBackgroundColor
+        backgroundColor = UIColor.DotaColor.prussian
         
     }
     

@@ -76,7 +76,7 @@ class SearchAccountViewController: UIViewController {
         if let navigationBar = navigationController?.navigationBar {
             navigationBar.topItem?.title = "Search account"
             navigationBar.prefersLargeTitles = true
-            navigationBar.barTintColor = R.SearchAccount.navBarColor
+            navigationBar.barTintColor = UIColor.DotaColor.steel
             navigationBar.largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.lightGray]
         }
     }
@@ -86,8 +86,8 @@ class SearchAccountViewController: UIViewController {
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
         definesPresentationContext = true
-        searchController.searchBar.tintColor = R.SearchAccount.searchBarTintColor
-        searchController.searchBar.searchTextField.textColor = R.SearchAccount.searchTextFieldTextColor
+        searchController.searchBar.tintColor = UIColor.DotaColor.denim
+        searchController.searchBar.searchTextField.textColor = UIColor.DotaColor.denim
     }
     
     private func showBackGroundView(in tableView: UITableView) {
@@ -188,7 +188,7 @@ extension SearchAccountViewController: UISearchBarDelegate {
     }
     
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
-        setEditingColor(for: searchBar, color: R.SearchAccount.searchTextFieldTextColor)
+        setEditingColor(for: searchBar, color: UIColor.DotaColor.denim)
     }
     
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {

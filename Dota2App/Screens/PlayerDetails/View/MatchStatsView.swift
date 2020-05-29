@@ -23,7 +23,7 @@ class MatchStatsView: UIView {
     private lazy var resultTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Result"
-        label.font = UIFont.DotaFonts.headline
+        label.font = UIFont.DotaFont.headline
         label.textColor = UIColor.white
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -32,7 +32,7 @@ class MatchStatsView: UIView {
     
     private lazy var resultValueLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.DotaFonts.body
+        label.font = UIFont.DotaFont.body
         label.textColor = UIColor.white
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -42,7 +42,7 @@ class MatchStatsView: UIView {
     private lazy var durationTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "Duration"
-        label.font = UIFont.DotaFonts.headline
+        label.font = UIFont.DotaFont.headline
         label.textColor = UIColor.white
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -51,7 +51,7 @@ class MatchStatsView: UIView {
     
     private lazy var durationValueLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.DotaFonts.body
+        label.font = UIFont.DotaFont.body
         label.textColor = UIColor.white
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -61,7 +61,7 @@ class MatchStatsView: UIView {
     private lazy var killsTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "K"
-        label.font = UIFont.DotaFonts.headline
+        label.font = UIFont.DotaFont.headline
         label.textColor = UIColor.white
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -71,7 +71,7 @@ class MatchStatsView: UIView {
     private lazy var deathsTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "D"
-        label.font = UIFont.DotaFonts.headline
+        label.font = UIFont.DotaFont.headline
         label.textColor = UIColor.white
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -81,7 +81,7 @@ class MatchStatsView: UIView {
     private lazy var assistsTitleLabel: UILabel = {
         let label = UILabel()
         label.text = "A"
-        label.font = UIFont.DotaFonts.headline
+        label.font = UIFont.DotaFont.headline
         label.textColor = UIColor.white
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -90,7 +90,7 @@ class MatchStatsView: UIView {
     
     private lazy var killsValueLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.DotaFonts.body
+        label.font = UIFont.DotaFont.body
         label.textColor = UIColor.white
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -99,7 +99,7 @@ class MatchStatsView: UIView {
     
     private lazy var deathsValueLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.DotaFonts.body
+        label.font = UIFont.DotaFont.body
         label.textColor = UIColor.white
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -108,7 +108,7 @@ class MatchStatsView: UIView {
     
     private lazy var assistsValueLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.DotaFonts.body
+        label.font = UIFont.DotaFont.body
         label.textColor = UIColor.white
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false

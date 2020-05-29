@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIFont {
-    struct DotaFonts {
+    enum DotaFont {
         static let body = UIFont(name: "ArialMT", size: 14)
         static let headline = UIFont(name: "Arial-BoldMT", size: 16)
         static let subtitle = UIFont(name: "ArialMT", size: 12)

@@ -18,14 +18,14 @@ class PlayerDetailsView: UIView {
     
     private lazy var headerView: UIView = {
         let view = UIView()
-        view.backgroundColor = R.SearchAccount.accountCellBackgroundColor
+        view.backgroundColor = UIColor.DotaColor.prussian
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     lazy var avatarView: LoadableImageView = {
         let imageView = LoadableImageView()
-        imageView.backgroundColor = .red
+        imageView.image = UIImage(named: "account")
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -35,7 +35,7 @@ class PlayerDetailsView: UIView {
         let label = UILabel()
         label.text = "Name: "
         label.textColor = .white
-        label.font = UIFont.DotaFonts.body
+        label.font = UIFont.DotaFont.body
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -44,7 +44,7 @@ class PlayerDetailsView: UIView {
         let label = UILabel()
         label.text = "Country: "
         label.textColor = .white
-        label.font = UIFont.DotaFonts.body
+        label.font = UIFont.DotaFont.body
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -53,7 +53,7 @@ class PlayerDetailsView: UIView {
         let label = UILabel()
         label.text = "Won: "
         label.textColor = .white
-        label.font = UIFont.DotaFonts.body
+        label.font = UIFont.DotaFont.body
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -62,7 +62,7 @@ class PlayerDetailsView: UIView {
         let label = UILabel()
         label.text = "Lost: "
         label.textColor = .white
-        label.font = UIFont.DotaFonts.body
+        label.font = UIFont.DotaFont.body
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -113,7 +113,7 @@ class PlayerDetailsView: UIView {
         label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .center
         label.textColor = .white
-        label.font = UIFont.DotaFonts.headline
+        label.font = UIFont.DotaFont.headline
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -124,7 +124,7 @@ class PlayerDetailsView: UIView {
         label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .center
         label.textColor = .white
-        label.font = UIFont.DotaFonts.headline
+        label.font = UIFont.DotaFont.headline
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -135,7 +135,7 @@ class PlayerDetailsView: UIView {
         label.adjustsFontSizeToFitWidth = true
         label.textAlignment = .center
         label.textColor = .white
-        label.font = UIFont.DotaFonts.headline
+        label.font = UIFont.DotaFont.headline
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -144,7 +144,7 @@ class PlayerDetailsView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .white
-        label.font = UIFont.DotaFonts.body
+        label.font = UIFont.DotaFont.body
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -153,7 +153,7 @@ class PlayerDetailsView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .white
-        label.font = UIFont.DotaFonts.body
+        label.font = UIFont.DotaFont.body
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -162,7 +162,7 @@ class PlayerDetailsView: UIView {
         let label = UILabel()
         label.textAlignment = .center
         label.textColor = .white
-        label.font = UIFont.DotaFonts.body
+        label.font = UIFont.DotaFont.body
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

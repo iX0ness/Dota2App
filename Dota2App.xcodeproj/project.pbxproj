@@ -12,7 +12,6 @@
 		3206B8A7241507E700A3C27F /* APIError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206B8A6241507E700A3C27F /* APIError.swift */; };
 		3206B8AB2416BA7100A3C27F /* AccountService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3206B8AA2416BA7100A3C27F /* AccountService.swift */; };
 		320AC4C5240EEA3A000228BD /* AccountTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320AC4C4240EEA3A000228BD /* AccountTableViewCell.swift */; };
-		320AC4C9240EECE6000228BD /* R.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320AC4C8240EECE6000228BD /* R.swift */; };
 		320AC4D0240F0445000228BD /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 320AC4CF240F0445000228BD /* Account.swift */; };
 		321C356E241AD0CC00E24B65 /* AppDependencyContainer+SearchControllerFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 321C356D241AD0CC00E24B65 /* AppDependencyContainer+SearchControllerFactory.swift */; };
 		3251B891240EE3F90032685D /* SearchAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3251B890240EE3F90032685D /* SearchAccountView.swift */; };
@@ -32,6 +31,7 @@
 		8B0604552437959C00D1A53A /* ImageCache.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B0604542437959C00D1A53A /* ImageCache.swift */; };
 		8B4EFEFF2444BFFC00549CA9 /* PlayerDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B4EFEFE2444BFFC00549CA9 /* PlayerDetails.swift */; };
 		8B637588247941F70009F4AD /* UserDefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B637587247941F70009F4AD /* UserDefaults+Extension.swift */; };
+		8B6599542481510D00D74640 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6599532481510D00D74640 /* UIColor+Extension.swift */; };
 		8B6EB8482410039700D6CA85 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB8472410039700D6CA85 /* Helper.swift */; };
 		8B6EB84D24166E0900D6CA85 /* GetAccounts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB84C24166E0900D6CA85 /* GetAccounts.swift */; };
 		8B6EB850241673DB00D6CA85 /* AccountResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8B6EB84F241673DB00D6CA85 /* AccountResponse.swift */; };
@@ -73,7 +73,6 @@
 		3206B8A6241507E700A3C27F /* APIError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIError.swift; sourceTree = "<group>"; };
 		3206B8AA2416BA7100A3C27F /* AccountService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AccountService.swift; path = Dota2App/Facade/Services/AccountService/AccountService.swift; sourceTree = SOURCE_ROOT; };
 		320AC4C4240EEA3A000228BD /* AccountTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountTableViewCell.swift; sourceTree = "<group>"; };
-		320AC4C8240EECE6000228BD /* R.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = R.swift; sourceTree = "<group>"; };
 		320AC4CF240F0445000228BD /* Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		321C356D241AD0CC00E24B65 /* AppDependencyContainer+SearchControllerFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AppDependencyContainer+SearchControllerFactory.swift"; sourceTree = "<group>"; };
 		3251B890240EE3F90032685D /* SearchAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchAccountView.swift; sourceTree = "<group>"; };
@@ -95,6 +94,7 @@
 		8B0604542437959C00D1A53A /* ImageCache.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCache.swift; sourceTree = "<group>"; };
 		8B4EFEFE2444BFFC00549CA9 /* PlayerDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetails.swift; sourceTree = "<group>"; };
 		8B637587247941F70009F4AD /* UserDefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UserDefaults+Extension.swift"; sourceTree = "<group>"; };
+		8B6599532481510D00D74640 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		8B6EB8472410039700D6CA85 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		8B6EB84C24166E0900D6CA85 /* GetAccounts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetAccounts.swift; sourceTree = "<group>"; };
 		8B6EB84F241673DB00D6CA85 /* AccountResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountResponse.swift; sourceTree = "<group>"; };
@@ -157,8 +157,6 @@
 			isa = PBXGroup;
 			children = (
 				320AC4C7240EECCD000228BD /* System */,
-				320AC4C8240EECE6000228BD /* R.swift */,
-				8B043AFE2417E7A100997C8A /* TypeAliases.swift */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -350,6 +348,7 @@
 				8B0604502437951400D1A53A /* LoadableImageView */,
 				8B043B17241BB5C600997C8A /* Debouncer */,
 				8B6EB8472410039700D6CA85 /* Helper.swift */,
+				8B043AFE2417E7A100997C8A /* TypeAliases.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -430,6 +429,7 @@
 			children = (
 				8BFA084F2429019D00461767 /* UIView+Extension.swift */,
 				8BFA0862242D02E600461767 /* UIFont+Extension.swift */,
+				8B6599532481510D00D74640 /* UIColor+Extension.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -587,7 +587,7 @@
 				3282E73C240ED6740002E111 /* SceneDelegate.swift in Sources */,
 				8B0604552437959C00D1A53A /* ImageCache.swift in Sources */,
 				8BB2ED8A2440B91300FEF194 /* PlayerInfoResponse.swift in Sources */,
-				320AC4C9240EECE6000228BD /* R.swift in Sources */,
+				8B6599542481510D00D74640 /* UIColor+Extension.swift in Sources */,
 				8B043AEE24169CB400997C8A /* APIFacade.swift in Sources */,
 				8B06044F2437905800D1A53A /* LoadableImageView.swift in Sources */,
 				8BB2ED79243F9DFB00FEF194 /* PlayerDetailsService.swift in Sources */,

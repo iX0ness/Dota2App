@@ -24,7 +24,7 @@ class SearchAccountView: UIView {
     lazy var accountsTableView: UITableView = {
         let tableView = UITableView()
         tableView.backgroundView = emptyAccountView
-        tableView.backgroundColor = R.SearchAccount.accountsTableViewBackgroundColor
+        tableView.backgroundColor = UIColor.DotaColor.denim
         tableView.showsVerticalScrollIndicator = false
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -36,7 +36,7 @@ class SearchAccountView: UIView {
         self.viewModel = viewModel
         super.init(frame: .zero)
         accountsTableView.register(AccountTableViewCell.self, forCellReuseIdentifier: AccountTableViewCell.defaultReuseIdentifier)
-        backgroundColor = R.SearchAccount.searchAccountsViewBackgroundColor
+        backgroundColor = UIColor.DotaColor.denim
     }
     
     required init?(coder: NSCoder) {

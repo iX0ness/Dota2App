@@ -15,7 +15,7 @@ class EmptySearchAccountView: UIView {
     // MARK: - View Properties
     
     private lazy var logoImageView: UIImageView = {
-        let imageView = UIImageView(image: UIImage(named: R.SearchAccount.logoName))
+        let imageView = UIImageView(image: UIImage(named: "logo"))
         imageView.contentMode = .scaleAspectFit
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -23,7 +23,7 @@ class EmptySearchAccountView: UIView {
     
     private lazy var dimView: UIView = {
         let view = UIView()
-        view.backgroundColor = R.SearchAccount.dimViewBackgroundColor
+        view.backgroundColor = UIColor.DotaColor.clarifier
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
@@ -32,7 +32,7 @@ class EmptySearchAccountView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = R.SearchAccount.emptyViewBackgroundColor
+        backgroundColor = UIColor.DotaColor.charcoal
     }
     
     required init?(coder: NSCoder) {
