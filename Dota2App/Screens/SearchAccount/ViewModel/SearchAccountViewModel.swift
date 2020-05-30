@@ -13,11 +13,6 @@ class SearchAccountViewModel {
     // MARK: - Object properties
     
     private let accountsProvider: AccountServiceProvider
-    private var dataTask: URLSessionDataTask? {
-        didSet {
-            dataTask?.cancel()
-        }
-    }
     var didFetchAccounts: (() -> Void)?
     
     var fetchedAccounts: [AccountResponse] = [] {
