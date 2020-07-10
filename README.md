@@ -1,5 +1,5 @@
 # Dota2App
-Simple iOS application using [The Opendota API](https://www.opendota.com/api-keys). Application allows you to search accounts by name, see players statstics and recent matches.
+Simple iOS application using [The Opendota API](https://www.opendota.com/api-keys). Application allows user to search accounts by name, see players statstics and recent matches.
 
 ## Development tools
 * **Architecture pattern:** MVVM
